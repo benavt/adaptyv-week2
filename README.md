@@ -48,3 +48,7 @@ Original starter files remain under `reference/` with unchanged bytes and intern
 relative layout. Its prior launchers retain their old path contracts. Shared
 workflow code is pinned separately from upstream engines and retained guide
 snapshots; those references are not installed prediction environments.
+
+Reference structures and prior TNFA analyses are indexed in
+[the reference intake](docs/2026-10-05_TNFA_REFERENCE_INTAKE.md). Campaign inputs
+and hotspots remain unset.

@@ -35,3 +35,7 @@ backups with source artifacts. Never delete unique/unverified data.
 Preserve Week1 and active paths. Avoid new symlinks; audit consumers before moves.
 Alerts, Notion updates and automatic continuation are deferred. Ask at disruptive
 phase boundaries.
+
+For existing TNFA reference material, read docs/2026-10-05_TNFA_REFERENCE_INTAKE.md
+and its compact intake index before searching other projects. Reference copies
+are not selected campaign inputs; do not invoke historical capture helpers.

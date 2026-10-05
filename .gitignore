@@ -21,3 +21,5 @@
 /drafts/
 **/__pycache__/
 *.pyc
+
+!docs/2026-10-05_TNFA_REFERENCE_INTAKE.md
