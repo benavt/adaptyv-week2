@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "project_id": "TNFA",
+  "campaign_id": "2026-10-07_tnfa-foundry-boltz2-migration",
+  "run_id": "2026-10-09_boltz2-pose-conservation_007",
+  "created_at": "2026-10-09T14:32:16.711975+00:00",
+  "parents": [
+    {
+      "campaign_id": "2026-10-07_tnfa-foundry-boltz2-migration",
+      "run_id": "2026-10-09_boltz2-pose-conservation_006",
+      "manifest_sha256": "8e9267273b9075ddd13299b4470c74b3c42e5076017c47ed884c88e789b0bfec"
+    }
+  ],
+  "recipe": {
+    "recipe_id": "tnfa-foundry-boltz2-migration",
+    "stages": {
+      "01_staging": {
+        "method": "verify-two-dd1-source-cohorts-and-materialize-exact-sequences",
+        "execution": "local"
+      },
+      "02_design": {
+        "method": "intake-existing-foundry-rfd3-sequence-and-backbone-outputs",
+        "execution": "empire-beta-existing-output-source",
+        "scientific_parameters": "Explicit draft choices require review and freezing before execution"
+      },
+      "03_filtering": {
+        "substeps": [
+          {
+            "method": "boltz2-prediction",
+            "execution": "mimas"
+          },
+          {
+            "method": "score-and-select",
+            "execution": "local"
+          }
+        ],
+        "score_methods": "pending_explicit_review"
+      },
+      "04_analysis": {
+        "method": "first-round-ranking-and-branch-selection",
+        "execution": "local"
+      }
+    }
+  },
+  "settings": {
+    "version": "2026-10-09_v6",
+    "method": "paired TNFA pose conservation and IPSAE product ranking",
+    "frozen_at": "2026-10-09T13:49:22.991546+00:00",
+    "scope": "All complete indexed human/mouse pairs at frozen snapshot; incomplete full cohorts remain explicit. Twenty design slides plus four cohort plot slides.",
+    "available_pairs": {
+      "revised-human": 2242,
+      "revised-mouse": 2186,
+      "original-human": 8552,
+      "original-mouse": 957
+    },
+    "pair_count": 13937,
+    "expected_full_cohorts": {
+      "original-human": 8552,
+      "original-mouse": 8688,
+      "revised-human": 7672,
+      "revised-mouse": 7576
+    },
+    "ipsae": "Symmetric Dunbrack v4 residue-specific d0 best D-to-A/B/C, PAE<10 A, contact diagnostics15 A; human/mouse arithmetic mean.",
+    "ranking": "mean_IPSAE times binder_pose_TM_target_aligned, descending full precision then candidate_id ascending. Top 5 per cohort.",
+    "binder_pose_tm": "Fixed identical-sequence binder CA correspondence under target-only proper Kabsch fit. All human/mouse homologous target CA sites across trimer; enumerate six protomer copy permutations. Among fits within0.1 A of best target RMSD take greatest binder pose TM. d0=max(0.5,1.24*(L-15)^(1/3)-1.8) for L>15, else0.5. No binder fitting.",
+    "whole_complex_tm": "USalign Mouse vs Human, -mol prot -mm1 -ter1 with explicit selected chain map. Second TM score normalized to Human full complex. Separate diagnostic.",
+    "dockq": "DockQ2.1.4 symmetric average Human-reference and Mouse-reference comparison, native atom identities retained. Collapse mapped trimer to receptor R and binder to D; explicit homologous residue-number mapping including gaps, no_align=True. Only binder\u2013trimer interface, no target\u2013target score domination. Contact5 A, interface10 A, native references are predictions. Fixed copy map chosen by target-aligned binder pose TM.",
+    "runtime_python": "MACHINE_CONFIGURED_PATH/software/2026-10-08_boltz2-anthropic_001/env/bin/python",
+    "usalign": "MACHINE_CONFIGURED_PATH/foundry/USalign",
+    "reuse_ipsae": {
+      "source_run": "2026-10-09_boltz2-four-cohort-test-deck_001",
+      "path": "03_filtering/2026-10-09_available-pair-features_001/features.jsonl",
+      "sha256": "4a1f696bc8edcfcd00e6118b7571800b8399bacf281aa4298be05b62fb8be0fa"
+    },
+    "preservation": "Read-only native structures. New immutable score output and temporary adapters only. No changes to predictions or GPU recovery settings.",
+    "runtime_dependencies": {
+      "DockQ": "2.1.4 existing project source snapshot, upstream pure-Python fallback",
+      "parallelbar": "2.5 existing installed source",
+      "colorama": "0.4.6 existing installed source",
+      "installation": "Frozen vendored copies; no package installation or environment mutation."
+    },
+    "predecessor": "2026-10-09_boltz2-pose-conservation_005",
+    "implementation_change": "Set package parent before fallback module directory on sys.path. Scoring formulas and pure-Python source unchanged.",
+    "execution_parallelism": 24,
+    "execution_resume": {
+      "source_run": "2026-10-09_boltz2-pose-conservation_006",
+      "path": "04_analysis/2026-10-09_all-available-pose-metrics_001/metrics.jsonl",
+      "sha256": "03c66c31afd2f8f319e25b60688cfc01a49b2c58c018bcdb4ab2b377efca0835",
+      "pair_count": 1400,
+      "reason": "Same scientific algorithm and frozen native snapshot, resume validated completed rows from deliberately canceled8CPUjob9712 with24CPUworkers"
+    }
+  },
+  "files_sha256": {
+    "campaign.json": "7996944523078448f64f12154d2d613040da44f3920f83f829873033687c0949",
+    "payload/all.sbatch": "c4b8530fce95e779dbc529565d2d9b3e6d38edb8472a5035e594d83ee8a6cd47",
+    "payload/historical/CAMPAIGN_TOP10_EGFR_REPORTS.md": "eb281fea1c849a9144a96430f98e6d8da9653c982561663175d1177e2c3e212a",
+    "payload/historical/DD1_ANALYSIS_SLIDES.md": "3441f9d97e7b3b39318b15fb4bf0807bac0e3668c5cbf0eadfc95c52d586da66",
+    "payload/historical/calculate_dockq_tm_all.py": "ebb7d6a2b52d5b11cd900d71a492938f08ff95ff12c96dc1227ad794f28362d1",
+    "payload/historical/calculate_mouse_human_tm.py": "18313ffffa26410b7176dd1649b781f5ea60f77fefb628961882ae14610ca6d4",
+    "payload/historical-source-manifest.json": "41cb995023e3201fc0b5b92f4d80a8076d52cac36d4d65beeb080123f15ea00a",
+    "payload/pairs.json.gz": "dbd7ba34b4fca0e523a4bdb16fa1ecffb239a833099598e63286e7137543226e",
+    "payload/pilot.sbatch": "a16a53f62cd3759b335c62101246f22825c0986e614d342b4db7b38051ea4182",
+    "payload/pinned-ipsae.py": "2ff2e8d644467cb2f151d30779329a0dcc409855beeb1f024030972e7ba44f69",
+    "payload/score_pose.py": "7c135c73b0804b5894e04ddf405f8ff1ad346161fdf2b55c6f5966d47bc0c4e0",
+    "payload/settings.json": "7af7283c6fbf3f8e1089cbfcb42346e8ef4f6efe91e3d759c0449415f02e9888",
+    "payload/vendor/DockQ/DockQ.py": "7b9d112c9abd18711de43f1f56145301944460dc59b8bc52853b464cf6d7a887",
+    "payload/vendor/DockQ/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "payload/vendor/DockQ/__main__.py": "a2dc944b6fdaeb5c4f3574c452519449505756abbb96e2261179a2b643b57df5",
+    "payload/vendor/DockQ/constants.py": "431767db749faa74e2cb876f768cee6e43cfbb30da263725d47d6574fed3ec18",
+    "payload/vendor/DockQ/operations_nocy.py": "e76216611fd5d901ced99efb38c98c2d53f332091272edde737109f95da5d0d3",
+    "payload/vendor/DockQ/parsers.py": "db3c4572d764a37c64cd7d24bc8d2334ed68a94e3e2cc50eb5dff7f43b608f75",
+    "payload/vendor/DockQ-LICENSE": "1ac62f778ff853b0b7215565aa86a2b6fde946508552cb41b75a74e5e0c3df79",
+    "payload/vendor/colorama/__init__.py": "c1e3d0038536d2d2a060047248b102d38eee70d5fe83ca512e9601ba21e52dbf",
+    "payload/vendor/colorama/ansi.py": "4e8a7811e12e69074159db5e28c11c18e4de29e175f50f96a3febf0a3e643b34",
+    "payload/vendor/colorama/ansitowin32.py": "bcf3586b73996f18dbb85c9a568d139a19b2d4567594a3160a74fba1d5e922d9",
+    "payload/vendor/colorama/initialise.py": "fa1227cbce82957a37f62c61e624827d421ad9ffe1fdb80a4435bb82ab3e28b5",
+    "payload/vendor/colorama/tests/__init__.py": "32480f004cc641df91ab4c343d95d25f62da7515a150409c8ac258f254ab9b84",
+    "payload/vendor/colorama/tests/ansi_test.py": "15e5620eb50834865caf9d393c0c6f5380235f3d5ab048802ecf465cc87045a1",
+    "payload/vendor/colorama/tests/ansitowin32_test.py": "44dec0221309e44a83b186828d5a3ea38bbc2730c3e2e9096e67af58a4bbd2b6",
+    "payload/vendor/colorama/tests/initialise_test.py": "05b3f2f977f21f027accaa33b903af36f419cecc7dbdd6ffd1b6179fb86c0537",
+    "payload/vendor/colorama/tests/isatty_test.py": "3e0dba2d1a6fd3240307901cfacc605571bb86c035358bdaa45800a597d8cd98",
+    "payload/vendor/colorama/tests/utils.py": "d48211ca51b7f73e7e773ab4f51fe782e7f1c8f67182574d6ebc4ac541b018a1",
+    "payload/vendor/colorama/tests/winterm_test.py": "aa85853c48f29b9826d91b8cc297f7a4e8acddae6bfcf259142ccadb9e092fc0",
+    "payload/vendor/colorama/win32.py": "61038ac0c4f0b4605bb18e1d2f91d84efc1378ff70210adae4cbcf35d769c59b",
+    "payload/vendor/colorama/winterm.py": "5c24050c78cf8ba00760d759c32d2d034d87f89878f09a7e1ef0a378b78ba775",
+    "payload/vendor/parallelbar/__init__.py": "8ec02696280fbbfe2aefff2e26438848ed4dc40eaeeca942ba925e7739b9b48b",
+    "payload/vendor/parallelbar/parallelbar.py": "a352b08bbf7bd9e392217b98718399e475179f641e315d00566a42197ec9ae31",
+    "payload/vendor/parallelbar/tools.py": "c03077b2d56684b33f9b53a221325c1a23799f0533f5da185869f833d285fe4c",
+    "payload/vendor/parallelbar/wrappers.py": "e0578af78397771002a2432ede56ea1dba00b310b18a61f4926727831d8fbe92",
+    "payload/vendor-source-manifest.json": "3856d29e2a5f00661d52382198df92e06ba8550e995fd1f41a35ce9aa7bd4de0",
+    "project.json": "261db18a1e57a8cb7e44ac987779169bffd55f400b2260144f9c6e5e8d62d880",
+    "settings.json": "7af7283c6fbf3f8e1089cbfcb42346e8ef4f6efe91e3d759c0449415f02e9888",
+    "workflow.lock.json": "47f84b2d604f2ad7f15070b039a1a0f0600927ca3d0af8fd1b3afc95846e0e9c"
+  },
+  "scientific_inputs_validated": false
+}

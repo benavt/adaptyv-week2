@@ -1,0 +1,583 @@
+[
+  {
+    "source_relative_path": "campaigns/2026-10-06_dd1-human-tnfa-pocket/campaign.json",
+    "original_sha256": "f967d2bbed029fe84f5f586deebc00d4ed2d14098c79a5a62850d0a4740bc525",
+    "portable_sha256": "937e673ee47f2a02d0c9151dff23bff2e86e2a824f38becaf45c3d5bd4546f59",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__campaigns__2026-10-06_dd1-human-tnfa-pocket__campaign.json"
+  },
+  {
+    "source_relative_path": "campaigns/2026-10-06_dd1-human-tnfa-pocket/runs/2026-10-06_150412-0400-dd1-human-1tnf-ac-pocket-rfd3-50000_001/run.json",
+    "original_sha256": "b5c0982f6a190ff279fa8b6f3380951497197bace7bac43f93b30753fdea2a26",
+    "portable_sha256": "70a463b9ea98f40f7b975b0547eb20598461e85a2334b3b2cb080c4204303ddd",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__campaigns__2026-10-06_dd1-human-tnfa-pocket__runs__2026-10-06_150412-0400-dd1-human-1tnf-ac-pocket-rfd3-50000_001__run.json"
+  },
+  {
+    "source_relative_path": "campaigns/2026-10-06_dd1-human-tnfa-pocket/runs/2026-10-06_160209-0400-dd1-human-1tnf-ac-pocket-rfd3-100-mimas_001/run.json",
+    "original_sha256": "283fd533b955657c9290f5c5adfe03dba771151e5b0b4444f235190a48aa11e8",
+    "portable_sha256": "729c022abc32de0ac67ca63da7b66a8f17b6503fdf6cf8186a22b71302da83f1",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__campaigns__2026-10-06_dd1-human-tnfa-pocket__runs__2026-10-06_160209-0400-dd1-human-1tnf-ac-pocket-rfd3-100-mimas_001__run.json"
+  },
+  {
+    "source_relative_path": "campaigns/2026-10-06_dd1-human-tnfa-pocket/runs/2026-10-06_162135-0400-dd1-human-1tnf-ac-pocket-rfd3-50000-empire_001/run.json",
+    "original_sha256": "2c6cb4f16991c9bd3a5a839ba1cfa5fa44cca3d683625c643e7db2126b6b1412",
+    "portable_sha256": "a719979945748958c082c005ef5e987b2ffadc91737dd8f64954ccc731e41cf6",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__campaigns__2026-10-06_dd1-human-tnfa-pocket__runs__2026-10-06_162135-0400-dd1-human-1tnf-ac-pocket-rfd3-50000-empire_001__run.json"
+  },
+  {
+    "source_relative_path": "campaigns/2026-10-06_dd1-human-tnfa-pocket/runs/2026-10-06_dd1-rfd3-50000_001/run.json",
+    "original_sha256": "274c19329dac0491fa52a830d8b37b3e598d1243920705e833abbc59f98b58a4",
+    "portable_sha256": "9d16fc51e39ba22b97da9f6350de19eee6d6a55b645f6288aee7db7a4bf8d090",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__campaigns__2026-10-06_dd1-human-tnfa-pocket__runs__2026-10-06_dd1-rfd3-50000_001__run.json"
+  },
+  {
+    "source_relative_path": "campaigns/2026-10-06_dd1-human-tnfa-pocket/runs/2026-10-06_dd1-rfd3-upload_001/run.json",
+    "original_sha256": "1f0ead735f9b9cca11308bf223d4e4c9e751c6ff469a9f0f30270b41af762e79",
+    "portable_sha256": "fa88fbc4b107b5981b8149a12be76b133702d777948d4fc86f6043f7501ae0a9",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__campaigns__2026-10-06_dd1-human-tnfa-pocket__runs__2026-10-06_dd1-rfd3-upload_001__run.json"
+  },
+  {
+    "source_relative_path": "campaigns/2026-10-06_dd1-human-tnfa-pocket/runs/2026-10-07_102236-0400-dd1-human-1tnf-ac-103-110-rfd3-50000-empire_001/run.json",
+    "original_sha256": "62b6d052aac2f4aaf7e04a097ba825d4adba27fa52fdd1b4ff7c8b9647f22f97",
+    "portable_sha256": "71741f88cbb4576d30e623e03dfd2d8519a3b7d1a9e3e1d5acc61aa306e587bf",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__campaigns__2026-10-06_dd1-human-tnfa-pocket__runs__2026-10-07_102236-0400-dd1-human-1tnf-ac-103-110-rfd3-50000-empire_001__run.json"
+  },
+  {
+    "source_relative_path": "campaigns/2026-10-06_dd1-mouse-tnfa-pocket/campaign.json",
+    "original_sha256": "970c3e0956c82c60e35fbd0d54ad5616ae3650775157ec910d607f8abc287f6e",
+    "portable_sha256": "27dfb617e1ba548712185910b5c3b0c942895979facda273baa204686842ff1e",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__campaigns__2026-10-06_dd1-mouse-tnfa-pocket__campaign.json"
+  },
+  {
+    "source_relative_path": "campaigns/2026-10-06_dd1-mouse-tnfa-pocket/runs/2026-10-06_150412-0400-dd1-mouse-2tnf-ac-pocket-rfd3-50000_001/run.json",
+    "original_sha256": "6578b5a354e72c6d1a969a5944e6ead09c6ade1f5e0f9f610302544ea702984a",
+    "portable_sha256": "b2b328e84542cf5aed5e28640554b2265a65e42a33add975a76eeeef135d043e",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__campaigns__2026-10-06_dd1-mouse-tnfa-pocket__runs__2026-10-06_150412-0400-dd1-mouse-2tnf-ac-pocket-rfd3-50000_001__run.json"
+  },
+  {
+    "source_relative_path": "campaigns/2026-10-06_dd1-mouse-tnfa-pocket/runs/2026-10-06_160209-0400-dd1-mouse-2tnf-ac-pocket-rfd3-100-mimas_001/run.json",
+    "original_sha256": "dbb2162e029f3f6dbfded6e95195c16ea5e4277eac9d48b96f0719cba64f5390",
+    "portable_sha256": "f9523d58123f78329803f011fc8270751f1120ed950915aee4ef82e708243eef",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__campaigns__2026-10-06_dd1-mouse-tnfa-pocket__runs__2026-10-06_160209-0400-dd1-mouse-2tnf-ac-pocket-rfd3-100-mimas_001__run.json"
+  },
+  {
+    "source_relative_path": "campaigns/2026-10-06_dd1-mouse-tnfa-pocket/runs/2026-10-06_162135-0400-dd1-mouse-2tnf-ac-pocket-rfd3-50000-empire_001/run.json",
+    "original_sha256": "cb06aaf74df47c37d89c0dea214b4959ea3e391937085e52b6568086cbd8d29f",
+    "portable_sha256": "d247a1f1069f2d244104f3405ddc3c3bd75253a4933eedfe63cc575e92a7b64a",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__campaigns__2026-10-06_dd1-mouse-tnfa-pocket__runs__2026-10-06_162135-0400-dd1-mouse-2tnf-ac-pocket-rfd3-50000-empire_001__run.json"
+  },
+  {
+    "source_relative_path": "campaigns/2026-10-06_dd1-mouse-tnfa-pocket/runs/2026-10-07_102236-0400-dd1-mouse-2tnf-ab-71-112-rfd3-50000-empire_001/run.json",
+    "original_sha256": "0e37bf281ed366d21392d198fea2185b005260c1b90138079ab96ce51ec62e62",
+    "portable_sha256": "f21fc216358848f98976aa37a6ff7748f8b97baa8a431c43c7dc08aa2163cfe4",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__campaigns__2026-10-06_dd1-mouse-tnfa-pocket__runs__2026-10-07_102236-0400-dd1-mouse-2tnf-ab-71-112-rfd3-50000-empire_001__run.json"
+  },
+  {
+    "source_relative_path": "campaigns/2026-10-07_tnfa-foundry-boltz2-migration/runs/2026-10-09_boltz2-four-cohort-test-deck_001/run.json",
+    "original_sha256": "7ff1f312cdefa6eea8ab074e6ffcb6a3dbefdc9a11ff0de740e6e8e851290181",
+    "portable_sha256": "8f250dc264f262723fb3e8c969560b59955d8cd8da8436cff176ea10459bfd0a",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__campaigns__2026-10-07_tnfa-foundry-boltz2-migration__runs__2026-10-09_boltz2-four-cohort-test-deck_001__run.json"
+  },
+  {
+    "source_relative_path": "campaigns/2026-10-07_tnfa-foundry-boltz2-migration/runs/2026-10-09_boltz2-missing-prediction-recovery_001/run.json",
+    "original_sha256": "ec38c4c80913bfe1fd4249bf39c8774fd60ba59634f46cfd4f100fdaeb959920",
+    "portable_sha256": "6fd31a1b8ce1571c9767e22a67db567280046ed80fde8374632a186cd025357f",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__campaigns__2026-10-07_tnfa-foundry-boltz2-migration__runs__2026-10-09_boltz2-missing-prediction-recovery_001__run.json"
+  },
+  {
+    "source_relative_path": "campaigns/2026-10-07_tnfa-foundry-boltz2-migration/runs/2026-10-09_boltz2-pose-conservation_001/run.json",
+    "original_sha256": "36828b7df5a69671454b7a52f730be59c6efa49ac6e307568ede63f899e3901e",
+    "portable_sha256": "a7bfea8e68946c106fb152c845ae9a7f3094b0e22db247b0c4bc941384e4540c",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__campaigns__2026-10-07_tnfa-foundry-boltz2-migration__runs__2026-10-09_boltz2-pose-conservation_001__run.json"
+  },
+  {
+    "source_relative_path": "campaigns/2026-10-07_tnfa-foundry-boltz2-migration/runs/2026-10-09_boltz2-pose-conservation_002/run.json",
+    "original_sha256": "1f16f6cdaa22fa844aefb2002dd2994a3dfe73b81a68a1d20b3adcf23690135a",
+    "portable_sha256": "999762412d23f6c604e86a50f19a992e2af2ec74fdf1ee1b0619c4e35c1e7231",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__campaigns__2026-10-07_tnfa-foundry-boltz2-migration__runs__2026-10-09_boltz2-pose-conservation_002__run.json"
+  },
+  {
+    "source_relative_path": "campaigns/2026-10-07_tnfa-foundry-boltz2-migration/runs/2026-10-09_boltz2-pose-conservation_003/run.json",
+    "original_sha256": "c6821a1005ea2f8efaa18c9199b14f4a4be03160aaa021c2a592bd4c11b67830",
+    "portable_sha256": "e31b6a7fa057573c9580ce154991be38096f13f0b72c8f3dbc8963083142fc14",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__campaigns__2026-10-07_tnfa-foundry-boltz2-migration__runs__2026-10-09_boltz2-pose-conservation_003__run.json"
+  },
+  {
+    "source_relative_path": "campaigns/2026-10-07_tnfa-foundry-boltz2-migration/runs/2026-10-09_boltz2-pose-conservation_004/run.json",
+    "original_sha256": "567c68ece9fe61db0b435c3d9ba18195378e9751ef8359bfc8717158a3198714",
+    "portable_sha256": "85ab12a9115da103a5e1d4c89946aa9c24f4f52066a1457efa61f5bff8211d51",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__campaigns__2026-10-07_tnfa-foundry-boltz2-migration__runs__2026-10-09_boltz2-pose-conservation_004__run.json"
+  },
+  {
+    "source_relative_path": "campaigns/2026-10-07_tnfa-foundry-boltz2-migration/runs/2026-10-09_boltz2-pose-conservation_005/run.json",
+    "original_sha256": "80b00d53b6ee76c30f44fbc19eea372a227b55c30c6a397d4b551bf0c4fd79b3",
+    "portable_sha256": "d4ee77a8a2985cf1cae15f07064a0d1e107c367d9d25b153d4695252133a5610",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__campaigns__2026-10-07_tnfa-foundry-boltz2-migration__runs__2026-10-09_boltz2-pose-conservation_005__run.json"
+  },
+  {
+    "source_relative_path": "campaigns/2026-10-07_tnfa-foundry-boltz2-migration/runs/2026-10-09_boltz2-pose-conservation_006/run.json",
+    "original_sha256": "8e9267273b9075ddd13299b4470c74b3c42e5076017c47ed884c88e789b0bfec",
+    "portable_sha256": "99f4d78949d759ddd0ce61d807b552536292a5e902a8aa98c10a28ba4e939cdd",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__campaigns__2026-10-07_tnfa-foundry-boltz2-migration__runs__2026-10-09_boltz2-pose-conservation_006__run.json"
+  },
+  {
+    "source_relative_path": "campaigns/2026-10-07_tnfa-foundry-boltz2-migration/runs/2026-10-09_boltz2-pose-conservation_007/04_analysis/2026-10-09_pose-conservation-slides_001/2026-10-09_shared-camera_002.json",
+    "original_sha256": "1c1adc1ac0718d5ba193d4ac27f6693219272b86b65319cdc01a37bfad220efe",
+    "portable_sha256": "dca80fe8b91bf7d05a0678de7891e2e6b713277ea1181ad9bac663c43c44f8b5",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__campaigns__2026-10-07_tnfa-foundry-boltz2-migration__runs__2026-10-09_boltz2-pose-conservation_007__04_analysis__2026-10-09_pose-conservation-slides_001__2026-10-09_shared-camera_002.json"
+  },
+  {
+    "source_relative_path": "campaigns/2026-10-07_tnfa-foundry-boltz2-migration/runs/2026-10-09_boltz2-pose-conservation_007/04_analysis/2026-10-09_pose-conservation-slides_001/build-v4/build.mjs",
+    "original_sha256": "a0953405a0c4e9d78710e50494c3f5723086675fce11357f4b7c340aa87e5c02",
+    "portable_sha256": "274c239385d4e8f83456b016241a7f09bd6dbc244715f17246715a5c832daeff",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__campaigns__2026-10-07_tnfa-foundry-boltz2-migration__runs__2026-10-09_boltz2-pose-conservation_007__04_analysis__2026-10-09_pose-conservation-slides_001__build-v4__build.mjs"
+  },
+  {
+    "source_relative_path": "campaigns/2026-10-07_tnfa-foundry-boltz2-migration/runs/2026-10-09_boltz2-pose-conservation_007/run.json",
+    "original_sha256": "262c4e59b6da11c173f156d2535a9a6ebcdd774f8e4e000416ac8627a826b768",
+    "portable_sha256": "f0599d0b86ac9e5709d42c42243543a400b2b186b6e8900ce73738c0c63dd8a9",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__campaigns__2026-10-07_tnfa-foundry-boltz2-migration__runs__2026-10-09_boltz2-pose-conservation_007__run.json"
+  },
+  {
+    "source_relative_path": "campaigns/2026-10-07_tnfa-foundry-boltz2-migration/runs/2026-10-09_whole-tm-adapter-repair_001/run.json",
+    "original_sha256": "943348b2b80cfcbc07d07362767e2b9db51589a405e4e4ab3a95305f1b3881a7",
+    "portable_sha256": "f255ccf6320ea5dafce59121fc7bb0251888fadf7642ec8cdcc9822c4782e900",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__campaigns__2026-10-07_tnfa-foundry-boltz2-migration__runs__2026-10-09_whole-tm-adapter-repair_001__run.json"
+  },
+  {
+    "source_relative_path": "campaigns/2026-10-07_tnfa-foundry-boltz2-migration/runs/2026-10-10_boltz2-cache-loss-recovery_001/run.json",
+    "original_sha256": "a9ef7bc3031af54f1bb133e1171c84026578bdf923ddc596c908d289f823769c",
+    "portable_sha256": "c0757897159c1ad1cd45907da7d4aa4ddf7fb3b0143b1f4647d5ff759d21a5cd",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__campaigns__2026-10-07_tnfa-foundry-boltz2-migration__runs__2026-10-10_boltz2-cache-loss-recovery_001__run.json"
+  },
+  {
+    "source_relative_path": "campaigns/2026-10-07_tnfa-foundry-boltz2-migration/runs/2026-10-10_boltz2-completed-pose-metrics_001/run.json",
+    "original_sha256": "2577da795c0133bd9add6f925e1651ffe243622a7cabccfe6ea2371175c8f1bf",
+    "portable_sha256": "d2f4f93f33dc302fa1434411068a2d29667e48f1b997e367d9afd1d4720e7297",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__campaigns__2026-10-07_tnfa-foundry-boltz2-migration__runs__2026-10-10_boltz2-completed-pose-metrics_001__run.json"
+  },
+  {
+    "source_relative_path": "campaigns/2026-10-07_tnfa-foundry-boltz2-migration/runs/2026-10-10_boltz2-completed-pose-metrics_002/run.json",
+    "original_sha256": "95818e3bbb11bc257d52b5927a7832b0d3d1df24475c068550e6dc6d1408ca50",
+    "portable_sha256": "7d731ddc3010b49fa2d9deb8883fbcc9a3b7f0b5e2fec0ea5a28ec2b4851fa9b",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__campaigns__2026-10-07_tnfa-foundry-boltz2-migration__runs__2026-10-10_boltz2-completed-pose-metrics_002__run.json"
+  },
+  {
+    "source_relative_path": "campaigns/2026-10-07_tnfa-foundry-boltz2-migration/runs/2026-10-10_boltz2-completed-pose-metrics_003/01_staging/payload/all.sbatch",
+    "original_sha256": "c4b8530fce95e779dbc529565d2d9b3e6d38edb8472a5035e594d83ee8a6cd47",
+    "portable_sha256": "339d10cd75f113bb46e4a859ee860868d30cfc122563ea934b96d288e95a2f16",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__campaigns__2026-10-07_tnfa-foundry-boltz2-migration__runs__2026-10-10_boltz2-completed-pose-metrics_003__01_staging__payload__all.sbatch"
+  },
+  {
+    "source_relative_path": "campaigns/2026-10-07_tnfa-foundry-boltz2-migration/runs/2026-10-10_boltz2-completed-pose-metrics_003/01_staging/payload/pilot.sbatch",
+    "original_sha256": "a16a53f62cd3759b335c62101246f22825c0986e614d342b4db7b38051ea4182",
+    "portable_sha256": "060559520dc2d29f0d99b4ccaa720c71e7ed8cbadff09b4d94e4f12a61464dc9",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__campaigns__2026-10-07_tnfa-foundry-boltz2-migration__runs__2026-10-10_boltz2-completed-pose-metrics_003__01_staging__payload__pilot.sbatch"
+  },
+  {
+    "source_relative_path": "campaigns/2026-10-07_tnfa-foundry-boltz2-migration/runs/2026-10-10_boltz2-completed-pose-metrics_003/01_staging/payload/settings.json",
+    "original_sha256": "3862509ba46b77630eb7e1f7da45eca61b8892140f70c8d3eb5878e9b90d997e",
+    "portable_sha256": "7b2d5fadb41e65dc83c1aa2430da6008e367de9bc19a8a7dc154808af5ab9bce",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__campaigns__2026-10-07_tnfa-foundry-boltz2-migration__runs__2026-10-10_boltz2-completed-pose-metrics_003__01_staging__payload__settings.json"
+  },
+  {
+    "source_relative_path": "campaigns/2026-10-07_tnfa-foundry-boltz2-migration/runs/2026-10-10_boltz2-completed-pose-metrics_003/01_staging/settings.json",
+    "original_sha256": "3862509ba46b77630eb7e1f7da45eca61b8892140f70c8d3eb5878e9b90d997e",
+    "portable_sha256": "7b2d5fadb41e65dc83c1aa2430da6008e367de9bc19a8a7dc154808af5ab9bce",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__campaigns__2026-10-07_tnfa-foundry-boltz2-migration__runs__2026-10-10_boltz2-completed-pose-metrics_003__01_staging__settings.json"
+  },
+  {
+    "source_relative_path": "campaigns/2026-10-07_tnfa-foundry-boltz2-migration/runs/2026-10-10_boltz2-completed-pose-metrics_003/01_staging/snapshot.json",
+    "original_sha256": "883a1873685a6f3ffc15f2dda67436342866c67b18e6b9e107515aba356a1bb5",
+    "portable_sha256": "00a44ac3870014f89f22ce9c8a6eed077bb41f508acb1bea497f386b54b34288",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__campaigns__2026-10-07_tnfa-foundry-boltz2-migration__runs__2026-10-10_boltz2-completed-pose-metrics_003__01_staging__snapshot.json"
+  },
+  {
+    "source_relative_path": "campaigns/2026-10-07_tnfa-foundry-boltz2-migration/runs/2026-10-10_boltz2-completed-pose-metrics_003/run.json",
+    "original_sha256": "883a1873685a6f3ffc15f2dda67436342866c67b18e6b9e107515aba356a1bb5",
+    "portable_sha256": "00a44ac3870014f89f22ce9c8a6eed077bb41f508acb1bea497f386b54b34288",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__campaigns__2026-10-07_tnfa-foundry-boltz2-migration__runs__2026-10-10_boltz2-completed-pose-metrics_003__run.json"
+  },
+  {
+    "source_relative_path": "docs/2026-10-10_MACHINE_CONTINUATION.md",
+    "original_sha256": "338282e30f62f708f800bf5f1cefd1670c54693736d58c46808b1dfc20274895",
+    "portable_sha256": "c1b5aa69a50bd0cc18e7dcbf48dd1694f1057341be6dc9b63303c2b2b7fea9f2",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__docs__2026-10-10_MACHINE_CONTINUATION.md"
+  },
+  {
+    "source_relative_path": "drafts/04_analysis/2026-10-08_tnfa-four-hotspot-views_001/initial-view.json",
+    "original_sha256": "5e9aaae2628a2d173308e1ea370b431021860c5f11fa824cea7c7a7d546a1657",
+    "portable_sha256": "edeed7aa443987ad60b0e2868728dbf703f5808ecddd01cc75e6a4bf57555a6f",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__drafts__04_analysis__2026-10-08_tnfa-four-hotspot-views_001__initial-view.json"
+  },
+  {
+    "source_relative_path": "drafts/04_analysis/2026-10-08_tnfa-four-hotspot-views_001/sources.json",
+    "original_sha256": "7c3a60036ef7201f9b07e614a25b704b6c17b9ac375f56beda56eaab6d25fb4e",
+    "portable_sha256": "d19b3ab11d88369f9d680aa2a134863d3b5089914f37a05890ec3ebafa894d34",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__drafts__04_analysis__2026-10-08_tnfa-four-hotspot-views_001__sources.json"
+  },
+  {
+    "source_relative_path": "local/2026-10-09_boltz2-results-retrieval_001/2026-10-09_selected-native-copy_001.py",
+    "original_sha256": "a56e6b4ea69b0b3ad8dffd039993dd327172aa5854da4bc8be7f2ca2b7127858",
+    "portable_sha256": "c15578ef5771ffbc949097f499d2b7782390159d751b44277469eff0c7f796fe",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__local__2026-10-09_boltz2-results-retrieval_001__2026-10-09_selected-native-copy_001.py"
+  },
+  {
+    "source_relative_path": "local/2026-10-09_boltz2-results-retrieval_001/2026-10-10_audit_cache_recovery.py",
+    "original_sha256": "9e1e3509f2d95042ece22ea14038d2b0ffd1b5e99a781700823ed15db4cd2cdc",
+    "portable_sha256": "77c0335b6d85c98dafbb8bf69cc094a5129247819e3bed4a89850e11439216a7",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__local__2026-10-09_boltz2-results-retrieval_001__2026-10-10_audit_cache_recovery.py"
+  },
+  {
+    "source_relative_path": "local/2026-10-09_boltz2-results-retrieval_001/2026-10-10_audit_cache_recovery_1017.py",
+    "original_sha256": "fedc742fa67779033d8a6f57231f3411856d68086d6f5db0276756846b302b1f",
+    "portable_sha256": "1b67e35b5c0349e624686e83e1c0cff7584ae95a5e9cbef740c37b2de48eeffc",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__local__2026-10-09_boltz2-results-retrieval_001__2026-10-10_audit_cache_recovery_1017.py"
+  },
+  {
+    "source_relative_path": "local/2026-10-09_boltz2-results-retrieval_001/2026-10-10_audit_cache_recovery_1122.py",
+    "original_sha256": "c858d9992d6cd7310e372d6ed15914a31d9c0bcbbe9a857805c625a0ef7bb427",
+    "portable_sha256": "c8492d898b4340944d993a617363b3d8b09b53642a5d503ac84bc2f3f4be4ed5",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__local__2026-10-09_boltz2-results-retrieval_001__2026-10-10_audit_cache_recovery_1122.py"
+  },
+  {
+    "source_relative_path": "local/2026-10-09_boltz2-results-retrieval_001/2026-10-10_audit_cache_recovery_1220.py",
+    "original_sha256": "4a100e61f2e988f09ed0c6a71b9255d8fb186f44ea0712583a4101dcefb1b99c",
+    "portable_sha256": "21ada5014fb99553fad2fc73fa38f8e91930abcd0dc1315af23e8e3101c90ac8",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__local__2026-10-09_boltz2-results-retrieval_001__2026-10-10_audit_cache_recovery_1220.py"
+  },
+  {
+    "source_relative_path": "local/2026-10-09_boltz2-results-retrieval_001/2026-10-10_audit_partial_0218.py",
+    "original_sha256": "f16d679fca1dbe49aa8b3d430e7eaf958149cc89af115f3d577359cef0155f0f",
+    "portable_sha256": "86cc749d7276dffdad4a90aaa702f49f291e16d18487b7ea2bedf83a2633ec52",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__local__2026-10-09_boltz2-results-retrieval_001__2026-10-10_audit_partial_0218.py"
+  },
+  {
+    "source_relative_path": "local/2026-10-09_boltz2-results-retrieval_001/2026-10-10_audit_recovery_0019.py",
+    "original_sha256": "36ec18d4387b8af83bab2d5f74fe29b64a0868d7ab456afec453f8fd5d8f918b",
+    "portable_sha256": "21cd2394070abc9e12b5940686144942b6a2372eeb0575965f56a68eae51e2e9",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__local__2026-10-09_boltz2-results-retrieval_001__2026-10-10_audit_recovery_0019.py"
+  },
+  {
+    "source_relative_path": "local/2026-10-09_boltz2-results-retrieval_001/2026-10-10_audit_recovery_0114.py",
+    "original_sha256": "1ef2b0a3908cc4b3f3f3b25ed2e09821c5dd79ed2b4e056145965fe03d54c4dc",
+    "portable_sha256": "bc05160134f72a928f58c7ffbce84664810d410b99a1ee4307bda031f383c377",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__local__2026-10-09_boltz2-results-retrieval_001__2026-10-10_audit_recovery_0114.py"
+  },
+  {
+    "source_relative_path": "local/2026-10-09_boltz2-results-retrieval_001/2026-10-10_audit_recovery_0116.py",
+    "original_sha256": "b9b947630d08b0b901c2077f104b836ade8a2e4f22ce8e8cb0612a23f7478802",
+    "portable_sha256": "710c0b7c48ca497865f65fbe2ad041a4a619977d598b9a8da7856f65fc065df4",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__local__2026-10-09_boltz2-results-retrieval_001__2026-10-10_audit_recovery_0116.py"
+  },
+  {
+    "source_relative_path": "local/2026-10-09_boltz2-results-retrieval_001/2026-10-10_candidate-traces-portable-backup.json",
+    "original_sha256": "52e993145abb8c775d6d05b170228c574125592ca37ac11bd9b3b1a33df2f613",
+    "portable_sha256": "52e993145abb8c775d6d05b170228c574125592ca37ac11bd9b3b1a33df2f613",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__local__2026-10-09_boltz2-results-retrieval_001__2026-10-10_candidate-traces-portable-backup.json"
+  },
+  {
+    "source_relative_path": "local/2026-10-09_boltz2-results-retrieval_001/2026-10-10_finalize_completed_pose.py",
+    "original_sha256": "2dad00159fbf847d812095f88721f56c66e1d8eba133e7347b97e38b298bcdf3",
+    "portable_sha256": "2dad00159fbf847d812095f88721f56c66e1d8eba133e7347b97e38b298bcdf3",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__local__2026-10-09_boltz2-results-retrieval_001__2026-10-10_finalize_completed_pose.py"
+  },
+  {
+    "source_relative_path": "local/2026-10-09_boltz2-results-retrieval_001/2026-10-10_finalize_completed_pose_002.py",
+    "original_sha256": "653b9236ccd389eb5bf896681c95cc4b4a59705f426b7c73c1952d8787ab16a4",
+    "portable_sha256": "653b9236ccd389eb5bf896681c95cc4b4a59705f426b7c73c1952d8787ab16a4",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__local__2026-10-09_boltz2-results-retrieval_001__2026-10-10_finalize_completed_pose_002.py"
+  },
+  {
+    "source_relative_path": "local/2026-10-09_boltz2-results-retrieval_001/2026-10-10_finalize_completed_pose_003.py",
+    "original_sha256": "5dc112cb0ae209b6a4203d3b067fb74d6cb77c34ce7f64702c7105c65c5fa1f7",
+    "portable_sha256": "5dc112cb0ae209b6a4203d3b067fb74d6cb77c34ce7f64702c7105c65c5fa1f7",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__local__2026-10-09_boltz2-results-retrieval_001__2026-10-10_finalize_completed_pose_003.py"
+  },
+  {
+    "source_relative_path": "local/2026-10-09_boltz2-results-retrieval_001/2026-10-10_prepare_cache_recovery.py",
+    "original_sha256": "326862cad59a196ab8e8565175fc67bf9df5fea06ede345351e6c01148c4d951",
+    "portable_sha256": "326862cad59a196ab8e8565175fc67bf9df5fea06ede345351e6c01148c4d951",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__local__2026-10-09_boltz2-results-retrieval_001__2026-10-10_prepare_cache_recovery.py"
+  },
+  {
+    "source_relative_path": "local/2026-10-09_boltz2-results-retrieval_001/2026-10-10_prepare_pose_extension.py",
+    "original_sha256": "d8568b833efe76461943479c80f02c8a9c776e12e6497646bb54481308b10175",
+    "portable_sha256": "d8568b833efe76461943479c80f02c8a9c776e12e6497646bb54481308b10175",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__local__2026-10-09_boltz2-results-retrieval_001__2026-10-10_prepare_pose_extension.py"
+  },
+  {
+    "source_relative_path": "local/2026-10-09_boltz2-results-retrieval_001/2026-10-10_prepare_pose_extension_002.py",
+    "original_sha256": "412bc0ced7f0621230731707eb0e4bbf13e620a84d06e79608c9957b4e009c36",
+    "portable_sha256": "412bc0ced7f0621230731707eb0e4bbf13e620a84d06e79608c9957b4e009c36",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__local__2026-10-09_boltz2-results-retrieval_001__2026-10-10_prepare_pose_extension_002.py"
+  },
+  {
+    "source_relative_path": "local/2026-10-09_boltz2-results-retrieval_001/2026-10-10_prepare_pose_extension_003.py",
+    "original_sha256": "b011ca7264aeec21e95917eb076c612e299bdca8df274f5a4ffe9e9ccc45e737",
+    "portable_sha256": "b011ca7264aeec21e95917eb076c612e299bdca8df274f5a4ffe9e9ccc45e737",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__local__2026-10-09_boltz2-results-retrieval_001__2026-10-10_prepare_pose_extension_003.py"
+  },
+  {
+    "source_relative_path": "local/2026-10-09_boltz2-results-retrieval_001/2026-10-10_reconstruct_repair_upload.py",
+    "original_sha256": "913e17afcd5c71d3d9a732a95a653beb9d9ac3dcef42dce44638e96a1f5243ff",
+    "portable_sha256": "25a347a98f04d493e2ea373e0cea0edf57d6d44648176d4d6707775ea2249935",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__local__2026-10-09_boltz2-results-retrieval_001__2026-10-10_reconstruct_repair_upload.py"
+  },
+  {
+    "source_relative_path": "local/2026-10-09_boltz2-results-retrieval_001/2026-10-10_select_top10_native.py",
+    "original_sha256": "9b9e8ae089bf1081b30fd90d9c740e707649121ae847449c47520c73abde00d0",
+    "portable_sha256": "9b9e8ae089bf1081b30fd90d9c740e707649121ae847449c47520c73abde00d0",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__local__2026-10-09_boltz2-results-retrieval_001__2026-10-10_select_top10_native.py"
+  },
+  {
+    "source_relative_path": "local/2026-10-09_boltz2-results-retrieval_001/2026-10-10_unpack_score_transfer.py",
+    "original_sha256": "c4124be147238352f4818e5fadfac9c32e4523009a56753d8bcfaaf54a94dfc2",
+    "portable_sha256": "c4124be147238352f4818e5fadfac9c32e4523009a56753d8bcfaaf54a94dfc2",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__local__2026-10-09_boltz2-results-retrieval_001__2026-10-10_unpack_score_transfer.py"
+  },
+  {
+    "source_relative_path": "local/2026-10-09_boltz2-results-retrieval_001/2026-10-10_unpack_score_transfer_002.py",
+    "original_sha256": "4e544942497baa04dc49fc52f2249a85249a21b7de0224ed9d7210ce0ff998eb",
+    "portable_sha256": "4e544942497baa04dc49fc52f2249a85249a21b7de0224ed9d7210ce0ff998eb",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__local__2026-10-09_boltz2-results-retrieval_001__2026-10-10_unpack_score_transfer_002.py"
+  },
+  {
+    "source_relative_path": "local/2026-10-09_boltz2-results-retrieval_001/audit_recovery_1703.py",
+    "original_sha256": "fc8a0911777bfcebbec376b9cb6925391e1bcf686ce4eb69a43e3eec9da0c719",
+    "portable_sha256": "81a34bf46c6c32b668bf2bde038d9d16eadb6c0fb1c8dc519e66e6bf5d52a452",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__local__2026-10-09_boltz2-results-retrieval_001__audit_recovery_1703.py"
+  },
+  {
+    "source_relative_path": "local/2026-10-09_boltz2-results-retrieval_001/audit_recovery_1811.py",
+    "original_sha256": "8c40cb6bbdf2c2399aceb138879a52ebc2cdb23a1c2b1c97728d3751335f1a3e",
+    "portable_sha256": "d99e16d7bf10cc942ca689db3d8dc4e0a4f95d668fe1e6d746b55da309e9719d",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__local__2026-10-09_boltz2-results-retrieval_001__audit_recovery_1811.py"
+  },
+  {
+    "source_relative_path": "local/2026-10-09_boltz2-results-retrieval_001/audit_recovery_1907.py",
+    "original_sha256": "61ad1c484779009cd285d6503f25a7ff7748c1423eda5444729488e6fa0264be",
+    "portable_sha256": "7b525f8a22a399501fb93515299c66b36a7a26dfd00432f4b5ea0bf9ccc8409e",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__local__2026-10-09_boltz2-results-retrieval_001__audit_recovery_1907.py"
+  },
+  {
+    "source_relative_path": "local/2026-10-09_boltz2-results-retrieval_001/audit_recovery_2015.py",
+    "original_sha256": "2c6574e17909f39a96dde8b8bf731ffcbe494069a4de050cf4b0438347e888d6",
+    "portable_sha256": "1f7334ea1ada460fbdb70535b466adcee1ea0a6c772182be397bc1537dbe393f",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__local__2026-10-09_boltz2-results-retrieval_001__audit_recovery_2015.py"
+  },
+  {
+    "source_relative_path": "local/2026-10-09_boltz2-results-retrieval_001/audit_recovery_2113.py",
+    "original_sha256": "7e6dc154c3e40bfd887ed09850e4b0bd6d507f736183e45b7f90442790d22b09",
+    "portable_sha256": "2ab307b5451c7c56a9fd02db0d2b6a7db14cbd7fa83b209515d973f89df44492",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__local__2026-10-09_boltz2-results-retrieval_001__audit_recovery_2113.py"
+  },
+  {
+    "source_relative_path": "local/2026-10-09_boltz2-results-retrieval_001/audit_recovery_2217.py",
+    "original_sha256": "9b7372fd94aa0e88a4bc454a237227a8d93907ba3b067b92155007b225b6be66",
+    "portable_sha256": "9bbad2faa2eafb0b2a84618371ee454043c9cc9f78a4e093b17e705de4258eb8",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__local__2026-10-09_boltz2-results-retrieval_001__audit_recovery_2217.py"
+  },
+  {
+    "source_relative_path": "local/2026-10-09_boltz2-results-retrieval_001/audit_recovery_2314.py",
+    "original_sha256": "4b94c0cd6954d4ae77007a80466607ddb240862cbbb893071c46cdc192439050",
+    "portable_sha256": "4973e12e96b21eaf16cb1ca5a1c9b664d59924dd969474ea499ec1f79a063080",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__local__2026-10-09_boltz2-results-retrieval_001__audit_recovery_2314.py"
+  },
+  {
+    "source_relative_path": "local/2026-10-09_boltz2-results-retrieval_001/backup_pose_report.py",
+    "original_sha256": "06068383f25d8489b2cbc7f1f5f30bc51764a4a3bc7360deaa8cb2fd44ac2bee",
+    "portable_sha256": "06068383f25d8489b2cbc7f1f5f30bc51764a4a3bc7360deaa8cb2fd44ac2bee",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__local__2026-10-09_boltz2-results-retrieval_001__backup_pose_report.py"
+  },
+  {
+    "source_relative_path": "local/2026-10-09_boltz2-results-retrieval_001/collect_indices.py",
+    "original_sha256": "b1e1c9b8fef2ae3d03a6af0472eb62300fd725b5895e23e5a429bec98bed6b37",
+    "portable_sha256": "b1e1c9b8fef2ae3d03a6af0472eb62300fd725b5895e23e5a429bec98bed6b37",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__local__2026-10-09_boltz2-results-retrieval_001__collect_indices.py"
+  },
+  {
+    "source_relative_path": "local/2026-10-09_boltz2-results-retrieval_001/collect_models.py",
+    "original_sha256": "46f62083e9f5bdcaabafee26a5b9c7509fed160641624c6a5ab2c3b0d26254df",
+    "portable_sha256": "46f62083e9f5bdcaabafee26a5b9c7509fed160641624c6a5ab2c3b0d26254df",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__local__2026-10-09_boltz2-results-retrieval_001__collect_models.py"
+  },
+  {
+    "source_relative_path": "local/2026-10-09_boltz2-results-retrieval_001/finalize_pose_selection.py",
+    "original_sha256": "61fc64ade5ff9cd13e7736d3dc69fe6caf6e732d4527d2c770186573b16ca445",
+    "portable_sha256": "61fc64ade5ff9cd13e7736d3dc69fe6caf6e732d4527d2c770186573b16ca445",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__local__2026-10-09_boltz2-results-retrieval_001__finalize_pose_selection.py"
+  },
+  {
+    "source_relative_path": "local/2026-10-09_boltz2-results-retrieval_001/finalize_test_selection.py",
+    "original_sha256": "b0729f8fb27496d29d4f3ae5c9efde831c74c66b2c56ba1c11ef400f56f8c2c5",
+    "portable_sha256": "b0729f8fb27496d29d4f3ae5c9efde831c74c66b2c56ba1c11ef400f56f8c2c5",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__local__2026-10-09_boltz2-results-retrieval_001__finalize_test_selection.py"
+  },
+  {
+    "source_relative_path": "local/2026-10-09_boltz2-results-retrieval_001/handoff.json",
+    "original_sha256": "e0b9ad44089d1c5059071d80a243ac8403db859f672db216949a54a7a0558f21",
+    "portable_sha256": "db60116f5ce37ebd4a2576f9bf149ed6394b9b0004107e5afe233167d63c72cb",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__local__2026-10-09_boltz2-results-retrieval_001__handoff.json"
+  },
+  {
+    "source_relative_path": "local/2026-10-09_boltz2-results-retrieval_001/inventory_remote.py",
+    "original_sha256": "ce6ae1cb79e95f2b9bf5105e6d0a69557ac0995d6ec0ceb131c3786346f5aa07",
+    "portable_sha256": "03c284698d856f62ecfb3959b4dac8bf6dabfd6407965040c2e99e4418c0d3e5",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__local__2026-10-09_boltz2-results-retrieval_001__inventory_remote.py"
+  },
+  {
+    "source_relative_path": "local/2026-10-09_boltz2-results-retrieval_001/merge_corrected_whole_tm.py",
+    "original_sha256": "9efb96c2d14230b442083be123ee244d4fed5fc85f89ebf460668db5dbef0b39",
+    "portable_sha256": "9efb96c2d14230b442083be123ee244d4fed5fc85f89ebf460668db5dbef0b39",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__local__2026-10-09_boltz2-results-retrieval_001__merge_corrected_whole_tm.py"
+  },
+  {
+    "source_relative_path": "local/2026-10-09_boltz2-results-retrieval_001/package_paired_sessions.py",
+    "original_sha256": "46d579badfba0272e082af5caf098df034471dfd5604dd7940d55ab492b28050",
+    "portable_sha256": "46d579badfba0272e082af5caf098df034471dfd5604dd7940d55ab492b28050",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__local__2026-10-09_boltz2-results-retrieval_001__package_paired_sessions.py"
+  },
+  {
+    "source_relative_path": "local/2026-10-09_boltz2-results-retrieval_001/prepare_pose_selected_collection.py",
+    "original_sha256": "0c837e74e8c0f0acb5b341d03654a3944ba204ad58a0c67059df56bba9fd681f",
+    "portable_sha256": "0c837e74e8c0f0acb5b341d03654a3944ba204ad58a0c67059df56bba9fd681f",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__local__2026-10-09_boltz2-results-retrieval_001__prepare_pose_selected_collection.py"
+  },
+  {
+    "source_relative_path": "local/2026-10-09_boltz2-results-retrieval_001/prepare_recovery.py",
+    "original_sha256": "927db95b91141922c32235b68148c225d529cdbcf578fbbee5d2421b2ceb2319",
+    "portable_sha256": "927db95b91141922c32235b68148c225d529cdbcf578fbbee5d2421b2ceb2319",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__local__2026-10-09_boltz2-results-retrieval_001__prepare_recovery.py"
+  },
+  {
+    "source_relative_path": "local/2026-10-09_boltz2-results-retrieval_001/rank_pose_metrics.py",
+    "original_sha256": "b532028d07b31c818b923c1e6040719d5631fd84a80e7e8daa667a4193ba8b0f",
+    "portable_sha256": "b532028d07b31c818b923c1e6040719d5631fd84a80e7e8daa667a4193ba8b0f",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__local__2026-10-09_boltz2-results-retrieval_001__rank_pose_metrics.py"
+  },
+  {
+    "source_relative_path": "local/2026-10-09_boltz2-results-retrieval_001/rank_test_pairs.py",
+    "original_sha256": "196ac9b1c21b2b77cb95c2efa87e26e0073be0b4e565e4dd4ef45654a68f2c28",
+    "portable_sha256": "196ac9b1c21b2b77cb95c2efa87e26e0073be0b4e565e4dd4ef45654a68f2c28",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__local__2026-10-09_boltz2-results-retrieval_001__rank_test_pairs.py"
+  },
+  {
+    "source_relative_path": "local/2026-10-09_boltz2-results-retrieval_001/read_recovery_sources.py",
+    "original_sha256": "1a1007faf59e48a2ec3969b1072637bdf4407b0d772d0ebe47be1dd1aafdbcf1",
+    "portable_sha256": "a60ec489f383c53683fb93f0a07242a22a40d613d3d7c8f94fdab0563318cfeb",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__local__2026-10-09_boltz2-results-retrieval_001__read_recovery_sources.py"
+  },
+  {
+    "source_relative_path": "local/2026-10-09_boltz2-results-retrieval_001/source-resume.py",
+    "original_sha256": "ce08d7b72289106bb2b834ecae93b104b7017a98bdd36bb6395577ecceaf2b9c",
+    "portable_sha256": "ce08d7b72289106bb2b834ecae93b104b7017a98bdd36bb6395577ecceaf2b9c",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__local__2026-10-09_boltz2-results-retrieval_001__source-resume.py"
+  },
+  {
+    "source_relative_path": "local/2026-10-09_boltz2-results-retrieval_001/source-validation.py",
+    "original_sha256": "4d837902ffa2c54b2dff24cd504dea813fcaff89fd02b141afd7b867f6588363",
+    "portable_sha256": "4d837902ffa2c54b2dff24cd504dea813fcaff89fd02b141afd7b867f6588363",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__local__2026-10-09_boltz2-results-retrieval_001__source-validation.py"
+  },
+  {
+    "source_relative_path": "local/2026-10-09_boltz2-results-retrieval_001/trace_all_candidates.py",
+    "original_sha256": "044b70b34cfb12496a4b28824b4663dbd926d82fc5ccf17118a1ffeb084cdb27",
+    "portable_sha256": "044b70b34cfb12496a4b28824b4663dbd926d82fc5ccf17118a1ffeb084cdb27",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__local__2026-10-09_boltz2-results-retrieval_001__trace_all_candidates.py"
+  },
+  {
+    "source_relative_path": "local/2026-10-09_boltz2-results-retrieval_001/verify_selected_pose.py",
+    "original_sha256": "65b8c1bbed8b63d922c1f660727a32074a0703f9c7c1b344da548d2df6b40ce2",
+    "portable_sha256": "65b8c1bbed8b63d922c1f660727a32074a0703f9c7c1b344da548d2df6b40ce2",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__local__2026-10-09_boltz2-results-retrieval_001__verify_selected_pose.py"
+  },
+  {
+    "source_relative_path": "scripts/create_tnfa_hotspot_picking_session.py",
+    "original_sha256": "9d9d389cd6a38f4b6ca18c4b0c15a1115400bc29b86b2bafc86f2bd199534bb8",
+    "portable_sha256": "527a7a169c3648c5209944f0dbe899c412e9817fcef487444eca5fcb5baa7362",
+    "transformation": "Machine-specific paths replaced; original scientific sources remain unchanged and must be recovered from canonical storage for frozen-input validation",
+    "portable_file": "portable__scripts__create_tnfa_hotspot_picking_session.py"
+  }
+]

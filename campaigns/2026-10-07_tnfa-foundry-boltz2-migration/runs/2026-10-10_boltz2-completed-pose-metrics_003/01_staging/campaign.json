@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "campaign_id": "2026-10-07_tnfa-foundry-boltz2-migration",
+  "title": "TNFA Foundry sequence migration and first Boltz2 filtering",
+  "objective": "Incrementally copy verified RFD3 sequence and backbone outputs from both DD1 EmpireAI campaigns to Mimas, refold exact sequences with Boltz2, and freeze first-round evidence for branch selection.",
+  "recipe": {
+    "recipe_id": "tnfa-foundry-boltz2-migration",
+    "stages": {
+      "01_staging": {
+        "method": "verify-two-dd1-source-cohorts-and-materialize-exact-sequences",
+        "execution": "local"
+      },
+      "02_design": {
+        "method": "intake-existing-foundry-rfd3-sequence-and-backbone-outputs",
+        "execution": "empire-beta-existing-output-source",
+        "scientific_parameters": "Explicit draft choices require review and freezing before execution"
+      },
+      "03_filtering": {
+        "substeps": [
+          {
+            "method": "boltz2-prediction",
+            "execution": "mimas"
+          },
+          {
+            "method": "score-and-select",
+            "execution": "local"
+          }
+        ],
+        "score_methods": "pending_explicit_review"
+      },
+      "04_analysis": {
+        "method": "first-round-ranking-and-branch-selection",
+        "execution": "local"
+      }
+    }
+  },
+  "created_at": "2026-10-07T16:38:06.233382-04:00",
+  "updated_at": "2026-10-08T08:48:12.524965-04:00",
+  "preparation_status": "incremental_paired_boltz2_jobs_submitted",
+  "campaign_type": "sequence_refolding_and_selection",
+  "plan_document": "docs/2026-10-07_TNFA_MIGRATION_AND_BRANCH_PLAN.md",
+  "draft_directory": "drafts/2026-10-07_tnfa-foundry-boltz2-migration",
+  "execution_scope": {
+    "job_submitted": true,
+    "frozen_run_created": true,
+    "authorized_action": "Predict only the newly downloaded designs against both Foundry trimers, excluding the previous running subset",
+    "new_candidate_count": 28064,
+    "new_prediction_count": 56128,
+    "total_paired_coverage": 64976
+  },
+  "progress_record": "local/2026-10-07_tnfa-migration-plan/2026-10-07_tnfa-foundry-boltz2-migration.json",
+  "pending_decisions": [
+    "score_methods_versions_and_acceptance_criteria",
+    "downstream_cross_campaign_selection"
+  ],
+  "upstream_runs": [
+    {
+      "campaign_id": "2026-10-06_dd1-human-tnfa-pocket",
+      "run_id": "2026-10-07_102236-0400-dd1-human-1tnf-ac-103-110-rfd3-50000-empire_001",
+      "role": "intended_generation_source",
+      "native_output_manifest": "campaigns/2026-10-07_tnfa-foundry-boltz2-migration/runs/2026-10-08_empire-four-cohort-intake_001/01_staging/payload/source-snapshot.json",
+      "completion_evidence": null,
+      "output_snapshot_receipt": "campaigns/2026-10-06_dd1-human-tnfa-pocket/runs/2026-10-07_102236-0400-dd1-human-1tnf-ac-103-110-rfd3-50000-empire_001/receipts/2026-10-08_empire-four-cohort-intake_001_collection.json",
+      "hotspot_revision": "revised",
+      "snapshot_models": 7672
+    },
+    {
+      "campaign_id": "2026-10-06_dd1-mouse-tnfa-pocket",
+      "run_id": "2026-10-07_102236-0400-dd1-mouse-2tnf-ab-71-112-rfd3-50000-empire_001",
+      "role": "intended_generation_source",
+      "native_output_manifest": "campaigns/2026-10-07_tnfa-foundry-boltz2-migration/runs/2026-10-08_empire-four-cohort-intake_001/01_staging/payload/source-snapshot.json",
+      "completion_evidence": null,
+      "output_snapshot_receipt": "campaigns/2026-10-06_dd1-mouse-tnfa-pocket/runs/2026-10-07_102236-0400-dd1-mouse-2tnf-ab-71-112-rfd3-50000-empire_001/receipts/2026-10-08_empire-four-cohort-intake_001_collection.json",
+      "hotspot_revision": "revised",
+      "snapshot_models": 7576
+    },
+    {
+      "campaign_id": "2026-10-06_dd1-human-tnfa-pocket",
+      "run_id": "2026-10-06_162135-0400-dd1-human-1tnf-ac-pocket-rfd3-50000-empire_001",
+      "role": "generation_source",
+      "completion_evidence": null,
+      "hotspot_revision": "original",
+      "native_output_manifest": "campaigns/2026-10-07_tnfa-foundry-boltz2-migration/runs/2026-10-08_empire-four-cohort-intake_001/01_staging/payload/source-snapshot.json",
+      "output_snapshot_receipt": "campaigns/2026-10-06_dd1-human-tnfa-pocket/runs/2026-10-06_162135-0400-dd1-human-1tnf-ac-pocket-rfd3-50000-empire_001/receipts/2026-10-08_empire-four-cohort-intake_001_collection.json",
+      "snapshot_models": 8552
+    },
+    {
+      "campaign_id": "2026-10-06_dd1-mouse-tnfa-pocket",
+      "run_id": "2026-10-06_162135-0400-dd1-mouse-2tnf-ac-pocket-rfd3-50000-empire_001",
+      "role": "generation_source",
+      "completion_evidence": null,
+      "hotspot_revision": "original",
+      "native_output_manifest": "campaigns/2026-10-07_tnfa-foundry-boltz2-migration/runs/2026-10-08_empire-four-cohort-intake_001/01_staging/payload/source-snapshot.json",
+      "output_snapshot_receipt": "campaigns/2026-10-06_dd1-mouse-tnfa-pocket/runs/2026-10-06_162135-0400-dd1-mouse-2tnf-ac-pocket-rfd3-50000-empire_001/receipts/2026-10-08_empire-four-cohort-intake_001_collection.json",
+      "snapshot_models": 8688
+    }
+  ],
+  "downstream_campaigns": [
+    "2026-10-07_tnfa-protonpottsmpnn-redesign",
+    "2026-10-07_tnfa-apnovo-epitope"
+  ],
+  "sequence_baseline": {
+    "method": "foundry-rfd3",
+    "researcher_confirmed": "RFD3 emits sequence alongside backbone; initial MPNN not required",
+    "native_artifact_verification": "32488 exact coordinate-derived binder sequences verified across original/revised human/mouse snapshots; previous 4424 registrations retained"
+  },
+  "source_cohorts": [
+    "human",
+    "mouse"
+  ],
+  "current_intake_run_id": "2026-10-08_empire-four-cohort-intake_001",
+  "current_refolding_run_id": "2026-10-08_boltz2-four-cohort-increment_001",
+  "current_intake_counts": {
+    "original-human": 8552,
+    "original-mouse": 8688,
+    "revised-human": 7672,
+    "revised-mouse": 7576
+  },
+  "refolding_runs": [
+    "2026-10-07_boltz2-paired-foundry-trimers_001",
+    "2026-10-08_boltz2-four-cohort-increment_001"
+  ]
+}

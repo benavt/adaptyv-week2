@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "project_id": "TNFA",
+  "campaign_id": "2026-10-07_tnfa-foundry-boltz2-migration",
+  "run_id": "2026-10-09_boltz2-four-cohort-test-deck_001",
+  "created_at": "2026-10-09T13:04:36.086638+00:00",
+  "parents": [
+    {
+      "campaign_id": "2026-10-07_tnfa-foundry-boltz2-migration",
+      "run_id": "2026-10-07_boltz2-paired-foundry-trimers_001",
+      "manifest_sha256": "18dddd551c369d2cb26386122a4ff981c520c4fb22033d3bdae1efd612ec1b6b"
+    },
+    {
+      "campaign_id": "2026-10-07_tnfa-foundry-boltz2-migration",
+      "run_id": "2026-10-08_boltz2-four-cohort-increment_001",
+      "manifest_sha256": "96056fc8ae3e9b484836a1d6d03d4a8aa2529bdc3e338f2af6a2400674e00173"
+    },
+    {
+      "campaign_id": "2026-10-07_tnfa-foundry-boltz2-migration",
+      "run_id": "2026-10-09_boltz2-existing-result-audit_001",
+      "manifest_sha256": "9505855c1c530356ddeac52556e02521a6cc24633f24ee2e157a31d86bc690e4"
+    }
+  ],
+  "recipe": {
+    "recipe_id": "tnfa-foundry-boltz2-migration",
+    "stages": {
+      "01_staging": {
+        "method": "verify-two-dd1-source-cohorts-and-materialize-exact-sequences",
+        "execution": "local"
+      },
+      "02_design": {
+        "method": "intake-existing-foundry-rfd3-sequence-and-backbone-outputs",
+        "execution": "empire-beta-existing-output-source",
+        "scientific_parameters": "Explicit draft choices require review and freezing before execution"
+      },
+      "03_filtering": {
+        "substeps": [
+          {
+            "method": "boltz2-prediction",
+            "execution": "mimas"
+          },
+          {
+            "method": "score-and-select",
+            "execution": "local"
+          }
+        ],
+        "score_methods": "pending_explicit_review"
+      },
+      "04_analysis": {
+        "method": "first-round-ranking-and-branch-selection",
+        "execution": "local"
+      }
+    }
+  },
+  "settings": {
+    "method": "Boltz2_available_pair_IPSAE_features_for_test_deck",
+    "version": "2026-10-09_v1",
+    "scope": "All validated complete paired outputs indexed at frozen snapshot. Provisional highest mean human/mouse best-protomer IPSAE per cohort. Final top-1-percent full-cohort selection remains separate.",
+    "available_pairs": {
+      "revised-human": 2241,
+      "revised-mouse": 2185,
+      "original-human": 8552,
+      "original-mouse": 912
+    },
+    "expected_full_cohorts": {
+      "original-human": 8552,
+      "original-mouse": 8688,
+      "revised-human": 7672,
+      "revised-mouse": 7576
+    },
+    "IPSAE": "Symmetric Dunbrack v4 residue-specific d0, max D versus A/B/C; PAE cutoff 10 A; contact diagnostic cutoff 15 A, no distance mask in IPSAE; arithmetic human/mouse mean.",
+    "execution": {
+      "feature_extraction": "Mimas CPU near canonical sidecars",
+      "cross_species_ranking_and_report": "local"
+    },
+    "runtime_python": "MACHINE_CONFIGURED_PATH/software/2026-10-08_boltz2-anthropic_001/env/bin/python",
+    "source_preservation": "Read-only native outputs and sidecars. New source-located feature artifacts only; no prediction jobs or scientific input changes."
+  },
+  "files_sha256": {
+    "campaign.json": "7996944523078448f64f12154d2d613040da44f3920f83f829873033687c0949",
+    "payload/features.py": "a4409025a5261f998ced24bacd7546bc9bde5c49341282708cd86ab487f88ae0",
+    "payload/features.sbatch": "7b63b78034be77a735a0c60f47279b6fbdb7816cc714aef796eba7c0b9975e87",
+    "payload/pairs.json": "6580536c5ed6ef3ed5697ed019c455b064add62033e2048708ac963fb3660c4b",
+    "payload/pinned-scoring-method.py": "2ff2e8d644467cb2f151d30779329a0dcc409855beeb1f024030972e7ba44f69",
+    "payload/prepare_features.py": "d0c177755fdc3264e4968cc0327698390a086ba0c5510e4eb3eddda3cbc3785d",
+    "payload/settings.json": "c10d37b703623a5c41c89725db191a8f2410e9276cf5c5288f440bf81440fc32",
+    "project.json": "261db18a1e57a8cb7e44ac987779169bffd55f400b2260144f9c6e5e8d62d880",
+    "settings.json": "c10d37b703623a5c41c89725db191a8f2410e9276cf5c5288f440bf81440fc32",
+    "workflow.lock.json": "47f84b2d604f2ad7f15070b039a1a0f0600927ca3d0af8fd1b3afc95846e0e9c"
+  },
+  "scientific_inputs_validated": false
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "campaign_id": "2026-10-08_tnfa-bindcraft2-pockets",
+  "title": "TNFA BindCraft2 original and revised pockets",
+  "objective": "Generate 1000 completed de novo BindCraft2 gradient trajectories for each of the human and mouse original and revised Foundry hotspot inputs, without ProteinMPNN or downstream acceptance.",
+  "recipe": {
+    "recipe_id": "tnfa-bindcraft2-completed-trajectories-v1",
+    "stages": {
+      "01_staging": {
+        "method": "native-target-trimer-and-hotspot-validation",
+        "execution": "local-and-mimas-cpu"
+      },
+      "02_design": {
+        "method": "bindcraft2-trajectory-only",
+        "execution": "mimas",
+        "scientific_parameters": "1000 completed gradient trajectories per run; early failures retried; ordinary residue-level hotspots; 60-100 residue single-chain binder; native optimization and adaptive tuning"
+      },
+      "03_filtering": {
+        "method": "excluded-by-researcher",
+        "execution": "none",
+        "scope": "no ProteinMPNN, independent refolding, or downstream acceptance"
+      },
+      "04_analysis": {
+        "method": "preserve-counts-and-generation-provenance",
+        "execution": "local",
+        "selection": "not_requested"
+      }
+    }
+  },
+  "created_at": "2026-10-08T12:21:38.897949+00:00",
+  "execution_scope": {
+    "runs": 4,
+    "completed_sequences_per_run": 1000,
+    "source": "two Foundry input pairs",
+    "walltime": "UNLIMITED",
+    "walltime_setting": "Slurm --time=0",
+    "authorization": "2026-10-08 user requested submission after agreed trajectory-only count and targeting choices"
+  }
+}

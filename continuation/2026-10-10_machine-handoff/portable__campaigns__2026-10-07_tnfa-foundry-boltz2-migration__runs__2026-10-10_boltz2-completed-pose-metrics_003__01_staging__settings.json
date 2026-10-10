@@ -1,0 +1,47 @@
+{
+  "version": "2026-10-10_v1",
+  "method": "paired TNFA pose conservation and IPSAE product ranking",
+  "frozen_at": "2026-10-09T13:49:22.991546+00:00",
+  "scope": "All completed hash-indexed paired predictions at frozen snapshot; incremental missing pose metrics with corrected canonical whole-complex TM",
+  "available_pairs": {
+    "revised-human": 7672,
+    "revised-mouse": 7576,
+    "original-human": 8552,
+    "original-mouse": 8688
+  },
+  "pair_count": 32488,
+  "expected_full_cohorts": {
+    "original-human": 8552,
+    "original-mouse": 8688,
+    "revised-human": 7672,
+    "revised-mouse": 7576
+  },
+  "ipsae": "Symmetric Dunbrack v4 residue-specific d0 best D-to-A/B/C, PAE<10 A, contact diagnostics15 A; human/mouse arithmetic mean.",
+  "ranking": "Mean IPSAE times target-aligned binder pose TM; top10 per parent design run for updated report",
+  "binder_pose_tm": "Fixed identical-sequence binder CA correspondence under target-only proper Kabsch fit. All human/mouse homologous target CA sites across trimer; enumerate six protomer copy permutations. Among fits within0.1 A of best target RMSD take greatest binder pose TM. d0=max(0.5,1.24*(L-15)^(1/3)-1.8) for L>15, else0.5. No binder fitting.",
+  "whole_complex_tm": "USalign Mouse vs Human, -mol prot -mm1 -ter1 with explicit selected chain map. Second TM score normalized to Human full complex. Separate diagnostic.",
+  "dockq": "DockQ2.1.4 symmetric average Human-reference and Mouse-reference comparison, native atom identities retained. Collapse mapped trimer to receptor R and binder to D; explicit homologous residue-number mapping including gaps, no_align=True. Only binder\u2013trimer interface, no target\u2013target score domination. Contact5 A, interface10 A, native references are predictions. Fixed copy map chosen by target-aligned binder pose TM.",
+  "runtime_python": "MACHINE_CONFIGURED_PATH/software/2026-10-08_boltz2-anthropic_001/env/bin/python",
+  "usalign": "MACHINE_CONFIGURED_PATH/foundry/USalign",
+  "reuse_ipsae": {
+    "path": "payload/reuse-ipsae.jsonl",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "preservation": "Read-only native structures. New immutable score output and temporary adapters only. No changes to predictions or GPU recovery settings.",
+  "runtime_dependencies": {
+    "DockQ": "2.1.4 existing project source snapshot, upstream pure-Python fallback",
+    "parallelbar": "2.5 existing installed source",
+    "colorama": "0.4.6 existing installed source",
+    "installation": "Frozen vendored copies; no package installation or environment mutation."
+  },
+  "predecessor": "2026-10-10_boltz2-completed-pose-metrics_002",
+  "implementation_change": "Set package parent before fallback module directory on sys.path. Scoring formulas and pure-Python source unchanged.",
+  "execution_parallelism": 24,
+  "execution_resume": {
+    "source_run": "2026-10-10_boltz2-completed-pose-metrics_002",
+    "path": "04_analysis/2026-10-10_completed-pose-metrics_002/metrics.jsonl",
+    "sha256": "fa3213e6a7d75f8038354cb5d7de74d9df00a8ef9a55ef48badfe9e7bc4c3e3c",
+    "pair_count": 30028,
+    "reason": "Reuse validated primary metrics and corrected canonical whole TM for exact matching native hashes"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "project_id": "TNFA",
+  "campaign_id": "2026-10-07_tnfa-foundry-boltz2-migration",
+  "run_id": "2026-10-09_whole-tm-adapter-repair_001",
+  "created_at": "2026-10-09T15:34:09.035713+00:00",
+  "parents": [
+    {
+      "campaign_id": "2026-10-07_tnfa-foundry-boltz2-migration",
+      "run_id": "2026-10-09_boltz2-pose-conservation_007",
+      "manifest_sha256": "262c4e59b6da11c173f156d2535a9a6ebcdd774f8e4e000416ac8627a826b768"
+    }
+  ],
+  "recipe": {
+    "recipe_id": "tnfa-foundry-boltz2-migration",
+    "stages": {
+      "01_staging": {
+        "method": "verify-two-dd1-source-cohorts-and-materialize-exact-sequences",
+        "execution": "local"
+      },
+      "02_design": {
+        "method": "intake-existing-foundry-rfd3-sequence-and-backbone-outputs",
+        "execution": "empire-beta-existing-output-source",
+        "scientific_parameters": "Explicit draft choices require review and freezing before execution"
+      },
+      "03_filtering": {
+        "substeps": [
+          {
+            "method": "boltz2-prediction",
+            "execution": "mimas"
+          },
+          {
+            "method": "score-and-select",
+            "execution": "local"
+          }
+        ],
+        "score_methods": "pending_explicit_review"
+      },
+      "04_analysis": {
+        "method": "first-round-ranking-and-branch-selection",
+        "execution": "local"
+      }
+    }
+  },
+  "settings": {
+    "method": "Whole-complex USalign with canonicalized equivalent-copy labels and identity chain map",
+    "method_version": "2026-10-09_v8",
+    "parent_scoring_run": "2026-10-09_boltz2-pose-conservation_007",
+    "parent_metrics_path": "04_analysis/2026-10-09_all-available-pose-metrics_001/metrics.jsonl",
+    "parent_metrics_sha256": "bdbb1e8060f5619e50188a563d99aeeb30d7d3e6dce3a450aae1ab5357185d90",
+    "usalign": "MACHINE_CONFIGURED_PATH/foundry/USalign",
+    "usalign_sha256": "ac65274b07711e979e659cc039a4f6d2cf07ed9dc60709e8d7385e7010d123df",
+    "expected_pairs": 13937,
+    "selected_ids": [
+      "2026-10-08_dd1-original-human-rfd3-b1082-m0",
+      "2026-10-08_dd1-original-human-rfd3-b833-m0",
+      "2026-10-08_dd1-original-human-rfd3-b4141-m2",
+      "2026-10-08_dd1-original-human-rfd3-b565-m6",
+      "2026-10-08_dd1-original-human-rfd3-b690-m6",
+      "2026-10-08_dd1-original-mouse-rfd3-b1451-m2",
+      "2026-10-08_dd1-original-mouse-rfd3-b1438-m5",
+      "2026-10-08_dd1-original-mouse-rfd3-b1162-m5",
+      "2026-10-08_dd1-original-mouse-rfd3-b1393-m6",
+      "2026-10-08_dd1-original-mouse-rfd3-b1032-m2",
+      "2026-10-07_dd1-human-rfd3-b789-m5",
+      "2026-10-07_dd1-human-rfd3-b1205-m4",
+      "2026-10-07_dd1-human-rfd3-b5696-m6",
+      "2026-10-07_dd1-human-rfd3-b700-m1",
+      "2026-10-07_dd1-human-rfd3-b2271-m7",
+      "2026-10-07_dd1-mouse-rfd3-b5908-m1",
+      "2026-10-07_dd1-mouse-rfd3-b3364-m4",
+      "2026-10-07_dd1-mouse-rfd3-b1226-m4",
+      "2026-10-07_dd1-mouse-rfd3-b3962-m3",
+      "2026-10-07_dd1-mouse-rfd3-b449-m3"
+    ],
+    "scope": "Repair diagnostic only. IPSAE, target-aligned binder TM, symmetric DockQ, product ranking and native input coordinates remain unchanged. Every atom-site value apart from adapter chain labels is preserved exactly."
+  },
+  "files_sha256": {
+    "campaign.json": "7996944523078448f64f12154d2d613040da44f3920f83f829873033687c0949",
+    "payload/__pycache__/canonical_tm.cpython-311.pyc": "6913a5bc01180a0b60354d9057e3014df1ea26f76bb12742d48bc4a4cb0dccb2",
+    "payload/all.sbatch": "d9d9e9c7dadd3eaf851a7de4b997d98de6823f786369c08069434d8e28016f80",
+    "payload/canonical-local-pilot.json": "07aeecd16a9d12c70ace2b3537164c27faa707e8595ec61633089d5945a00ac4",
+    "payload/canonical_tm.py": "6a4f5d79687372d3333714ba1de82afa1c2ae97eb14e736fb1187180adf0596a",
+    "payload/pilot.sbatch": "9370bbdbada59f4f953382acb34c6e432bdbe2e685b324825243d1dbb3f7d2a8",
+    "payload/score_whole.py": "97559dcdd22c11986f97f3940da699a5d80215d709c6c2669f4d2a31dbd803a4",
+    "payload/selected-test.json": "c1969a5e32a8cbd79a2c046f26c05ff1dbfaf7b338d4331aa12a29e5d7abc645",
+    "payload/settings.json": "b8d72c35cd601501389fa692cac2cbfce445874e11f455eb1a5e6fb1f26be2bb",
+    "project.json": "261db18a1e57a8cb7e44ac987779169bffd55f400b2260144f9c6e5e8d62d880",
+    "settings.json": "b8d72c35cd601501389fa692cac2cbfce445874e11f455eb1a5e6fb1f26be2bb",
+    "workflow.lock.json": "47f84b2d604f2ad7f15070b039a1a0f0600927ca3d0af8fd1b3afc95846e0e9c"
+  },
+  "scientific_inputs_validated": false
+}

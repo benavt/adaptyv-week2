@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "project_id": "TNFA",
+  "campaign_id": "2026-10-07_tnfa-foundry-boltz2-migration",
+  "run_id": "2026-10-09_boltz2-pose-conservation_003",
+  "created_at": "2026-10-09T13:57:14.571825+00:00",
+  "parents": [
+    {
+      "campaign_id": "2026-10-07_tnfa-foundry-boltz2-migration",
+      "run_id": "2026-10-09_boltz2-pose-conservation_002",
+      "manifest_sha256": "1f16f6cdaa22fa844aefb2002dd2994a3dfe73b81a68a1d20b3adcf23690135a"
+    }
+  ],
+  "recipe": {
+    "recipe_id": "tnfa-foundry-boltz2-migration",
+    "stages": {
+      "01_staging": {
+        "method": "verify-two-dd1-source-cohorts-and-materialize-exact-sequences",
+        "execution": "local"
+      },
+      "02_design": {
+        "method": "intake-existing-foundry-rfd3-sequence-and-backbone-outputs",
+        "execution": "empire-beta-existing-output-source",
+        "scientific_parameters": "Explicit draft choices require review and freezing before execution"
+      },
+      "03_filtering": {
+        "substeps": [
+          {
+            "method": "boltz2-prediction",
+            "execution": "mimas"
+          },
+          {
+            "method": "score-and-select",
+            "execution": "local"
+          }
+        ],
+        "score_methods": "pending_explicit_review"
+      },
+      "04_analysis": {
+        "method": "first-round-ranking-and-branch-selection",
+        "execution": "local"
+      }
+    }
+  },
+  "settings": {
+    "version": "2026-10-09_v3",
+    "method": "paired TNFA pose conservation and IPSAE product ranking",
+    "frozen_at": "2026-10-09T13:49:22.991546+00:00",
+    "scope": "All complete indexed human/mouse pairs at frozen snapshot; incomplete full cohorts remain explicit. Twenty design slides plus four cohort plot slides.",
+    "available_pairs": {
+      "revised-human": 2242,
+      "revised-mouse": 2186,
+      "original-human": 8552,
+      "original-mouse": 957
+    },
+    "pair_count": 13937,
+    "expected_full_cohorts": {
+      "original-human": 8552,
+      "original-mouse": 8688,
+      "revised-human": 7672,
+      "revised-mouse": 7576
+    },
+    "ipsae": "Symmetric Dunbrack v4 residue-specific d0 best D-to-A/B/C, PAE<10 A, contact diagnostics15 A; human/mouse arithmetic mean.",
+    "ranking": "mean_IPSAE times binder_pose_TM_target_aligned, descending full precision then candidate_id ascending. Top 5 per cohort.",
+    "binder_pose_tm": "Fixed identical-sequence binder CA correspondence under target-only proper Kabsch fit. All human/mouse homologous target CA sites across trimer; enumerate six protomer copy permutations. Among fits within0.1 A of best target RMSD take greatest binder pose TM. d0=max(0.5,1.24*(L-15)^(1/3)-1.8) for L>15, else0.5. No binder fitting.",
+    "whole_complex_tm": "USalign Mouse vs Human, -mol prot -mm1 -ter1 with explicit selected chain map. Second TM score normalized to Human full complex. Separate diagnostic.",
+    "dockq": "DockQ2.1.4 symmetric average Human-reference and Mouse-reference comparison, native atom identities retained. Collapse mapped trimer to receptor R and binder to D; explicit homologous residue-number mapping including gaps, no_align=True. Only binder\u2013trimer interface, no target\u2013target score domination. Contact5 A, interface10 A, native references are predictions. Fixed copy map chosen by target-aligned binder pose TM.",
+    "runtime_python": "MACHINE_CONFIGURED_PATH/software/2026-10-08_boltz2-anthropic_001/env/bin/python",
+    "usalign": "MACHINE_CONFIGURED_PATH/foundry/USalign",
+    "reuse_ipsae": {
+      "source_run": "2026-10-09_boltz2-four-cohort-test-deck_001",
+      "path": "03_filtering/2026-10-09_available-pair-features_001/features.jsonl",
+      "sha256": "4a1f696bc8edcfcd00e6118b7571800b8399bacf281aa4298be05b62fb8be0fa"
+    },
+    "preservation": "Read-only native structures. New immutable score output and temporary adapters only. No changes to predictions or GPU recovery settings.",
+    "runtime_dependencies": {
+      "DockQ": "2.1.4",
+      "parallelbar": "2.5",
+      "colorama": "0.4.6",
+      "installation": "Isolated run-specific --target library. Existing Boltz2 environment remains intact. Official PyPI packages with pip report hashes."
+    },
+    "predecessor": "2026-10-09_boltz2-pose-conservation_002",
+    "implementation_change": "Explicitly select DockQ protein interface branch (small_molecule=False). Compress frozen pair table and remove unused duplicate file-hash dicts; native structure and all required sidecar hashes retained."
+  },
+  "files_sha256": {
+    "campaign.json": "7996944523078448f64f12154d2d613040da44f3920f83f829873033687c0949",
+    "payload/all.sbatch": "ff8c8f3097d42ecdd2f5a77fbfd00bdfc9d5631dfa9c5d79fbe51340901a060d",
+    "payload/historical/CAMPAIGN_TOP10_EGFR_REPORTS.md": "eb281fea1c849a9144a96430f98e6d8da9653c982561663175d1177e2c3e212a",
+    "payload/historical/DD1_ANALYSIS_SLIDES.md": "3441f9d97e7b3b39318b15fb4bf0807bac0e3668c5cbf0eadfc95c52d586da66",
+    "payload/historical/calculate_dockq_tm_all.py": "ebb7d6a2b52d5b11cd900d71a492938f08ff95ff12c96dc1227ad794f28362d1",
+    "payload/historical/calculate_mouse_human_tm.py": "18313ffffa26410b7176dd1649b781f5ea60f77fefb628961882ae14610ca6d4",
+    "payload/historical-source-manifest.json": "41cb995023e3201fc0b5b92f4d80a8076d52cac36d4d65beeb080123f15ea00a",
+    "payload/pairs.json.gz": "dbd7ba34b4fca0e523a4bdb16fa1ecffb239a833099598e63286e7137543226e",
+    "payload/pilot.sbatch": "051204ba7e8620ae5e78410a42e850a2bdaaae7c8065a46b52e9bb1780820cbc",
+    "payload/pinned-ipsae.py": "2ff2e8d644467cb2f151d30779329a0dcc409855beeb1f024030972e7ba44f69",
+    "payload/score_pose.py": "73a474f70cc6add17f6005f11c58e55ed3f70aa83751a072dc4f7b1770935731",
+    "payload/settings.json": "fb9fe612dd698cc983cc8c3b3737d44a3b26fdae57f07e84c65dcf409d7fabbe",
+    "project.json": "261db18a1e57a8cb7e44ac987779169bffd55f400b2260144f9c6e5e8d62d880",
+    "settings.json": "fb9fe612dd698cc983cc8c3b3737d44a3b26fdae57f07e84c65dcf409d7fabbe",
+    "workflow.lock.json": "47f84b2d604f2ad7f15070b039a1a0f0600927ca3d0af8fd1b3afc95846e0e9c"
+  },
+  "scientific_inputs_validated": false
+}

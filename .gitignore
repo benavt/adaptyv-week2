@@ -23,3 +23,16 @@
 *.pyc
 
 !docs/2026-10-05_TNFA_REFERENCE_INTAKE.md
+
+!docs/2026-10-06_TNFA_TRIMER_MODELING_INTAKE.md
+
+!docs/2026-10-06_TNFA_COLORS.md
+
+!scripts/tnfa_focus_regions.py
+
+!docs/2026-10-06_DD1_CAMPAIGN_IDENTITIES.md
+
+!docs/2026-10-07_TNFA_MIGRATION_AND_BRANCH_PLAN.md
+!campaigns/2026-10-07_tnfa-foundry-boltz2-migration/README.md
+!campaigns/2026-10-07_tnfa-protonpottsmpnn-redesign/README.md
+!campaigns/2026-10-07_tnfa-apnovo-epitope/README.md

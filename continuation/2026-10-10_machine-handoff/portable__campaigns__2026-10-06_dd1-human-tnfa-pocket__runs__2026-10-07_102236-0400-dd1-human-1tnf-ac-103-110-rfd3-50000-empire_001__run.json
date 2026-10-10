@@ -1,0 +1,240 @@
+{
+  "schema_version": 1,
+  "project_id": "TNFA",
+  "campaign_id": "2026-10-06_dd1-human-tnfa-pocket",
+  "run_id": "2026-10-07_102236-0400-dd1-human-1tnf-ac-103-110-rfd3-50000-empire_001",
+  "created_at": "2026-10-07T14:22:37.689527+00:00",
+  "parents": [
+    {
+      "campaign_id": "2026-10-06_dd1-human-tnfa-pocket",
+      "run_id": "2026-10-06_162135-0400-dd1-human-1tnf-ac-pocket-rfd3-50000-empire_001",
+      "manifest_sha256": "2c6cb4f16991c9bd3a5a839ba1cfa5fa44cca3d683625c643e7db2126b6b1412"
+    }
+  ],
+  "recipe": {
+    "recipe_id": "dd1-human-tnfa-pocket-foundry-boltz2-analysis",
+    "stages": {
+      "01_staging": {
+        "method": "validate-1tnf-native-author-numbering-researcher-hotspot-revision2",
+        "execution": "local"
+      },
+      "02_design": {
+        "method": "foundry-rfd3",
+        "execution": "empire-beta",
+        "scientific_parameters": "New five-residue hotspot set; 6250 x8 =50000 RFD3 backbones, 60\u2013100-residue binder; Fleet native container route and output/timing paths; no MPNN or refolding"
+      },
+      "03_filtering": {
+        "substeps": [
+          {
+            "method": "boltz2-prediction",
+            "execution": "mimas"
+          },
+          {
+            "method": "score-and-select",
+            "execution": "local"
+          }
+        ],
+        "score_methods": "choose explicitly per campaign",
+        "current_execution_status": "Excluded for this run by researcher: no MPNN or refolding"
+      },
+      "04_analysis": {
+        "method": "compare-rank-plot-and-report",
+        "execution": "local"
+      }
+    }
+  },
+  "settings": {
+    "campaign_id": "2026-10-06_dd1-human-tnfa-pocket",
+    "design_label": "DD1",
+    "prepared_at": "2026-10-07T10:22:36.945576-04:00",
+    "revision_reason": "Researcher selected five new author-numbered residue hotspots on 2026-10-07; new immutable scientific snapshot",
+    "binder_length_range": [
+      60,
+      100
+    ],
+    "binder_length_evidence": "User chose 60\u2013100 residues for both upload bundles in this chat",
+    "requested_backbones": 50000,
+    "diffusion_batch_size": 8,
+    "n_batches": 6250,
+    "count_scope": "One specification \u00d7 8 samples \u00d7 6250 batches = 50,000 requested RFD3 backbones",
+    "seed": null,
+    "source_pdb_id": "1TNF",
+    "species": "Homo sapiens",
+    "source_sha256": "c86bc5041124d7cdcc0585ded990b489ef603b0f0d2b6dbb45a0f76856594ba5",
+    "target_pdb_sha256": "f1c4c9c1f6a5239756951dda9e4b466347a280f3dd3082e06ff9be18131f35c7",
+    "target_residues": 456,
+    "target_atoms": 3552,
+    "input_numbering": "PDB author IDs; native preparation validates exact residue identities, mapping and coordinates",
+    "target_chains": [
+      "A",
+      "B",
+      "C"
+    ],
+    "binder_output_chain": "D",
+    "hotspots_author": [
+      [
+        "C",
+        103,
+        "ARG"
+      ],
+      [
+        "A",
+        104,
+        "GLU"
+      ],
+      [
+        "A",
+        110,
+        "GLU"
+      ],
+      [
+        "A",
+        107,
+        "GLU"
+      ],
+      [
+        "A",
+        109,
+        "ALA"
+      ]
+    ],
+    "select_hotspots": {
+      "C103": "CB,CG,CD,NE,CZ,NH1,NH2",
+      "A104": "CB,CG,CD,OE1,OE2",
+      "A110": "CB,CG,CD,OE1,OE2",
+      "A107": "CB,CG,CD,OE1,OE2",
+      "A109": "CB"
+    },
+    "contig": "A6-157,/0,B6-157,/0,C6-157,/0,60-100",
+    "native_adapter": "Not invoked by the Fleet Empire native launcher; historical Mimas adapter retained as predecessor evidence",
+    "native_adapter_sha256": "b79dc933633e67c0d2055ee272a8f307f71e17c9f33d1134cac1ee0574db13fd",
+    "runtime_file": "empire_runtime.json",
+    "job_submitted": false,
+    "job_count": 1,
+    "mpnn": "Excluded by researcher; do not execute",
+    "review_evidence": "Researcher provided these exact hotspot clicks and requested new Empire inputs/transfer commands; inherit 60\u2013100-residue binder and 50000 RFD3-only budget",
+    "guide_authority": [
+      "Fleet docs/empire-rfd3.md",
+      "Fleet foundry-empire-beta route",
+      "workflow.lock.json (unchanged scientific pins)"
+    ],
+    "scientific_quality": "No designs generated, binding/eligibility not established",
+    "deposited_sequence_length": 157,
+    "deposited_sequence_sha256": "edb0284136c40c4f8dd367c28340a2020499364de3208b7e085d879a8662fffa",
+    "construct_difference_from_assay": "Deposited human Leu143; challenge sequence Asp143. Source model retained without mutation.",
+    "upload_directory": "campaigns/2026-10-06_dd1-human-tnfa-pocket/Designs/2026-10-07_102236-0400-dd1-human-1tnf-ac-103-110-rfd3-50000-empire_001",
+    "remote_upload_directory": "MACHINE_CONFIGURED_PATH/runs/2026-10-07_102236-0400-dd1-human-1tnf-ac-103-110-rfd3-50000-empire_001",
+    "output_directory": "MACHINE_CONFIGURED_PATH/runs/2026-10-07_102236-0400-dd1-human-1tnf-ac-103-110-rfd3-50000-empire_001/outputs",
+    "native_validation": "Local atom identities, selected side-chain atoms, source hashes and geometry verified; new Empire native input preflight provided but not executed",
+    "refolding": "Excluded by researcher; do not execute",
+    "execution_stages": [
+      "rfd3"
+    ],
+    "slurm_walltime": "72:00:00",
+    "walltime_authority": "Explicit sbatch override in researcher-provided BrdET launch instructions",
+    "step": "design",
+    "attempt": "attempt-001",
+    "monitoring_attempt": null,
+    "design_family_id": "DD1",
+    "design_brief": "DD1 TNFa revised hotspot pocket across protomers A/C",
+    "run_id": "2026-10-07_102236-0400-dd1-human-1tnf-ac-103-110-rfd3-50000-empire_001",
+    "predecessor_snapshot": {
+      "run_id": "2026-10-06_162135-0400-dd1-human-1tnf-ac-pocket-rfd3-50000-empire_001",
+      "deployment_id": "2026-10-06_162135-0400_empire-dd1-manual-upload_001",
+      "bundle_manifest_sha256": "7ec41ef2bc0f04ea09116246a40f70365583695af4322c04fb28a911cd079800",
+      "scope": "Complete predecessor retained in deployment/predecessors; original immutable scientific run preserved"
+    },
+    "checkpoint": "/opt/database/rfd3_latest.ckpt",
+    "seed_policy": "Not passed by the existing rfd3.slurm; container default applies, not verified as seed 0",
+    "deployment_snapshot_id": "2026-10-07_102236-0400_empire-dd1-hotspots-r2_001",
+    "deployment_prepared_at": "2026-10-07T10:22:36.945576-04:00",
+    "machine_id": "empire-beta",
+    "launcher": "MACHINE_CONFIGURED_PATH/rfd3.slurm",
+    "submission_cwd": "MACHINE_CONFIGURED_PATH",
+    "prior_execution_settings": {
+      "seed": 0,
+      "native_adapter": "Preserve source bonds between fixed retained target atoms; shared installation unchanged",
+      "runtime_file": "runtime.json",
+      "guide_authority": [
+        "MACHINE_CONFIGURED_PATH/foundry/docs/rfd3.md",
+        "MACHINE_CONFIGURED_PATH/foundry/docs/input_paths.md",
+        "MACHINE_CONFIGURED_PATH/design/Mimas_Design_Skills/input_workflows.md",
+        "workflow.lock.json"
+      ],
+      "slurm_walltime": "14-00:00:00",
+      "walltime_authority": "MACHINE_CONFIGURED_PATH/foundry/pipeline_50k.slurm allocation header only; its downstream pipeline is not used",
+      "monitoring_attempt": "MACHINE_CONFIGURED_PATH/foundry/runs/2026-10-06_150412-0400-dd1-human-1tnf-ac-pocket-rfd3-50000_001/receipts/2026-10-06_150412-0400-monitored-attempt_001",
+      "native_validation": "Passed installed Foundry YAML/PDB/Hydra validation of corrected DD1 identity; all target geometry, hotspot atoms, chain roles, numbering and three disulfides retained; 6250 x 8 = 50000; no inference"
+    },
+    "disulfide_output_check": "Check all three target Cys69-Cys101 disulfides in first finished designs; direct launcher does not invoke the preserved bond helper",
+    "execution_revision_reason": "New hotspot set and matching local/remote Empire run ID; retain the selected Fleet execution profile",
+    "batch_wrapper": "empire_timed.sbatch",
+    "design_json_role": "Current absolute-path equivalent of native design.yaml",
+    "timing": {
+      "attempt_directory": "MACHINE_CONFIGURED_PATH/runs/2026-10-07_102236-0400-dd1-human-1tnf-ac-103-110-rfd3-50000-empire_001/receipts/2026-10-07_102236-0400_empire-dd1-hotspots-r2_001",
+      "events": [
+        "queued",
+        "left_queue_execution_started",
+        "execution_finished"
+      ],
+      "official_queue_start": "Slurm SubmitTime collected after sbatch acceptance",
+      "official_queue_exit": "SLURM_JOB_START_TIME; observed wrapper start only if unavailable",
+      "end_time": "Observed actual native launcher termination, not projected SLURM_JOB_END_TIME",
+      "log_file": "MACHINE_CONFIGURED_PATH/runs/2026-10-07_102236-0400-dd1-human-1tnf-ac-103-110-rfd3-50000-empire_001/receipts/2026-10-07_102236-0400_empire-dd1-hotspots-r2_001/lifecycle.log",
+      "jsonl_file": "MACHINE_CONFIGURED_PATH/runs/2026-10-07_102236-0400-dd1-human-1tnf-ac-103-110-rfd3-50000-empire_001/receipts/2026-10-07_102236-0400_empire-dd1-hotspots-r2_001/lifecycle.jsonl",
+      "summary_file": "MACHINE_CONFIGURED_PATH/runs/2026-10-07_102236-0400-dd1-human-1tnf-ac-103-110-rfd3-50000-empire_001/receipts/2026-10-07_102236-0400_empire-dd1-hotspots-r2_001/timing-summary.json",
+      "job_log": "MACHINE_CONFIGURED_PATH/runs/2026-10-07_102236-0400-dd1-human-1tnf-ac-103-110-rfd3-50000-empire_001/slurm.out",
+      "accounting_refresh": "empire_lifecycle.py accounting; official final scheduler state/end/ElapsedRaw, including cancellation before start"
+    },
+    "hotspot_revision": 2,
+    "pocket_protomers": [
+      "A",
+      "C"
+    ]
+  },
+  "files_sha256": {
+    "campaign.json": "f967d2bbed029fe84f5f586deebc00d4ed2d14098c79a5a62850d0a4740bc525",
+    "payload/1TNF_target.pdb": "f1c4c9c1f6a5239756951dda9e4b466347a280f3dd3082e06ff9be18131f35c7",
+    "payload/README.md": "a7adcb9a28b59185178f0dd0c88140dbad94e416b5c24a6b09d29715b5535963",
+    "payload/bundle_manifest.json": "7a006161e4210ab47280827c94e399db93e08d7c817c395b57c96c95fdc2158c",
+    "payload/check_outputs.py": "9d78f3a0688cb5a05909aea2e8c99f1a7a1943a957dadbaa703eb84a7c6be280",
+    "payload/design.json": "ddbde437b786b65a6711f78d0c4345d2f8ee58ef6bc6aa143149a3ae09330811",
+    "payload/design.yaml": "e9d7e1fb2b08a583f06068bffaaacd7fd1ee03c7c1ce0e75e284ae01d538e0b8",
+    "payload/empire_lifecycle.py": "796b570cfeb43dd627f760baa797bea28bba9d0b215368d53fb7df66ceb090a3",
+    "payload/empire_runtime.json": "f1f6be5264b667541053988dc56d6a6f47afe51bcedfe7e2d41177282f946c70",
+    "payload/empire_timed.sbatch": "57417b76138cbf28c9b18189e01d1f398073a91cc41e0bdc6c26e605a66f15bf",
+    "payload/expected.json": "5dda2655d860e9227318a605435defbd5e0648e08f7e823b797a0b2baf67aa79",
+    "payload/historical_mimas/preserve_source_bonds.py": "b79dc933633e67c0d2055ee272a8f307f71e17c9f33d1134cac1ee0574db13fd",
+    "payload/historical_mimas/run_rfd3.py": "58a8a2f75057ed58a1ae962820f551688f1d8f7ada634969737867ee06b01cb4",
+    "payload/historical_mimas/runtime.json": "daf0cfd13581f621861be7cdc5f2da96c856fe27c294f4dc31edee735aefac57",
+    "payload/historical_mimas/validate_native.py": "80f9993d7d8b592cf1e0a207b3c9ffb423944953f5406c3eaf39443d030b293e",
+    "payload/historical_mimas/validation.json": "d99dbb47abc69ffab9e766bfaab2288dca4c28f735e3385c7d7882ab855417ba",
+    "payload/historical_mimas/verify_bundle.py": "58bd55498ffae6004c8993432650d49627c176514f8d6c2f538cd37c34bfd61b",
+    "payload/historical_mimas/workload.sbatch": "60cc2e08524e4791c43ef4e6f0414634e2457ec55abdbe09b009d041fd66aa2c",
+    "payload/historical_preview/2026-10-06_150412-0400-dd1-human-1tnf-ac-pocket-rfd3-50000_001_hotspots.pse": "2066542286de0e182d162e522c6f46c488502060779d52a12922910c064a4618",
+    "payload/historical_preview/validation.json": "3de06106850fa22b908cd9c477adf2053f03492dbfd30fdb21c4fdef1faa184d",
+    "payload/local-validation.json": "908a4781067ad2f9fd55005a1f421846872cf002a4c955add791044a32559605",
+    "payload/preflight/check_native.py": "f59197430788897f2498dcb3ac04e896e301b2d277f92b5c2f4dc6b9bbf115fc",
+    "payload/preflight/container-source-pins.json": "2d43ef08e6fc2bbc245d1b1652ba8a310c56576c286c3388df99c9cb21304ec6",
+    "payload/preflight/log_slurm_resources.py": "c84291689e77495286ee1af2c4531f01b9d280c5f56681717fa9afbbbfe0fa0a",
+    "payload/preflight/validation.sbatch": "55e428eada940b32f091e1d1617f06deb65c0816d6238791ecd81f50ebe85879",
+    "payload/preview/2026-10-07_102236-0400-dd1-human-1tnf-ac-103-110-rfd3-50000-empire_001_hotspots.pse": "8c868d2245f5690889dcdea1f6a9026927c2414e707cc90cfcdd75888622b5bd",
+    "payload/preview/validation.json": "525e6c2958ba94bb3ae7c82126e0b36caf5da42d5c5b7cadb06ceb2fefad3e64",
+    "payload/residue_mapping.csv": "fac0deb35bde191d1c0429f0007376b50ec5daa03bce307200725506dfc6c40d",
+    "payload/settings.json": "529d77325ed9113c2c41160707f47b146ad6700062d175da6fc005f3b8556181",
+    "payload/source/1TNF_asymmetric-unit.cif": "c86bc5041124d7cdcc0585ded990b489ef603b0f0d2b6dbb45a0f76856594ba5",
+    "payload/source/1TNF_deposited.fasta": "4fb9f24663b5b34916bcbb1aff1fd061b4c65606f05101a91eb8afa7a4e0ec8f",
+    "payload/source/2026-10-07_researcher-hotspots.json": "ffecf26fa271102d6beccb395c213b4f652aac947183140746e48a35a8794b29",
+    "payload/source/empire_deployment_lineage.json": "d2d1b2ca034382919e4960da64c998e16a43b95981fe8f0f9097cd9e0a76b939",
+    "payload/source/empire_timing_lineage.json": "2a2ba26b2b9a135d070744692e66ff609e827c54912dba1b6cbf730aaab0b2c4",
+    "payload/source/hotspot-revision-lineage.json": "c83a0b5ab96fc7fc874f66f2d13efbea4dcad0b21bc85c63f215a1933f461cda",
+    "payload/source/lineage.json": "93c897b71e600b13423b90594257e58987942b799d99e8d398663cb2ae9efa75",
+    "payload/source/manual-upload-lineage.json": "ef9c956c9f5d981dbedd5f5932f7e5f6234856e30264fe390aef489ba592639a",
+    "payload/source/preparation.json": "1d7f8abbc58645ef47262e52995d680be070b6daacaf6701d8d0411f14cf748e",
+    "payload/verify_upload.py": "31158facb170391923f4fd9700d67601fe1535622c48834d0540f03a9870bfa0",
+    "project.json": "261db18a1e57a8cb7e44ac987779169bffd55f400b2260144f9c6e5e8d62d880",
+    "settings.json": "529d77325ed9113c2c41160707f47b146ad6700062d175da6fc005f3b8556181",
+    "workflow.lock.json": "47f84b2d604f2ad7f15070b039a1a0f0600927ca3d0af8fd1b3afc95846e0e9c"
+  },
+  "scientific_inputs_validated": false
+}

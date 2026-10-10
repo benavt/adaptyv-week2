@@ -1,0 +1,143 @@
+{
+  "schema_version": 1,
+  "campaign_id": "2026-10-06_dd1-mouse-tnfa-pocket",
+  "title": "DD1 \u2014 mouse TNFa side pocket across protomers A and C",
+  "objective": "Design a 60\u2013100-residue de novo binder against the researcher-selected six-residue pocket spanning mouse 2TNF protomers A and C; retain the complete trimer and prepare native RFD3 Foundry inputs.",
+  "recipe": {
+    "recipe_id": "dd1-mouse-tnfa-pocket-rfd3-boltz2-analysis",
+    "stages": {
+      "01_staging": {
+        "method": "validate-2tnf-native-author-numbering-researcher-hotspot-revision2",
+        "execution": "local"
+      },
+      "02_design": {
+        "method": "foundry-rfd3",
+        "execution": "empire-beta",
+        "scientific_parameters": "New five-residue hotspot set; 6250 x8 =50000 RFD3 backbones, 60\u2013100-residue binder; Fleet native container route and output/timing paths; no MPNN or refolding"
+      },
+      "03_filtering": {
+        "substeps": [
+          {
+            "method": "boltz2-prediction",
+            "execution": "mimas"
+          },
+          {
+            "method": "score-and-select",
+            "execution": "local"
+          }
+        ],
+        "score_methods": "choose explicitly per campaign",
+        "current_execution_status": "Excluded for this run by researcher: no MPNN or refolding"
+      },
+      "04_analysis": {
+        "method": "compare-rank-plot-and-report",
+        "execution": "local"
+      }
+    }
+  },
+  "created_at": "2026-10-06T18:16:40.601591+00:00",
+  "campaign_type": "binder_design",
+  "design_campaign_index": 1,
+  "initial_design_label": "DD1",
+  "updated_at": "2026-10-07T10:22:36.945576-04:00",
+  "target": {
+    "species": "Mus musculus",
+    "pdb_id": "2TNF",
+    "assembly": "soluble biological trimer",
+    "chains": [
+      "A",
+      "B",
+      "C"
+    ],
+    "pocket_protomers": [
+      "A",
+      "B"
+    ],
+    "source_numbering": "Deposited author residue IDs",
+    "hotspots": [
+      {
+        "chain": "A",
+        "residues": [
+          71,
+          104
+        ]
+      },
+      {
+        "chain": "B",
+        "residues": [
+          112,
+          110,
+          107
+        ]
+      }
+    ]
+  },
+  "binder": {
+    "chains": 1,
+    "length_range": [
+      60,
+      100
+    ]
+  },
+  "related_campaign": "2026-10-06_dd1-human-tnfa-pocket",
+  "preparation_status": "Empire_hotspot_revision2_locally_verified_manual_upload_ready_not_submitted",
+  "candidate_status": "DD1 is a shared design brief; no exact binder sequence generated",
+  "native_adapter": "Campaign-local source bond preservation; installed RFD3 remains unchanged",
+  "designs_folder": "Designs/2026-10-07_102236-0400-dd1-mouse-2tnf-ab-71-112-rfd3-50000-empire_001",
+  "execution_scope": {
+    "stages": [
+      "rfd3"
+    ],
+    "requested_backbones": 50000,
+    "mpnn": "excluded_by_researcher",
+    "refolding": "excluded_by_researcher",
+    "job_submitted": false
+  },
+  "design_family_id": "DD1",
+  "current_run_id": "2026-10-07_102236-0400-dd1-mouse-2tnf-ab-71-112-rfd3-50000-empire_001",
+  "predecessor_snapshot": {
+    "manifest_sha256": "0da9980aa51fe3c7eec245f0c9ca2d7b10145e1db3ff03658394db6cb0da8af9",
+    "archive_index": "local/history/2026-10-06_150412-0400_campaign-naming-history_001/lineage-index.json",
+    "scope": "Previous validated 50000-backbone snapshot; original frozen records retained in naming-history archive"
+  },
+  "execution_machine": "empire-beta",
+  "execution_route": "foundry-empire-beta",
+  "output_layout": "runs/<run_id>/02_design/attempt-001/rfd3",
+  "logging": {
+    "attempt_directory": "MACHINE_CONFIGURED_PATH/runs/2026-10-07_102236-0400-dd1-mouse-2tnf-ab-71-112-rfd3-50000-empire_001/receipts/2026-10-07_102236-0400_empire-dd1-hotspots-r2_001",
+    "events": [
+      "queued",
+      "left_queue_execution_started",
+      "execution_finished"
+    ],
+    "official_queue_start": "Slurm SubmitTime collected after sbatch acceptance",
+    "official_queue_exit": "SLURM_JOB_START_TIME; observed wrapper start only if unavailable",
+    "end_time": "Observed actual native launcher termination, not projected SLURM_JOB_END_TIME",
+    "log_file": "MACHINE_CONFIGURED_PATH/runs/2026-10-07_102236-0400-dd1-mouse-2tnf-ab-71-112-rfd3-50000-empire_001/receipts/2026-10-07_102236-0400_empire-dd1-hotspots-r2_001/lifecycle.log",
+    "jsonl_file": "MACHINE_CONFIGURED_PATH/runs/2026-10-07_102236-0400-dd1-mouse-2tnf-ab-71-112-rfd3-50000-empire_001/receipts/2026-10-07_102236-0400_empire-dd1-hotspots-r2_001/lifecycle.jsonl",
+    "summary_file": "MACHINE_CONFIGURED_PATH/runs/2026-10-07_102236-0400-dd1-mouse-2tnf-ab-71-112-rfd3-50000-empire_001/receipts/2026-10-07_102236-0400_empire-dd1-hotspots-r2_001/timing-summary.json",
+    "job_log": "MACHINE_CONFIGURED_PATH/runs/2026-10-07_102236-0400-dd1-mouse-2tnf-ab-71-112-rfd3-50000-empire_001/slurm.out",
+    "accounting_refresh": "empire_lifecycle.py accounting; official final scheduler state/end/ElapsedRaw, including cancellation before start"
+  },
+  "prepared_50000_run": {
+    "run_id": "2026-10-06_150412-0400-dd1-mouse-2tnf-ac-pocket-rfd3-50000_001",
+    "designs_folder": "Designs/2026-10-06_150412-0400-dd1-mouse-2tnf-ac-pocket-rfd3-50000_001",
+    "execution_machine": "empire-beta",
+    "deployment_id": "2026-10-06_154453-0400_empire-dd1-timing_001",
+    "status": "preserved_not_submitted; Empire seed and bond validation pending"
+  },
+  "related_mimas_smoke_run": {
+    "run_id": "2026-10-06_160209-0400-dd1-mouse-2tnf-ac-pocket-rfd3-100-mimas_001",
+    "job_id": "3964",
+    "scope": "100 RFD3 models; queued separately; retained unchanged"
+  },
+  "current_deployment_id": "2026-10-07_102236-0400_empire-dd1-hotspots-r2_001",
+  "hotspot_revision": 2,
+  "next_engine": {
+    "name": "RFdiffusion3",
+    "platform": "Foundry",
+    "execution": "empire-beta",
+    "native_input_status": "revision2_local_preparation_verified_Empire_preflight_pending"
+  },
+  "prior_hotspot_run": "2026-10-06_162135-0400-dd1-mouse-2tnf-ac-pocket-rfd3-50000-empire_001"
+}

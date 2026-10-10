@@ -1,0 +1,177 @@
+{
+  "schema_version": 1,
+  "project_id": "TNFA",
+  "campaign_id": "2026-10-06_dd1-mouse-tnfa-pocket",
+  "run_id": "2026-10-06_150412-0400-dd1-mouse-2tnf-ac-pocket-rfd3-50000_001",
+  "created_at": "2026-10-06T19:09:41.984610+00:00",
+  "parents": [],
+  "recipe": {
+    "recipe_id": "dd1-mouse-tnfa-pocket-rfd3-boltz2-analysis",
+    "stages": {
+      "01_staging": {
+        "method": "validate-native-2tnf-trimer-author-numbering-six-hotspots",
+        "execution": "local"
+      },
+      "02_design": {
+        "method": "foundry-rfd3",
+        "execution": "mimas",
+        "scientific_parameters": "One 60\u2013100-residue de novo binder against fixed complete modeled trimer; six selected hotspots; 6250 batches \u00d7 8 samples = 50000 requested backbones; seed 0; RFD3 only; no job submitted"
+      },
+      "03_filtering": {
+        "substeps": [
+          {
+            "method": "boltz2-prediction",
+            "execution": "mimas"
+          },
+          {
+            "method": "score-and-select",
+            "execution": "local"
+          }
+        ],
+        "score_methods": "choose explicitly per campaign",
+        "current_execution_status": "Excluded for this run by researcher: no MPNN or refolding"
+      },
+      "04_analysis": {
+        "method": "compare-rank-plot-and-report",
+        "execution": "local"
+      }
+    }
+  },
+  "settings": {
+    "campaign_id": "2026-10-06_dd1-mouse-tnfa-pocket",
+    "design_label": "DD1",
+    "prepared_at": "2026-10-06T15:04:12.448388-04:00",
+    "revision_reason": "Researcher clarified DD1 applies to both human and mouse; align local upload and Foundry run identities with timestamp, species, structure and pocket",
+    "binder_length_range": [
+      60,
+      100
+    ],
+    "binder_length_evidence": "User chose 60\u2013100 residues for both upload bundles in this chat",
+    "requested_backbones": 50000,
+    "diffusion_batch_size": 8,
+    "n_batches": 6250,
+    "count_scope": "One specification \u00d7 8 samples \u00d7 6250 batches = 50,000 requested RFD3 backbones",
+    "seed": 0,
+    "source_pdb_id": "2TNF",
+    "species": "Mus musculus",
+    "source_sha256": "2eb3e612a6aed3e57a2984e0c9220d67f605bd32f8d56cee9b3e49f9565c0b8a",
+    "target_pdb_sha256": "3725d24819155e08686d5b6740999f5da1d8da0e9b0edf54394fd7a8c6eba9da",
+    "target_residues": 444,
+    "target_atoms": 3477,
+    "input_numbering": "PDB author IDs; native preparation validates exact residue identities, mapping and coordinates",
+    "target_chains": [
+      "A",
+      "B",
+      "C"
+    ],
+    "binder_output_chain": "D",
+    "hotspots_author": [
+      [
+        "A",
+        65,
+        "LYS"
+      ],
+      [
+        "A",
+        112,
+        "LYS"
+      ],
+      [
+        "A",
+        146,
+        "GLU"
+      ],
+      [
+        "C",
+        78,
+        "HIS"
+      ],
+      [
+        "C",
+        90,
+        "LYS"
+      ],
+      [
+        "C",
+        140,
+        "LYS"
+      ]
+    ],
+    "select_hotspots": {
+      "A65": "CB,CG,CD,CE,NZ",
+      "A112": "CB,CG,CD,CE,NZ",
+      "A146": "CB,CG,CD,OE1,OE2",
+      "C78": "CB,CG,ND1,CD2,CE1,NE2",
+      "C90": "CB,CG,CD,CE,NZ",
+      "C140": "CB,CG,CD,CE,NZ"
+    },
+    "contig": "A9-72,A74-157,/0,B9-72,B74-157,/0,C9-72,C74-157,/0,60-100",
+    "native_adapter": "Preserve source bonds between fixed retained target atoms; shared installation unchanged",
+    "native_adapter_sha256": "b79dc933633e67c0d2055ee272a8f307f71e17c9f33d1134cac1ee0574db13fd",
+    "runtime_file": "runtime.json",
+    "job_submitted": false,
+    "job_count": 1,
+    "mpnn": "Excluded by researcher; do not execute",
+    "review_evidence": "Researcher authorized DD1 human and mouse input preparation, 60\u2013100-residue binder and 50000 backbones; MPNN/refolding excluded",
+    "guide_authority": [
+      "MACHINE_CONFIGURED_PATH/foundry/docs/rfd3.md",
+      "MACHINE_CONFIGURED_PATH/foundry/docs/input_paths.md",
+      "MACHINE_CONFIGURED_PATH/design/Mimas_Design_Skills/input_workflows.md",
+      "workflow.lock.json"
+    ],
+    "scientific_quality": "No designs generated, binding/eligibility not established",
+    "deposited_sequence_length": 156,
+    "deposited_sequence_sha256": "203a8671e29e18898a46c55a8e0095c1f7a708c76ae0cf62a320a25ab569ff4d",
+    "construct_difference_from_assay": "Deposited mouse domain matches challenge soluble domain; assay polyhistidine tag absent and not invented.",
+    "upload_directory": "campaigns/2026-10-06_dd1-mouse-tnfa-pocket/Designs/2026-10-06_150412-0400-dd1-mouse-2tnf-ac-pocket-rfd3-50000_001",
+    "remote_upload_directory": "MACHINE_CONFIGURED_PATH/foundry/runs/2026-10-06_150412-0400-dd1-mouse-2tnf-ac-pocket-rfd3-50000_001",
+    "output_directory": "MACHINE_CONFIGURED_PATH/foundry/runs/2026-10-06_150412-0400-dd1-mouse-2tnf-ac-pocket-rfd3-50000_001/02_design/attempt-001/rfd3",
+    "native_validation": "Passed installed Foundry YAML/PDB/Hydra validation of corrected DD1 identity; all target geometry, hotspot atoms, chain roles, numbering and three disulfides retained; 6250 x 8 = 50000; no inference",
+    "refolding": "Excluded by researcher; do not execute",
+    "execution_stages": [
+      "rfd3"
+    ],
+    "slurm_walltime": "14-00:00:00",
+    "walltime_authority": "MACHINE_CONFIGURED_PATH/foundry/pipeline_50k.slurm allocation header only; its downstream pipeline is not used",
+    "step": "design",
+    "attempt": "attempt-001",
+    "monitoring_attempt": "MACHINE_CONFIGURED_PATH/foundry/runs/2026-10-06_150412-0400-dd1-mouse-2tnf-ac-pocket-rfd3-50000_001/receipts/2026-10-06_150412-0400-monitored-attempt_001",
+    "design_family_id": "DD1",
+    "design_brief": "TNFa lateral pocket spanning native protomers A and C",
+    "run_id": "2026-10-06_150412-0400-dd1-mouse-2tnf-ac-pocket-rfd3-50000_001",
+    "predecessor_snapshot": {
+      "manifest_sha256": "0da9980aa51fe3c7eec245f0c9ca2d7b10145e1db3ff03658394db6cb0da8af9",
+      "archive_index": "local/history/2026-10-06_150412-0400_campaign-naming-history_001/lineage-index.json",
+      "scope": "Previous validated 50000-backbone snapshot; original frozen records retained in naming-history archive"
+    }
+  },
+  "files_sha256": {
+    "campaign.json": "bbf587937c12647d483d2b0a60cec05fba9db36522e206689b3a484bed4833bf",
+    "payload/2TNF_target.pdb": "3725d24819155e08686d5b6740999f5da1d8da0e9b0edf54394fd7a8c6eba9da",
+    "payload/README.md": "19d37606bc0a682694e874db344304586ea2d6869ec5f036b58987819c2b1f08",
+    "payload/bundle_manifest.json": "d39613ff5f18a6baaaed958fbbebb2d3aae9a03b90b84131918a3ca32e4dfa0d",
+    "payload/check_outputs.py": "9d78f3a0688cb5a05909aea2e8c99f1a7a1943a957dadbaa703eb84a7c6be280",
+    "payload/design.json": "e21e9ba471168db228033e37839e0329edf7ee388a07e0a7b33f718310f7a34a",
+    "payload/design.yaml": "e060373cdc649d536850ea6362fe4a55b906535219814652759efdd073258811",
+    "payload/expected.json": "9e83f8bcc45db92db7a5786f9b2c878625d4d6348f3def9aad300212f6b10fcd",
+    "payload/preserve_source_bonds.py": "b79dc933633e67c0d2055ee272a8f307f71e17c9f33d1134cac1ee0574db13fd",
+    "payload/preview/2026-10-06_150412-0400-dd1-mouse-2tnf-ac-pocket-rfd3-50000_001_hotspots.pse": "9be62f493cf97cab2c0d976e72f40311eb344bff36ded8978352104b31ae508e",
+    "payload/preview/validation.json": "ef18e606532a877ef4ec1d675e65f48b9ec86f7ad18361415f5a9fd9f17376ca",
+    "payload/residue_mapping.csv": "41c51858f82d1bfaace3c2d5f17c754d24947fe880a1800a396886c77c716a76",
+    "payload/run_rfd3.py": "58a8a2f75057ed58a1ae962820f551688f1d8f7ada634969737867ee06b01cb4",
+    "payload/runtime.json": "daf0cfd13581f621861be7cdc5f2da96c856fe27c294f4dc31edee735aefac57",
+    "payload/settings.json": "362b8dab3662fb5b2847061498c1b7868190a4b3b3d677e9aaca233d80f83d2e",
+    "payload/source/2TNF_asymmetric-unit.cif": "2eb3e612a6aed3e57a2984e0c9220d67f605bd32f8d56cee9b3e49f9565c0b8a",
+    "payload/source/2TNF_deposited.fasta": "317544416d6f9cd93da52fa3f5621f81ff0e12b7bb0801ba0f46de1c39384f59",
+    "payload/source/lineage.json": "5b744be388f180f361ec956cbd7c3e96a7db949c8b3938243b8475fa515ac592",
+    "payload/source/preparation.json": "46fae6279d2c360765938da2a68b144d94773226101e7a177398334851e6170c",
+    "payload/validate_native.py": "80f9993d7d8b592cf1e0a207b3c9ffb423944953f5406c3eaf39443d030b293e",
+    "payload/validation.json": "f23b37485bc803479867ee6243f1748fd9ddec4eb8837e636f1ba84faa7479cf",
+    "payload/verify_bundle.py": "58bd55498ffae6004c8993432650d49627c176514f8d6c2f538cd37c34bfd61b",
+    "payload/workload.sbatch": "cbcee40a04e388d56962365e87415b4fe36087a2380c14483d4f29c224106cb0",
+    "project.json": "e46206a7fed2e2278244b5883e0ec54725954510860b56e2bcb494dcb0a767f0",
+    "settings.json": "362b8dab3662fb5b2847061498c1b7868190a4b3b3d677e9aaca233d80f83d2e",
+    "workflow.lock.json": "47f84b2d604f2ad7f15070b039a1a0f0600927ca3d0af8fd1b3afc95846e0e9c"
+  },
+  "scientific_inputs_validated": false
+}

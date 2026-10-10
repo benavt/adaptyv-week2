@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "project_id": "TNFA",
+  "campaign_id": "2026-10-07_tnfa-foundry-boltz2-migration",
+  "run_id": "2026-10-09_boltz2-existing-result-audit_001",
+  "created_at": "2026-10-09T11:35:19.501907+00:00",
+  "parents": [
+    {
+      "campaign_id": "2026-10-07_tnfa-foundry-boltz2-migration",
+      "run_id": "2026-10-08_boltz2-four-cohort-increment_001",
+      "manifest_sha256": "96056fc8ae3e9b484836a1d6d03d4a8aa2529bdc3e338f2af6a2400674e00173"
+    }
+  ],
+  "recipe": {
+    "recipe_id": "tnfa-foundry-boltz2-migration",
+    "stages": {
+      "01_staging": {
+        "method": "verify-two-dd1-source-cohorts-and-materialize-exact-sequences",
+        "execution": "local"
+      },
+      "02_design": {
+        "method": "intake-existing-foundry-rfd3-sequence-and-backbone-outputs",
+        "execution": "empire-beta-existing-output-source",
+        "scientific_parameters": "Explicit draft choices require review and freezing before execution"
+      },
+      "03_filtering": {
+        "substeps": [
+          {
+            "method": "boltz2-prediction",
+            "execution": "mimas"
+          },
+          {
+            "method": "score-and-select",
+            "execution": "local"
+          }
+        ],
+        "score_methods": "pending_explicit_review"
+      },
+      "04_analysis": {
+        "method": "first-round-ranking-and-branch-selection",
+        "execution": "local"
+      }
+    }
+  },
+  "settings": {
+    "method": "native Boltz2 output integrity validation; no inference",
+    "task_count": 46,
+    "parent_run": "2026-10-08_boltz2-four-cohort-increment_001",
+    "parent_run_json_sha256": "96056fc8ae3e9b484836a1d6d03d4a8aa2529bdc3e338f2af6a2400674e00173",
+    "artifact_scope": "Native structures belong to the predecessor; new index records their actual source locations and hashes."
+  },
+  "files_sha256": {
+    "campaign.json": "7996944523078448f64f12154d2d613040da44f3920f83f829873033687c0949",
+    "payload/audit.py": "db9c29766c22ac661f91415ddf724adf60def4658c3c465b4ec8c00a69e1d992",
+    "payload/audit.sbatch": "cd5db9002809e298d814f998f86009224131672f5822d9092917f3cc6e8ec2c0",
+    "payload/settings.json": "32134fa4487b3db0f2bdc39787f210be556ca44e73790fa13e802473e0c5f7f9",
+    "payload/tasks.json": "09de5b5f72d29f290a40cabdeee0ecc1626afc137e2ed0e6c6e8ae5206862eda",
+    "payload/validation.py": "4d837902ffa2c54b2dff24cd504dea813fcaff89fd02b141afd7b867f6588363",
+    "project.json": "261db18a1e57a8cb7e44ac987779169bffd55f400b2260144f9c6e5e8d62d880",
+    "settings.json": "32134fa4487b3db0f2bdc39787f210be556ca44e73790fa13e802473e0c5f7f9",
+    "workflow.lock.json": "47f84b2d604f2ad7f15070b039a1a0f0600927ca3d0af8fd1b3afc95846e0e9c"
+  },
+  "scientific_inputs_validated": false
+}

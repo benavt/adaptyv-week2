@@ -1,0 +1,237 @@
+{
+  "schema_version": 1,
+  "project_id": "TNFA",
+  "campaign_id": "2026-10-06_dd1-human-tnfa-pocket",
+  "run_id": "2026-10-06_dd1-hotspot-review_001",
+  "created_at": "2026-10-06T18:09:49.944473+00:00",
+  "parents": [],
+  "recipe": {
+    "recipe_id": "dd1-human-tnfa-pocket-foundry-boltz2-analysis",
+    "stages": {
+      "01_staging": {
+        "method": "validate-1tnf-trimer-native-author-numbering-and-researcher-selected-A-C-hotspots",
+        "execution": "local"
+      },
+      "02_design": {
+        "method": "foundry-rfd3",
+        "execution": "mimas",
+        "scientific_parameters": "Choose explicitly after hotspot PSE confirmation; no inherited EGFR defaults"
+      },
+      "03_filtering": {
+        "substeps": [
+          {
+            "method": "boltz2-prediction",
+            "execution": "mimas"
+          },
+          {
+            "method": "score-and-select",
+            "execution": "local"
+          }
+        ],
+        "score_methods": "choose explicitly per campaign"
+      },
+      "04_analysis": {
+        "method": "compare-rank-plot-and-report",
+        "execution": "local"
+      }
+    }
+  },
+  "settings": {
+    "predecessor_review_snapshot": "drafts/01_staging/2026-10-06_dd1-hotspot-review_001",
+    "purpose": "DD1 hotspot visualization/researcher review before native Foundry input preparation",
+    "campaign_id": "2026-10-06_dd1-human-tnfa-pocket",
+    "design_label": "DD1",
+    "campaign_type": "binder_design",
+    "target": {
+      "pdb_id": "1TNF",
+      "species": "Homo sapiens",
+      "source": "Deposited experimental 1TNF biological trimer view",
+      "source_session": "drafts/04_analysis/2026-10-06_tnfa-combined-regions_003/2026-10-06_human_mouse_TNFa_regions.pse",
+      "source_session_sha256": "e32fbd6a7429921ddeb4aa7f404e498b631b9ce44efd208ebcf31723bf1db420",
+      "experimental_cif": "drafts/01_staging/2026-10-05_tnfa-reference-intake/competition/rcsb/1TNF_asymmetric-unit.cif",
+      "experimental_cif_sha256": "c86bc5041124d7cdcc0585ded990b489ef603b0f0d2b6dbb45a0f76856594ba5",
+      "sequence_sha256": "edb0284136c40c4f8dd367c28340a2020499364de3208b7e085d879a8662fffa",
+      "deposited_sequence_length": 157,
+      "construct_difference_from_assay": "Deposited Leu143 versus challenge Asp143; no residue mutation in this review snapshot",
+      "target_chain_roles": {
+        "A": "target protomer; DD1 hotspot-bearing",
+        "B": "target protomer; retained trimer context",
+        "C": "target protomer; DD1 hotspot-bearing"
+      },
+      "chains_preserved": [
+        "A",
+        "B",
+        "C"
+      ],
+      "modeled_residue_counts": {
+        "A": 152,
+        "B": 152,
+        "C": 152
+      },
+      "missing_author_positions": {
+        "A": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "B": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "C": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "chemistry": "Original source evidence and native coordinates preserved; no invented atoms, glycans, linkers or interchain bonds"
+    },
+    "pocket": {
+      "researcher_description": "Pocket exposed along the side of two different monomers",
+      "focus_protomers": [
+        "A",
+        "C"
+      ],
+      "hotspot_numbering": "Deposited author residue numbers, chain-specific",
+      "hotspots": [
+        {
+          "chain": "A",
+          "author_residue": 146,
+          "resname": "GLU",
+          "clicked_atom": "CG",
+          "atom_count": 9,
+          "clicked_atom_coordinates": [
+            15.376999855041504,
+            62.7869987487793,
+            50.71900177001953
+          ],
+          "source_author_numbering": true,
+          "residue_identity_and_clicked_atom_validated": true
+        },
+        {
+          "chain": "C",
+          "author_residue": 90,
+          "resname": "LYS",
+          "clicked_atom": "CG",
+          "atom_count": 9,
+          "clicked_atom_coordinates": [
+            10.572999954223633,
+            53.071998596191406,
+            60.60100173950195
+          ],
+          "source_author_numbering": true,
+          "residue_identity_and_clicked_atom_validated": true
+        },
+        {
+          "chain": "C",
+          "author_residue": 138,
+          "resname": "ARG",
+          "clicked_atom": "CG",
+          "atom_count": 11,
+          "clicked_atom_coordinates": [
+            1.0709999799728394,
+            57.582000732421875,
+            45.59700012207031
+          ],
+          "source_author_numbering": true,
+          "residue_identity_and_clicked_atom_validated": true
+        },
+        {
+          "chain": "A",
+          "author_residue": 65,
+          "resname": "LYS",
+          "clicked_atom": "NZ",
+          "atom_count": 9,
+          "clicked_atom_coordinates": [
+            18.35099983215332,
+            71.36199951171875,
+            44.91600036621094
+          ],
+          "source_author_numbering": true,
+          "residue_identity_and_clicked_atom_validated": true
+        },
+        {
+          "chain": "C",
+          "author_residue": 73,
+          "resname": "HIS",
+          "clicked_atom": "CG",
+          "atom_count": 10,
+          "clicked_atom_coordinates": [
+            3.9820001125335693,
+            66.58599853515625,
+            40.742000579833984
+          ],
+          "source_author_numbering": true,
+          "residue_identity_and_clicked_atom_validated": true
+        },
+        {
+          "chain": "A",
+          "author_residue": 112,
+          "resname": "LYS",
+          "clicked_atom": "CB",
+          "atom_count": 9,
+          "clicked_atom_coordinates": [
+            5.449999809265137,
+            71.552001953125,
+            38.3650016784668
+          ],
+          "source_author_numbering": true,
+          "residue_identity_and_clicked_atom_validated": true
+        }
+      ],
+      "selection_scope": "Entire residues; clicked atom is source identity evidence, not an atom-specific Foundry constraint",
+      "surface_exposure_assessment": "Researcher-described pocket; no quantitative exposure or binding claim computed"
+    },
+    "visualization": {
+      "hotspot_color": "green",
+      "hotspot_object": "DD1_Hotspots",
+      "stick_radius": 0.3,
+      "cartoon_palette": "Human blue protomer-copy shades",
+      "charge_context_scene": "ARG/LYS red, ASP/GLU blue, HIS magenta; hotspot green takes priority",
+      "scenes": [
+        "DD1_Hotspots",
+        "DD1_Labeled",
+        "DD1_Charge_context",
+        "DD1_Pocket_closeup"
+      ],
+      "default_scene": "DD1_Hotspots"
+    },
+    "review": {
+      "status": "awaiting_researcher_confirmation",
+      "required_before": "RFD3 Foundry input structure creation",
+      "confirmation_evidence": null
+    },
+    "next_stage": {
+      "engine": "RFdiffusion3 via Foundry",
+      "execution": "mimas",
+      "native_inputs_prepared": false,
+      "job_submitted": false,
+      "binder_construct_length_seeds_checkpoint_and_sampling": "To choose explicitly after hotspot PSE confirmation; do not inherit historical EGFR settings"
+    }
+  },
+  "files_sha256": {
+    "campaign.json": "b5a52a41e80a45df83166fe6edf6b0f9c7d544bc5f6974766c8ff32a8933d095",
+    "payload/2026-10-06_DD1_human_TNFa_hotspots.png": "a50b3e64a36f932e912fff0e1673f3bfda011b50bd61d0703494eed9ec2ee92f",
+    "payload/2026-10-06_DD1_human_TNFa_hotspots.pse": "2066542286de0e182d162e522c6f46c488502060779d52a12922910c064a4618",
+    "payload/2026-10-06_DD1_human_TNFa_hotspots_labeled.png": "03d029f5c173fb5270103d38822f31f976b26fa00da1fe6a346dac47a471adeb",
+    "payload/README.md": "dbef7a995b0dff97c9e491dd7db94be7d02e132bbe0bb26e9d92c535b3ae4a23",
+    "payload/generate.py": "a2f5fb3d82a0c51bc7478cbdda7562646d8b4ad6c79d80417a57a34136cfd651",
+    "payload/generation.json": "e606037e7da78566aef7689ec23a5657d86d0d0335158b315eeaaee23453ecc6",
+    "payload/hotspots.csv": "3ee902a009602ddb93d82a5f07ba8adb8e88985d585e49846a99ecaa4a8b6dc0",
+    "payload/settings.json": "9b8ae525e2f1092b3bd1611ee5fc65dd7d53ad0154e381017655a3013105c74c",
+    "payload/source/1TNF_asymmetric-unit.cif": "c86bc5041124d7cdcc0585ded990b489ef603b0f0d2b6dbb45a0f76856594ba5",
+    "payload/source/1TNF_human_deposited.fasta": "ed214a3d4319bd9747a7fcd05ea8ccf5e9385e5340dde06ccfb2d7e9474f64b1",
+    "payload/source/2026-10-06_human_mouse_TNFa_regions.pse": "e32fbd6a7429921ddeb4aa7f404e498b631b9ce44efd208ebcf31723bf1db420",
+    "project.json": "e46206a7fed2e2278244b5883e0ec54725954510860b56e2bcb494dcb0a767f0",
+    "settings.json": "9b8ae525e2f1092b3bd1611ee5fc65dd7d53ad0154e381017655a3013105c74c",
+    "workflow.lock.json": "47f84b2d604f2ad7f15070b039a1a0f0600927ca3d0af8fd1b3afc95846e0e9c"
+  },
+  "scientific_inputs_validated": false
+}

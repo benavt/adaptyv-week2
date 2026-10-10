@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "campaign_id": "2026-10-07_tnfa-apnovo-epitope",
+  "title": "TNFA APNovo epitope input development",
+  "objective": "Convert selected first-round TNFA models into APNovo input briefs centered on epitope targeting while keeping other binder features flexible, subject to native binder-context compatibility validation.",
+  "recipe": {
+    "recipe_id": "tnfa-apnovo-epitope",
+    "stages": {
+      "01_staging": {
+        "method": "trace-reviewed-parents-and-map-epitope-to-native-context",
+        "execution": "local"
+      },
+      "02_design": {
+        "method": "apnovo-epitope-input-development",
+        "execution": "local-input-preparation-future-generation-host-pending",
+        "scientific_parameters": "Explicit draft choices require review and freezing before execution"
+      },
+      "03_filtering": {
+        "substeps": [
+          {
+            "method": "boltz2-prediction",
+            "execution": "mimas"
+          },
+          {
+            "method": "score-and-select",
+            "execution": "local"
+          }
+        ],
+        "score_methods": "pending_explicit_review"
+      },
+      "04_analysis": {
+        "method": "compare-parent-and-descendant-evidence",
+        "execution": "local"
+      }
+    }
+  },
+  "created_at": "2026-10-07T16:38:06.233382-04:00",
+  "updated_at": "2026-10-07T16:38:06.233382-04:00",
+  "preparation_status": "planning_folders_prepared_no_runs",
+  "campaign_type": "epitope_conditioned_design_preparation",
+  "plan_document": "docs/2026-10-07_TNFA_MIGRATION_AND_BRANCH_PLAN.md",
+  "draft_directory": "drafts/2026-10-07_tnfa-apnovo-epitope",
+  "execution_scope": {
+    "job_submitted": false,
+    "frozen_run_created": false,
+    "authorized_action": "document_plan_and_prepare_folders"
+  },
+  "progress_record": "local/2026-10-07_tnfa-migration-plan/2026-10-07_tnfa-apnovo-epitope.json",
+  "pending_decisions": [
+    "exact_native_inputs_and_hashes",
+    "runtime_version_and_checkpoint",
+    "native_adapter_preflight",
+    "seeds_and_sampling",
+    "execution_budget",
+    "score_methods_versions_and_acceptance_criteria"
+  ],
+  "upstream_campaigns": [
+    "2026-10-07_tnfa-foundry-boltz2-migration"
+  ],
+  "branch_selection": {
+    "status": "awaiting_first_filtering_round",
+    "selection_package": null,
+    "parent_candidate_ids": [],
+    "filtering_run_refs": [],
+    "rationale": null
+  },
+  "epitope_policy": {
+    "preserve": "epitope targeting",
+    "other_binder_features": "flexible",
+    "exact_residues_and_native_representation": null
+  },
+  "compatibility_status": "validate_APNovo_protein_target_binder_context_before_generation",
+  "method_reference": "https://github.com/google-deepmind/alphaprotein-novo"
+}

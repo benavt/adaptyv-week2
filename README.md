@@ -2,14 +2,16 @@
 
 Separate scientific project `TNFA` for Adaptyv Challenge 02. Local code is the
 control surface: prepare hotspots locally, run Foundry and Boltz2 on Mimas, then
-score and analyze selected results on the Mac. The first campaign name, constructs,
-hotspots and detailed settings remain unset.
+score and analyze selected results on the Mac. Mouse trimer sampling is defined in
+`2026-10-06_mouse-tnfa-trimer`; binder-design constructs, hotspots and detailed
+Foundry/Boltz2 settings remain unset.
 
 Start with `python3 scripts/workspace.py show` and [overview.md](overview.md).
 Read [challenge requirements](docs/CHALLENGE.md) before scientific choices and
 [workflow](docs/WORKSPACE.md) for preparation, transfer and sequence tracing.
-Native execution against the new paths has not yet been validated; no scientific
-jobs have been launched by this adoption.
+Foundry/Boltz2 execution against the new paths has not yet been validated. The
+2TNF AFSample3 sampling run uses its own validated native parser and submitted
+Slurm launchers.
 
 ```text
 project.json                   Target and four-stage recipe
@@ -52,3 +54,18 @@ snapshots; those references are not installed prediction environments.
 Reference structures and prior TNFA analyses are indexed in
 [the reference intake](docs/2026-10-05_TNFA_REFERENCE_INTAKE.md). Campaign inputs
 and hotspots remain unset.
+
+Final October 5 TNFA trimer modeling deliverables for all eight targets are indexed
+in [the successor modeling intake](docs/2026-10-06_TNFA_TRIMER_MODELING_INTAKE.md).
+
+[Proposed TNFA species colors](docs/2026-10-06_TNFA_COLORS.md) use three human
+blues and three mouse copper/amber shades, with separate atom-color conventions.
+
+Human and mouse focus-region objects and charge/histidine stick conventions are
+documented in [the TNFA color guide](docs/2026-10-06_TNFA_COLORS.md#focus-regions).
+
+[The next 24 hour migration and branch plan](docs/2026-10-07_TNFA_MIGRATION_AND_BRANCH_PLAN.md)
+prepares both DD1 EmpireAI RFD3 sequence/backbone cohorts for incremental Boltz2
+refolding on Mimas, followed by ProtonPottsMPNN redesign and APNovo inputs focused
+on epitope targeting. Three new campaigns and editable stage folders are prepared;
+their scientific settings and downstream candidate assignments remain pending.

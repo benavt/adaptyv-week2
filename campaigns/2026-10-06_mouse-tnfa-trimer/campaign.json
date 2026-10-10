@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "campaign_id": "2026-10-06_mouse-tnfa-trimer",
+  "title": "Mouse TNFa trimer sampling",
+  "objective": "Generate a 1000-model AFSample3 ensemble of the deposited 2TNF mouse TNFa soluble homotrimer using 200 seeds and five diffusion samples per seed.",
+  "recipe": {
+    "recipe_id": "2tnf-afsample3-trimer-sampling",
+    "stages": {
+      "01_staging": {
+        "method": "validate-2tnf-deposited-sequence-trimer-and-native-afsample3-input",
+        "execution": "local"
+      },
+      "02_design": {
+        "method": "not-applicable-no-binder-generation",
+        "execution": "none"
+      },
+      "03_filtering": {
+        "method": "afsample3-native-msa-preparation-and-1000-model-trimer-sampling",
+        "execution": "mimas",
+        "score_methods": "native confidence retained; no ranking thresholds chosen"
+      },
+      "04_analysis": {
+        "method": "structure-count-sequence-validation-and-local-ensemble-analysis",
+        "execution": "local"
+      }
+    }
+  },
+  "created_at": "2026-10-06T11:03:46.198946+00:00"
+}

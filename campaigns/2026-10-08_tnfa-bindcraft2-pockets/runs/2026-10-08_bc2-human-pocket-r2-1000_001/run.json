@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "project_id": "TNFA",
+  "campaign_id": "2026-10-08_tnfa-bindcraft2-pockets",
+  "run_id": "2026-10-08_bc2-human-pocket-r2-1000_001",
+  "created_at": "2026-10-08T12:21:39.195733+00:00",
+  "parents": [
+    {
+      "campaign_id": "2026-10-06_dd1-human-tnfa-pocket",
+      "run_id": "2026-10-07_102236-0400-dd1-human-1tnf-ac-103-110-rfd3-50000-empire_001",
+      "manifest_sha256": "62b6d052aac2f4aaf7e04a097ba825d4adba27fa52fdd1b4ff7c8b9647f22f97"
+    }
+  ],
+  "recipe": {
+    "recipe_id": "tnfa-bindcraft2-completed-trajectories-v1",
+    "stages": {
+      "01_staging": {
+        "method": "native-target-trimer-and-hotspot-validation",
+        "execution": "local-and-mimas-cpu"
+      },
+      "02_design": {
+        "method": "bindcraft2-trajectory-only",
+        "execution": "mimas",
+        "scientific_parameters": "1000 completed gradient trajectories per run; early failures retried; ordinary residue-level hotspots; 60-100 residue single-chain binder; native optimization and adaptive tuning"
+      },
+      "03_filtering": {
+        "method": "excluded-by-researcher",
+        "execution": "none",
+        "scope": "no ProteinMPNN, independent refolding, or downstream acceptance"
+      },
+      "04_analysis": {
+        "method": "preserve-counts-and-generation-provenance",
+        "execution": "local",
+        "selection": "not_requested"
+      }
+    }
+  },
+  "settings": {
+    "engine": "BindCraft2",
+    "engine_commit": "5bac63cd2d4e7ed3d5077ba4fc5966e0352038e4",
+    "mode": "trajectory_only",
+    "requested_completed_trajectories": 1000,
+    "raw_attempt_cap": null,
+    "early_failures": "retry_not_counted",
+    "count_scope": "one terminal exact sequence per completed native gradient trajectory; duplicates reported separately",
+    "native_settings": {
+      "campaign_name": "2026-10-08_tnfa-human-pocket-r2-bindcraft2",
+      "project_folder": "02_design/attempt-001",
+      "modality": "binder",
+      "targets": [
+        {
+          "name": "1TNF_trimer",
+          "target_path": "target.pdb",
+          "chains": "A,B,C",
+          "hotspots": "C103,A104,A110,A107,A109",
+          "objective": "target",
+          "weight": 1.0
+        }
+      ],
+      "binder_lengths": [
+        60,
+        100
+      ],
+      "copies": 1,
+      "target_flexibility": 0.0,
+      "resume": false,
+      "save_design_trajectory": true,
+      "save_failed_trajectories": true,
+      "save_failed_refolds": true,
+      "relax_accepted_designs": false,
+      "trajectory_only": true,
+      "forced_targeting": false,
+      "max_trajectories": 9223372036854775807,
+      "number_of_final_designs": 1,
+      "campaign_seed": 0,
+      "autotune": true,
+      "desperation": true,
+      "auto_multi_gpu": false,
+      "design_workers": 1,
+      "workers_per_gpu": 1,
+      "screen_steps": 50,
+      "refine_steps": 25,
+      "anneal_steps": 45,
+      "harden_steps": 5,
+      "mutate_steps": 15,
+      "archive_trajectories": false
+    },
+    "adapter": {
+      "method": "completed_native_trajectory_v1",
+      "sha256": "601e562d18a9e00d85b1db0a3830ff2a952e607470cf957c35ce307fb9fa6ea6",
+      "runtime_lock_sha256": "0ac6df893e510734753d901cc7d2ae30ea88d34105916b24f88d6ad4274e44ca"
+    },
+    "source_foundry_run": "2026-10-06_dd1-human-tnfa-pocket/2026-10-07_102236-0400-dd1-human-1tnf-ac-103-110-rfd3-50000-empire_001",
+    "execution": {
+      "machine_id": "mimas",
+      "gpus": 1,
+      "cpus": 4,
+      "memory": "48G",
+      "walltime": "UNLIMITED",
+      "walltime_sbatch": "0",
+      "whole_job_monitoring": "Fleet 2026-10-06_v1"
+    },
+    "mpnn": false,
+    "independent_validation": false,
+    "acceptance": false,
+    "scientific_scope": "de novo design against supplied soluble TNFA trimer; no pH-specific simulation or eligibility certification",
+    "prepared_at": "2026-10-08T08:21:39.127620-04:00"
+  },
+  "files_sha256": {
+    "campaign.json": "263b5cffc1052a7ad9f459bf35e3a73e3d79387581909352f90d822d1fed639a",
+    "payload/budget.json": "1fbf97af3aded0b30e45ed3d928e2524da1b2f2fb1dde5b7f7a4f868452af532",
+    "payload/conversion.json": "22a698069c879af8265c9a9695e8926989b7d728d60526f5597caca70f38df0d",
+    "payload/design.json": "d5da735c6c519dfaac972ba560552764c99692a6fd2fc2782f53459a24cef062",
+    "payload/job.sbatch": "377e5e95571a5e93689992fad433da6cf6ed4e147d338738af1f08d661e2c55e",
+    "payload/native-preflight.json": "3e8ea5e4c3d3cc0146a20a6101e6260409fdb394bfd87ac2931f3ac2a1d31b3c",
+    "payload/runtime-lock.json": "0ac6df893e510734753d901cc7d2ae30ea88d34105916b24f88d6ad4274e44ca",
+    "payload/source_design.yaml": "e9d7e1fb2b08a583f06068bffaaacd7fd1ee03c7c1ce0e75e284ae01d538e0b8",
+    "payload/source_residue_mapping.csv": "fac0deb35bde191d1c0429f0007376b50ec5daa03bce307200725506dfc6c40d",
+    "payload/source_settings.json": "529d77325ed9113c2c41160707f47b146ad6700062d175da6fc005f3b8556181",
+    "payload/target.pdb": "f1c4c9c1f6a5239756951dda9e4b466347a280f3dd3082e06ff9be18131f35c7",
+    "payload/tnfa_bindcraft2_completed.py": "601e562d18a9e00d85b1db0a3830ff2a952e607470cf957c35ce307fb9fa6ea6",
+    "project.json": "261db18a1e57a8cb7e44ac987779169bffd55f400b2260144f9c6e5e8d62d880",
+    "settings.json": "3a92710d747c2f723de7419b6b2dca2edc4e0332ed0e152740c6f138468da730",
+    "workflow.lock.json": "47f84b2d604f2ad7f15070b039a1a0f0600927ca3d0af8fd1b3afc95846e0e9c"
+  },
+  "scientific_inputs_validated": false
+}

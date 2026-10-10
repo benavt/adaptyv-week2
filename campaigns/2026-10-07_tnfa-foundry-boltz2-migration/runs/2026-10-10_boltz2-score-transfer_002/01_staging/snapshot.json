@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "project_id": "TNFA",
+  "campaign_id": "2026-10-07_tnfa-foundry-boltz2-migration",
+  "run_id": "2026-10-10_boltz2-score-transfer_002",
+  "created_at": "2026-10-10T14:03:19.342192+00:00",
+  "parents": [
+    {
+      "campaign_id": "2026-10-07_tnfa-foundry-boltz2-migration",
+      "run_id": "2026-10-10_boltz2-completed-pose-metrics_003",
+      "manifest_sha256": "883a1873685a6f3ffc15f2dda67436342866c67b18e6b9e107515aba356a1bb5"
+    }
+  ],
+  "recipe": {
+    "recipe_id": "tnfa-foundry-boltz2-migration",
+    "stages": {
+      "01_staging": {
+        "method": "verify-two-dd1-source-cohorts-and-materialize-exact-sequences",
+        "execution": "local"
+      },
+      "02_design": {
+        "method": "intake-existing-foundry-rfd3-sequence-and-backbone-outputs",
+        "execution": "empire-beta-existing-output-source",
+        "scientific_parameters": "Explicit draft choices require review and freezing before execution"
+      },
+      "03_filtering": {
+        "substeps": [
+          {
+            "method": "boltz2-prediction",
+            "execution": "mimas"
+          },
+          {
+            "method": "score-and-select",
+            "execution": "local"
+          }
+        ],
+        "score_methods": "pending_explicit_review"
+      },
+      "04_analysis": {
+        "method": "first-round-ranking-and-branch-selection",
+        "execution": "local"
+      }
+    }
+  },
+  "settings": {
+    "source_run": "2026-10-10_boltz2-completed-pose-metrics_003",
+    "source_path": "04_analysis/2026-10-10_completed-pose-metrics_003",
+    "metrics_sha256": "3dd573aed5554774723362bec4d02b3414e739f9aadece2acdabf89c840a91be",
+    "runtime_sha256": "31d444c728901982043b0e70e0fb6d27c7f0e3f249052a6fcf245d5564e7d188",
+    "scope": "Lossless compressed transport of validated32488 full-cohort metrics; no scientific settings changed"
+  },
+  "files_sha256": {
+    "campaign.json": "7996944523078448f64f12154d2d613040da44f3920f83f829873033687c0949",
+    "payload/pack.py": "c41b7881ed85dba5f1bb8dbc925014f96f8258d27802507057b40546558d5057",
+    "payload/pack.sbatch": "3c9935e73f3f66af46c34484c7091ebc7462597e4c8ed75e07219f8811e6b2d0",
+    "payload/settings.json": "bfee10f55f68b280c02b367587ddac9c3d8bb08209ab47db77c488f518bfae4d",
+    "project.json": "261db18a1e57a8cb7e44ac987779169bffd55f400b2260144f9c6e5e8d62d880",
+    "settings.json": "bfee10f55f68b280c02b367587ddac9c3d8bb08209ab47db77c488f518bfae4d",
+    "workflow.lock.json": "47f84b2d604f2ad7f15070b039a1a0f0600927ca3d0af8fd1b3afc95846e0e9c"
+  },
+  "scientific_inputs_validated": false
+}

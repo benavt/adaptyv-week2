@@ -1,0 +1,325 @@
+{
+  "view": [
+    0.602013885974884,
+    0.7437851428985596,
+    -0.2904529869556427,
+    -0.6578841805458069,
+    0.6681737899780273,
+    0.3474653363227844,
+    0.4525126814842224,
+    -0.01809452660381794,
+    0.891574501991272,
+    0.0,
+    0.0,
+    -209.00643920898438,
+    19.931997299194336,
+    49.7015266418457,
+    39.91001510620117,
+    164.7822723388672,
+    253.23060607910156,
+    20.0
+  ],
+  "reference": "Human_TNFa_Original_hotspots",
+  "sources": [
+    {
+      "species": "human",
+      "revision": "original",
+      "pse": "CONFIGURED_ROOT/Code/projects/adaptyv-week2/campaigns/2026-10-06_dd1-human-tnfa-pocket/runs/2026-10-06_162135-0400-dd1-human-1tnf-ac-pocket-rfd3-50000-empire_001/01_staging/payload/preview/2026-10-06_150412-0400-dd1-human-1tnf-ac-pocket-rfd3-50000_001_hotspots.pse",
+      "run": "CONFIGURED_ROOT/Code/projects/adaptyv-week2/campaigns/2026-10-06_dd1-human-tnfa-pocket/runs/2026-10-06_162135-0400-dd1-human-1tnf-ac-pocket-rfd3-50000-empire_001",
+      "hotspots": [
+        [
+          "A",
+          65,
+          "LYS"
+        ],
+        [
+          "A",
+          112,
+          "LYS"
+        ],
+        [
+          "A",
+          146,
+          "GLU"
+        ],
+        [
+          "C",
+          73,
+          "HIS"
+        ],
+        [
+          "C",
+          90,
+          "LYS"
+        ],
+        [
+          "C",
+          138,
+          "ARG"
+        ]
+      ],
+      "object": "Human_TNFa_Original_hotspots",
+      "source_pse_sha256": "2066542286de0e182d162e522c6f46c488502060779d52a12922910c064a4618",
+      "atoms": 3552,
+      "chains": [
+        "A",
+        "B",
+        "C"
+      ],
+      "hotspot_residues": 6,
+      "alignment_result": null,
+      "display_transform": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "per_chain_CA_rmsd_to_human": {
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.0
+      }
+    },
+    {
+      "species": "human",
+      "revision": "revised",
+      "pse": "CONFIGURED_ROOT/Code/projects/adaptyv-week2/campaigns/2026-10-06_dd1-human-tnfa-pocket/runs/2026-10-07_102236-0400-dd1-human-1tnf-ac-103-110-rfd3-50000-empire_001/01_staging/payload/preview/2026-10-07_102236-0400-dd1-human-1tnf-ac-103-110-rfd3-50000-empire_001_hotspots.pse",
+      "run": "CONFIGURED_ROOT/Code/projects/adaptyv-week2/campaigns/2026-10-06_dd1-human-tnfa-pocket/runs/2026-10-07_102236-0400-dd1-human-1tnf-ac-103-110-rfd3-50000-empire_001",
+      "hotspots": [
+        [
+          "C",
+          103,
+          "ARG"
+        ],
+        [
+          "A",
+          104,
+          "GLU"
+        ],
+        [
+          "A",
+          110,
+          "GLU"
+        ],
+        [
+          "A",
+          107,
+          "GLU"
+        ],
+        [
+          "A",
+          109,
+          "ALA"
+        ]
+      ],
+      "object": "Human_TNFa_Revised_hotspots",
+      "source_pse_sha256": "8c868d2245f5690889dcdea1f6a9026927c2414e707cc90cfcdd75888622b5bd",
+      "atoms": 3552,
+      "chains": [
+        "A",
+        "B",
+        "C"
+      ],
+      "hotspot_residues": 5,
+      "alignment_result": [
+        0.0,
+        456,
+        0,
+        0.0,
+        456,
+        2361.0,
+        456
+      ],
+      "display_transform": [
+        1.0,
+        1.0777010395202069e-08,
+        3.526762526462335e-08,
+        -1.945241724143898e-06,
+        -1.0777010395202069e-08,
+        1.0,
+        4.326175417901368e-09,
+        4.251928231724378e-08,
+        -3.526762526462335e-08,
+        -4.326175861990578e-09,
+        1.0,
+        9.200150046240196e-07,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "per_chain_CA_rmsd_to_human": {
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.0
+      }
+    },
+    {
+      "species": "mouse",
+      "revision": "original",
+      "pse": "CONFIGURED_ROOT/Code/projects/adaptyv-week2/campaigns/2026-10-06_dd1-mouse-tnfa-pocket/runs/2026-10-06_162135-0400-dd1-mouse-2tnf-ac-pocket-rfd3-50000-empire_001/01_staging/payload/preview/2026-10-06_150412-0400-dd1-mouse-2tnf-ac-pocket-rfd3-50000_001_hotspots.pse",
+      "run": "CONFIGURED_ROOT/Code/projects/adaptyv-week2/campaigns/2026-10-06_dd1-mouse-tnfa-pocket/runs/2026-10-06_162135-0400-dd1-mouse-2tnf-ac-pocket-rfd3-50000-empire_001",
+      "hotspots": [
+        [
+          "A",
+          65,
+          "LYS"
+        ],
+        [
+          "A",
+          112,
+          "LYS"
+        ],
+        [
+          "A",
+          146,
+          "GLU"
+        ],
+        [
+          "C",
+          78,
+          "HIS"
+        ],
+        [
+          "C",
+          90,
+          "LYS"
+        ],
+        [
+          "C",
+          140,
+          "LYS"
+        ]
+      ],
+      "object": "Mouse_TNFa_Original_hotspots",
+      "source_pse_sha256": "9be62f493cf97cab2c0d976e72f40311eb344bff36ded8978352104b31ae508e",
+      "atoms": 3477,
+      "chains": [
+        "A",
+        "B",
+        "C"
+      ],
+      "hotspot_residues": 6,
+      "alignment_result": [
+        1.4791345596313477,
+        444,
+        0,
+        1.4791345596313477,
+        444,
+        1892.0,
+        444
+      ],
+      "display_transform": [
+        0.8999740481376648,
+        0.36148154735565186,
+        -0.2436756193637848,
+        -1.4827842589967304,
+        -0.29913461208343506,
+        0.10545415431261063,
+        -0.9483659267425537,
+        -2.2554859555586404,
+        -0.31712016463279724,
+        0.9263965487480164,
+        0.20303763449192047,
+        2.60047243455557,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "per_chain_CA_rmsd_to_human": {
+        "A": null,
+        "B": null,
+        "C": null
+      }
+    },
+    {
+      "species": "mouse",
+      "revision": "revised",
+      "pse": "CONFIGURED_ROOT/Code/projects/adaptyv-week2/campaigns/2026-10-06_dd1-mouse-tnfa-pocket/runs/2026-10-07_102236-0400-dd1-mouse-2tnf-ab-71-112-rfd3-50000-empire_001/01_staging/payload/preview/2026-10-07_102236-0400-dd1-mouse-2tnf-ab-71-112-rfd3-50000-empire_001_hotspots.pse",
+      "run": "CONFIGURED_ROOT/Code/projects/adaptyv-week2/campaigns/2026-10-06_dd1-mouse-tnfa-pocket/runs/2026-10-07_102236-0400-dd1-mouse-2tnf-ab-71-112-rfd3-50000-empire_001",
+      "hotspots": [
+        [
+          "B",
+          112,
+          "LYS"
+        ],
+        [
+          "A",
+          71,
+          "ASP"
+        ],
+        [
+          "A",
+          104,
+          "ASP"
+        ],
+        [
+          "B",
+          110,
+          "GLU"
+        ],
+        [
+          "B",
+          107,
+          "GLU"
+        ]
+      ],
+      "object": "Mouse_TNFa_Revised_hotspots",
+      "source_pse_sha256": "05f1c2444f6d5d258d4477ff2a54505231ad1ab048bd072e44f00180415723d2",
+      "atoms": 3477,
+      "chains": [
+        "A",
+        "B",
+        "C"
+      ],
+      "hotspot_residues": 5,
+      "alignment_result": [
+        1.4791345596313477,
+        444,
+        0,
+        1.4791345596313477,
+        444,
+        1892.0,
+        444
+      ],
+      "display_transform": [
+        0.8999740481376648,
+        0.36148154735565186,
+        -0.2436756193637848,
+        -1.4827842589967304,
+        -0.29913461208343506,
+        0.10545415431261063,
+        -0.9483659267425537,
+        -2.2554859555586404,
+        -0.31712016463279724,
+        0.9263965487480164,
+        0.20303763449192047,
+        2.60047243455557,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "per_chain_CA_rmsd_to_human": {
+        "A": null,
+        "B": null,
+        "C": null
+      }
+    }
+  ],
+  "pymol_version": "3.1.0",
+  "created_at": "2026-10-09T00:22:50.414931+00:00"
+}

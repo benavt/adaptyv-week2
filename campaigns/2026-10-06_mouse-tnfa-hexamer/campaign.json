@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "campaign_id": "2026-10-06_mouse-tnfa-hexamer",
+  "title": "Mouse TNFa six-mer sampling",
+  "objective": "Generate 1000 AFSample3 predictions for six deposited mouse 2TNF chains with whole-job CPU, memory and allocated GPU telemetry.",
+  "recipe": {
+    "recipe_id": "2tnf-afsample3-mouse-hexamer-sampling",
+    "stages": {
+      "01_staging": {
+        "method": "validate-deposited-mouse-construct-six-chain-stoichiometry-and-native-af3-input",
+        "execution": "local"
+      },
+      "02_design": {
+        "method": "not-applicable-no-binder-generation",
+        "execution": "none"
+      },
+      "03_filtering": {
+        "method": "afsample3-native-msa-and-template-preparation-and-1000-model-mouse-hexamer-sampling",
+        "execution": "mimas",
+        "score_methods": "Native confidence retained; no ranking thresholds chosen"
+      },
+      "04_analysis": {
+        "method": "exact-count-chain-sequence-coordinate-and-confidence-validation",
+        "execution": "local"
+      }
+    }
+  },
+  "created_at": "2026-10-06T17:30:49.232309+00:00"
+}

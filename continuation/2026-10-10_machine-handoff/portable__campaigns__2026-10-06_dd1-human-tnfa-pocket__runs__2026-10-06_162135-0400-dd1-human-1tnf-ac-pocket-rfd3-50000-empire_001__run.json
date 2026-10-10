@@ -1,0 +1,236 @@
+{
+  "schema_version": 1,
+  "project_id": "TNFA",
+  "campaign_id": "2026-10-06_dd1-human-tnfa-pocket",
+  "run_id": "2026-10-06_162135-0400-dd1-human-1tnf-ac-pocket-rfd3-50000-empire_001",
+  "created_at": "2026-10-06T20:21:35.778694+00:00",
+  "parents": [
+    {
+      "campaign_id": "2026-10-06_dd1-human-tnfa-pocket",
+      "run_id": "2026-10-06_150412-0400-dd1-human-1tnf-ac-pocket-rfd3-50000_001",
+      "manifest_sha256": "b5c0982f6a190ff279fa8b6f3380951497197bace7bac43f93b30753fdea2a26"
+    }
+  ],
+  "recipe": {
+    "recipe_id": "dd1-human-tnfa-pocket-foundry-boltz2-analysis",
+    "stages": {
+      "01_staging": {
+        "method": "validate-1tnf-trimer-native-author-numbering-and-researcher-selected-A-C-hotspots",
+        "execution": "local"
+      },
+      "02_design": {
+        "method": "foundry-rfd3",
+        "execution": "empire-beta",
+        "scientific_parameters": "Fleet native route: 6250 x 8 =50000 RFD3 backbones; one 60\u2013100-residue binder; container-default seed/bond handling pending native review; no MPNN/refolding"
+      },
+      "03_filtering": {
+        "substeps": [
+          {
+            "method": "boltz2-prediction",
+            "execution": "mimas"
+          },
+          {
+            "method": "score-and-select",
+            "execution": "local"
+          }
+        ],
+        "score_methods": "choose explicitly per campaign",
+        "current_execution_status": "Excluded for this run by researcher: no MPNN or refolding"
+      },
+      "04_analysis": {
+        "method": "compare-rank-plot-and-report",
+        "execution": "local"
+      }
+    }
+  },
+  "settings": {
+    "campaign_id": "2026-10-06_dd1-human-tnfa-pocket",
+    "design_label": "DD1",
+    "prepared_at": "2026-10-06T16:21:35.342759-04:00",
+    "revision_reason": "Fresh user-uploadable Empire package with unique input/output identity, login verification and separate manual container preflight",
+    "binder_length_range": [
+      60,
+      100
+    ],
+    "binder_length_evidence": "User chose 60\u2013100 residues for both upload bundles in this chat",
+    "requested_backbones": 50000,
+    "diffusion_batch_size": 8,
+    "n_batches": 6250,
+    "count_scope": "One specification \u00d7 8 samples \u00d7 6250 batches = 50,000 requested RFD3 backbones",
+    "seed": null,
+    "source_pdb_id": "1TNF",
+    "species": "Homo sapiens",
+    "source_sha256": "c86bc5041124d7cdcc0585ded990b489ef603b0f0d2b6dbb45a0f76856594ba5",
+    "target_pdb_sha256": "f1c4c9c1f6a5239756951dda9e4b466347a280f3dd3082e06ff9be18131f35c7",
+    "target_residues": 456,
+    "target_atoms": 3552,
+    "input_numbering": "PDB author IDs; native preparation validates exact residue identities, mapping and coordinates",
+    "target_chains": [
+      "A",
+      "B",
+      "C"
+    ],
+    "binder_output_chain": "D",
+    "hotspots_author": [
+      [
+        "A",
+        65,
+        "LYS"
+      ],
+      [
+        "A",
+        112,
+        "LYS"
+      ],
+      [
+        "A",
+        146,
+        "GLU"
+      ],
+      [
+        "C",
+        73,
+        "HIS"
+      ],
+      [
+        "C",
+        90,
+        "LYS"
+      ],
+      [
+        "C",
+        138,
+        "ARG"
+      ]
+    ],
+    "select_hotspots": {
+      "A65": "CB,CG,CD,CE,NZ",
+      "A112": "CB,CG,CD,CE,NZ",
+      "A146": "CB,CG,CD,OE1,OE2",
+      "C73": "CB,CG,ND1,CD2,CE1,NE2",
+      "C90": "CB,CG,CD,CE,NZ",
+      "C138": "CB,CG,CD,NE,CZ,NH1,NH2"
+    },
+    "contig": "A6-157,/0,B6-157,/0,C6-157,/0,60-100",
+    "native_adapter": "Not invoked by the Empire native launcher; original Mimas helper retained as historical evidence",
+    "native_adapter_sha256": "b79dc933633e67c0d2055ee272a8f307f71e17c9f33d1134cac1ee0574db13fd",
+    "runtime_file": "empire_runtime.json",
+    "job_submitted": false,
+    "job_count": 1,
+    "mpnn": "Excluded by researcher; do not execute",
+    "review_evidence": "Researcher authorized DD1 human and mouse input preparation, 60\u2013100-residue binder and 50000 backbones; MPNN/refolding excluded",
+    "guide_authority": [
+      "Fleet docs/empire-rfd3.md",
+      "Fleet foundry-empire-beta route",
+      "workflow.lock.json (unchanged scientific pins)"
+    ],
+    "scientific_quality": "No designs generated, binding/eligibility not established",
+    "deposited_sequence_length": 157,
+    "deposited_sequence_sha256": "edb0284136c40c4f8dd367c28340a2020499364de3208b7e085d879a8662fffa",
+    "construct_difference_from_assay": "Deposited human Leu143; challenge sequence Asp143. Source model retained without mutation.",
+    "upload_directory": "campaigns/2026-10-06_dd1-human-tnfa-pocket/Designs/2026-10-06_162135-0400-dd1-human-1tnf-ac-pocket-rfd3-50000-empire_001",
+    "remote_upload_directory": "MACHINE_CONFIGURED_PATH/runs/2026-10-06_162135-0400-dd1-human-1tnf-ac-pocket-rfd3-50000-empire_001",
+    "output_directory": "MACHINE_CONFIGURED_PATH/runs/2026-10-06_162135-0400-dd1-human-1tnf-ac-pocket-rfd3-50000-empire_001/outputs",
+    "native_validation": "Mimas target/hotspot validation retained as historical evidence; Empire native inference not yet performed",
+    "refolding": "Excluded by researcher; do not execute",
+    "execution_stages": [
+      "rfd3"
+    ],
+    "slurm_walltime": "72:00:00",
+    "walltime_authority": "Explicit sbatch override in researcher-provided BrdET launch instructions",
+    "step": "design",
+    "attempt": "attempt-001",
+    "monitoring_attempt": null,
+    "design_family_id": "DD1",
+    "design_brief": "TNFa lateral pocket spanning native protomers A and C",
+    "run_id": "2026-10-06_162135-0400-dd1-human-1tnf-ac-pocket-rfd3-50000-empire_001",
+    "predecessor_snapshot": {
+      "run_id": "2026-10-06_150412-0400-dd1-human-1tnf-ac-pocket-rfd3-50000_001",
+      "deployment_id": "2026-10-06_154453-0400_empire-dd1-timing_001",
+      "bundle_manifest_sha256": "b15222cea2dc4e55c107cedb1d80f61775bee64819cc3dd0ff1d8aa608c0d0ee",
+      "scope": "Complete predecessor retained in deployment snapshot/predecessors"
+    },
+    "checkpoint": "/opt/database/rfd3_latest.ckpt",
+    "seed_policy": "Not passed by the existing rfd3.slurm; container default applies, not verified as seed 0",
+    "deployment_snapshot_id": "2026-10-06_162135-0400_empire-dd1-manual-upload_001",
+    "deployment_prepared_at": "2026-10-06T16:21:35.342759-04:00",
+    "machine_id": "empire-beta",
+    "launcher": "MACHINE_CONFIGURED_PATH/rfd3.slurm",
+    "submission_cwd": "MACHINE_CONFIGURED_PATH",
+    "prior_execution_settings": {
+      "seed": 0,
+      "native_adapter": "Preserve source bonds between fixed retained target atoms; shared installation unchanged",
+      "runtime_file": "runtime.json",
+      "guide_authority": [
+        "MACHINE_CONFIGURED_PATH/foundry/docs/rfd3.md",
+        "MACHINE_CONFIGURED_PATH/foundry/docs/input_paths.md",
+        "MACHINE_CONFIGURED_PATH/design/Mimas_Design_Skills/input_workflows.md",
+        "workflow.lock.json"
+      ],
+      "slurm_walltime": "14-00:00:00",
+      "walltime_authority": "MACHINE_CONFIGURED_PATH/foundry/pipeline_50k.slurm allocation header only; its downstream pipeline is not used",
+      "monitoring_attempt": "MACHINE_CONFIGURED_PATH/foundry/runs/2026-10-06_150412-0400-dd1-human-1tnf-ac-pocket-rfd3-50000_001/receipts/2026-10-06_150412-0400-monitored-attempt_001",
+      "native_validation": "Passed installed Foundry YAML/PDB/Hydra validation of corrected DD1 identity; all target geometry, hotspot atoms, chain roles, numbering and three disulfides retained; 6250 x 8 = 50000; no inference"
+    },
+    "disulfide_output_check": "Check all three target Cys69-Cys101 disulfides in first finished designs; direct launcher does not invoke the preserved bond helper",
+    "execution_revision_reason": "Updated local/remote run basenames and manual upload/test instructions; native Fleet launch settings unchanged",
+    "batch_wrapper": "empire_timed.sbatch",
+    "design_json_role": "Current absolute-path equivalent of native design.yaml",
+    "timing": {
+      "attempt_directory": "MACHINE_CONFIGURED_PATH/runs/2026-10-06_162135-0400-dd1-human-1tnf-ac-pocket-rfd3-50000-empire_001/receipts/2026-10-06_162135-0400_empire-dd1-manual-upload_001",
+      "events": [
+        "queued",
+        "left_queue_execution_started",
+        "execution_finished"
+      ],
+      "official_queue_start": "Slurm SubmitTime collected after sbatch acceptance",
+      "official_queue_exit": "SLURM_JOB_START_TIME; observed wrapper start only if unavailable",
+      "end_time": "Observed actual native launcher termination, not projected SLURM_JOB_END_TIME",
+      "log_file": "MACHINE_CONFIGURED_PATH/runs/2026-10-06_162135-0400-dd1-human-1tnf-ac-pocket-rfd3-50000-empire_001/receipts/2026-10-06_162135-0400_empire-dd1-manual-upload_001/lifecycle.log",
+      "jsonl_file": "MACHINE_CONFIGURED_PATH/runs/2026-10-06_162135-0400-dd1-human-1tnf-ac-pocket-rfd3-50000-empire_001/receipts/2026-10-06_162135-0400_empire-dd1-manual-upload_001/lifecycle.jsonl",
+      "summary_file": "MACHINE_CONFIGURED_PATH/runs/2026-10-06_162135-0400-dd1-human-1tnf-ac-pocket-rfd3-50000-empire_001/receipts/2026-10-06_162135-0400_empire-dd1-manual-upload_001/timing-summary.json",
+      "job_log": "MACHINE_CONFIGURED_PATH/runs/2026-10-06_162135-0400-dd1-human-1tnf-ac-pocket-rfd3-50000-empire_001/slurm.out",
+      "accounting_refresh": "empire_lifecycle.py accounting; official final scheduler state/end/ElapsedRaw, including cancellation before start"
+    }
+  },
+  "files_sha256": {
+    "campaign.json": "36a0de7cf0d9901473a91898b29fdc5c67d73956e313a4881408a239a875a8da",
+    "payload/1TNF_target.pdb": "f1c4c9c1f6a5239756951dda9e4b466347a280f3dd3082e06ff9be18131f35c7",
+    "payload/README.md": "ed7297055ec4a3180b51ce0a079d9952c8a4295c7a71ce05a68339e39c3625b8",
+    "payload/bundle_manifest.json": "7ec41ef2bc0f04ea09116246a40f70365583695af4322c04fb28a911cd079800",
+    "payload/check_outputs.py": "9d78f3a0688cb5a05909aea2e8c99f1a7a1943a957dadbaa703eb84a7c6be280",
+    "payload/design.json": "d88cdc129301b16e60de2028a338864c864f4f74c2919d8e6155b50743e4c278",
+    "payload/design.yaml": "9e59cf891ab3ac608a00a453dec92417a6bd0f65ac0834a73fe710636a9a2f70",
+    "payload/empire_lifecycle.py": "796b570cfeb43dd627f760baa797bea28bba9d0b215368d53fb7df66ceb090a3",
+    "payload/empire_runtime.json": "f1f6be5264b667541053988dc56d6a6f47afe51bcedfe7e2d41177282f946c70",
+    "payload/empire_timed.sbatch": "ce19e32d1949930f87dfc5ec15eb76db63d2bd3ce8c2192d1ef6947ca50d48ba",
+    "payload/expected.json": "edc28df6ef6ddf0161459c832dcc378491041f0f24e266090c81d03661212e65",
+    "payload/historical_mimas/preserve_source_bonds.py": "b79dc933633e67c0d2055ee272a8f307f71e17c9f33d1134cac1ee0574db13fd",
+    "payload/historical_mimas/run_rfd3.py": "58a8a2f75057ed58a1ae962820f551688f1d8f7ada634969737867ee06b01cb4",
+    "payload/historical_mimas/runtime.json": "daf0cfd13581f621861be7cdc5f2da96c856fe27c294f4dc31edee735aefac57",
+    "payload/historical_mimas/validate_native.py": "80f9993d7d8b592cf1e0a207b3c9ffb423944953f5406c3eaf39443d030b293e",
+    "payload/historical_mimas/validation.json": "d99dbb47abc69ffab9e766bfaab2288dca4c28f735e3385c7d7882ab855417ba",
+    "payload/historical_mimas/verify_bundle.py": "58bd55498ffae6004c8993432650d49627c176514f8d6c2f538cd37c34bfd61b",
+    "payload/historical_mimas/workload.sbatch": "60cc2e08524e4791c43ef4e6f0414634e2457ec55abdbe09b009d041fd66aa2c",
+    "payload/preflight/check_native.py": "f59197430788897f2498dcb3ac04e896e301b2d277f92b5c2f4dc6b9bbf115fc",
+    "payload/preflight/container-source-pins.json": "2d43ef08e6fc2bbc245d1b1652ba8a310c56576c286c3388df99c9cb21304ec6",
+    "payload/preflight/log_slurm_resources.py": "c84291689e77495286ee1af2c4531f01b9d280c5f56681717fa9afbbbfe0fa0a",
+    "payload/preflight/validation.sbatch": "a6e7d238e0c5a008f5b7187abf726785041461db0cbb71ecc286598bf3807ee3",
+    "payload/preview/2026-10-06_150412-0400-dd1-human-1tnf-ac-pocket-rfd3-50000_001_hotspots.pse": "2066542286de0e182d162e522c6f46c488502060779d52a12922910c064a4618",
+    "payload/preview/validation.json": "3de06106850fa22b908cd9c477adf2053f03492dbfd30fdb21c4fdef1faa184d",
+    "payload/residue_mapping.csv": "fac0deb35bde191d1c0429f0007376b50ec5daa03bce307200725506dfc6c40d",
+    "payload/settings.json": "26b3a15480cfec34610ecbe19c1744ab22fef1a12d26121c90ab441684e4b4e1",
+    "payload/source/1TNF_asymmetric-unit.cif": "c86bc5041124d7cdcc0585ded990b489ef603b0f0d2b6dbb45a0f76856594ba5",
+    "payload/source/1TNF_deposited.fasta": "4fb9f24663b5b34916bcbb1aff1fd061b4c65606f05101a91eb8afa7a4e0ec8f",
+    "payload/source/empire_deployment_lineage.json": "d2d1b2ca034382919e4960da64c998e16a43b95981fe8f0f9097cd9e0a76b939",
+    "payload/source/empire_timing_lineage.json": "2a2ba26b2b9a135d070744692e66ff609e827c54912dba1b6cbf730aaab0b2c4",
+    "payload/source/lineage.json": "93c897b71e600b13423b90594257e58987942b799d99e8d398663cb2ae9efa75",
+    "payload/source/manual-upload-lineage.json": "ef9c956c9f5d981dbedd5f5932f7e5f6234856e30264fe390aef489ba592639a",
+    "payload/source/preparation.json": "1d7f8abbc58645ef47262e52995d680be070b6daacaf6701d8d0411f14cf748e",
+    "payload/verify_upload.py": "31158facb170391923f4fd9700d67601fe1535622c48834d0540f03a9870bfa0",
+    "project.json": "261db18a1e57a8cb7e44ac987779169bffd55f400b2260144f9c6e5e8d62d880",
+    "settings.json": "26b3a15480cfec34610ecbe19c1744ab22fef1a12d26121c90ab441684e4b4e1",
+    "workflow.lock.json": "47f84b2d604f2ad7f15070b039a1a0f0600927ca3d0af8fd1b3afc95846e0e9c"
+  },
+  "scientific_inputs_validated": false
+}

@@ -1,0 +1,144 @@
+[
+  {
+    "species": "human",
+    "revision": "original",
+    "pse": "CONFIGURED_ROOT/Code/projects/adaptyv-week2/campaigns/2026-10-06_dd1-human-tnfa-pocket/runs/2026-10-06_162135-0400-dd1-human-1tnf-ac-pocket-rfd3-50000-empire_001/01_staging/payload/preview/2026-10-06_150412-0400-dd1-human-1tnf-ac-pocket-rfd3-50000_001_hotspots.pse",
+    "run": "CONFIGURED_ROOT/Code/projects/adaptyv-week2/campaigns/2026-10-06_dd1-human-tnfa-pocket/runs/2026-10-06_162135-0400-dd1-human-1tnf-ac-pocket-rfd3-50000-empire_001",
+    "hotspots": [
+      [
+        "A",
+        65,
+        "LYS"
+      ],
+      [
+        "A",
+        112,
+        "LYS"
+      ],
+      [
+        "A",
+        146,
+        "GLU"
+      ],
+      [
+        "C",
+        73,
+        "HIS"
+      ],
+      [
+        "C",
+        90,
+        "LYS"
+      ],
+      [
+        "C",
+        138,
+        "ARG"
+      ]
+    ]
+  },
+  {
+    "species": "human",
+    "revision": "revised",
+    "pse": "CONFIGURED_ROOT/Code/projects/adaptyv-week2/campaigns/2026-10-06_dd1-human-tnfa-pocket/runs/2026-10-07_102236-0400-dd1-human-1tnf-ac-103-110-rfd3-50000-empire_001/01_staging/payload/preview/2026-10-07_102236-0400-dd1-human-1tnf-ac-103-110-rfd3-50000-empire_001_hotspots.pse",
+    "run": "CONFIGURED_ROOT/Code/projects/adaptyv-week2/campaigns/2026-10-06_dd1-human-tnfa-pocket/runs/2026-10-07_102236-0400-dd1-human-1tnf-ac-103-110-rfd3-50000-empire_001",
+    "hotspots": [
+      [
+        "C",
+        103,
+        "ARG"
+      ],
+      [
+        "A",
+        104,
+        "GLU"
+      ],
+      [
+        "A",
+        110,
+        "GLU"
+      ],
+      [
+        "A",
+        107,
+        "GLU"
+      ],
+      [
+        "A",
+        109,
+        "ALA"
+      ]
+    ]
+  },
+  {
+    "species": "mouse",
+    "revision": "original",
+    "pse": "CONFIGURED_ROOT/Code/projects/adaptyv-week2/campaigns/2026-10-06_dd1-mouse-tnfa-pocket/runs/2026-10-06_162135-0400-dd1-mouse-2tnf-ac-pocket-rfd3-50000-empire_001/01_staging/payload/preview/2026-10-06_150412-0400-dd1-mouse-2tnf-ac-pocket-rfd3-50000_001_hotspots.pse",
+    "run": "CONFIGURED_ROOT/Code/projects/adaptyv-week2/campaigns/2026-10-06_dd1-mouse-tnfa-pocket/runs/2026-10-06_162135-0400-dd1-mouse-2tnf-ac-pocket-rfd3-50000-empire_001",
+    "hotspots": [
+      [
+        "A",
+        65,
+        "LYS"
+      ],
+      [
+        "A",
+        112,
+        "LYS"
+      ],
+      [
+        "A",
+        146,
+        "GLU"
+      ],
+      [
+        "C",
+        78,
+        "HIS"
+      ],
+      [
+        "C",
+        90,
+        "LYS"
+      ],
+      [
+        "C",
+        140,
+        "LYS"
+      ]
+    ]
+  },
+  {
+    "species": "mouse",
+    "revision": "revised",
+    "pse": "CONFIGURED_ROOT/Code/projects/adaptyv-week2/campaigns/2026-10-06_dd1-mouse-tnfa-pocket/runs/2026-10-07_102236-0400-dd1-mouse-2tnf-ab-71-112-rfd3-50000-empire_001/01_staging/payload/preview/2026-10-07_102236-0400-dd1-mouse-2tnf-ab-71-112-rfd3-50000-empire_001_hotspots.pse",
+    "run": "CONFIGURED_ROOT/Code/projects/adaptyv-week2/campaigns/2026-10-06_dd1-mouse-tnfa-pocket/runs/2026-10-07_102236-0400-dd1-mouse-2tnf-ab-71-112-rfd3-50000-empire_001",
+    "hotspots": [
+      [
+        "B",
+        112,
+        "LYS"
+      ],
+      [
+        "A",
+        71,
+        "ASP"
+      ],
+      [
+        "A",
+        104,
+        "ASP"
+      ],
+      [
+        "B",
+        110,
+        "GLU"
+      ],
+      [
+        "B",
+        107,
+        "GLU"
+      ]
+    ]
+  }
+]

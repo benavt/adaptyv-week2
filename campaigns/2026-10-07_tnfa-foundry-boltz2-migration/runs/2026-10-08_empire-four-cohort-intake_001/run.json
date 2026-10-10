@@ -1,0 +1,306 @@
+{
+  "schema_version": 1,
+  "project_id": "TNFA",
+  "campaign_id": "2026-10-07_tnfa-foundry-boltz2-migration",
+  "run_id": "2026-10-08_empire-four-cohort-intake_001",
+  "created_at": "2026-10-08T12:31:20.021380+00:00",
+  "parents": [
+    {
+      "campaign_id": "2026-10-07_tnfa-foundry-boltz2-migration",
+      "run_id": "2026-10-07_empire-all-available-intake_001",
+      "manifest_sha256": "7d517b06a645eb6fc9af18738762265f0f4d615fc617c5c17cf0243f2e536750"
+    },
+    {
+      "campaign_id": "2026-10-06_dd1-human-tnfa-pocket",
+      "run_id": "2026-10-06_162135-0400-dd1-human-1tnf-ac-pocket-rfd3-50000-empire_001",
+      "manifest_sha256": "2c6cb4f16991c9bd3a5a839ba1cfa5fa44cca3d683625c643e7db2126b6b1412"
+    },
+    {
+      "campaign_id": "2026-10-06_dd1-mouse-tnfa-pocket",
+      "run_id": "2026-10-06_162135-0400-dd1-mouse-2tnf-ac-pocket-rfd3-50000-empire_001",
+      "manifest_sha256": "cb06aaf74df47c37d89c0dea214b4959ea3e391937085e52b6568086cbd8d29f"
+    },
+    {
+      "campaign_id": "2026-10-06_dd1-human-tnfa-pocket",
+      "run_id": "2026-10-07_102236-0400-dd1-human-1tnf-ac-103-110-rfd3-50000-empire_001",
+      "manifest_sha256": "62b6d052aac2f4aaf7e04a097ba825d4adba27fa52fdd1b4ff7c8b9647f22f97"
+    },
+    {
+      "campaign_id": "2026-10-06_dd1-mouse-tnfa-pocket",
+      "run_id": "2026-10-07_102236-0400-dd1-mouse-2tnf-ab-71-112-rfd3-50000-empire_001",
+      "manifest_sha256": "0e37bf281ed366d21392d198fea2185b005260c1b90138079ab96ce51ec62e62"
+    }
+  ],
+  "recipe": {
+    "recipe_id": "tnfa-foundry-boltz2-migration",
+    "stages": {
+      "01_staging": {
+        "method": "verify-two-dd1-source-cohorts-and-materialize-exact-sequences",
+        "execution": "local"
+      },
+      "02_design": {
+        "method": "intake-existing-foundry-rfd3-sequence-and-backbone-outputs",
+        "execution": "empire-beta-existing-output-source",
+        "scientific_parameters": "Explicit draft choices require review and freezing before execution"
+      },
+      "03_filtering": {
+        "substeps": [
+          {
+            "method": "boltz2-prediction",
+            "execution": "mimas"
+          },
+          {
+            "method": "score-and-select",
+            "execution": "local"
+          }
+        ],
+        "score_methods": "pending_explicit_review"
+      },
+      "04_analysis": {
+        "method": "first-round-ranking-and-branch-selection",
+        "execution": "local"
+      }
+    }
+  },
+  "settings": {
+    "run_kind": "original_and_revised_empire_source_intake",
+    "purpose": "Download all currently available original and revised human and mouse TNFA RFD3 output pairs, retaining native provenance and exporting exact sequences",
+    "snapshot_started_at": "2026-10-08T12:22:58.723097+00:00",
+    "source_runs": [
+      {
+        "cohort": "original-human",
+        "revision": "original",
+        "species": "human",
+        "campaign_id": "2026-10-06_dd1-human-tnfa-pocket",
+        "run_id": "2026-10-06_162135-0400-dd1-human-1tnf-ac-pocket-rfd3-50000-empire_001",
+        "model_pairs": 8552,
+        "hotspots_author": [
+          [
+            "A",
+            65,
+            "LYS"
+          ],
+          [
+            "A",
+            112,
+            "LYS"
+          ],
+          [
+            "A",
+            146,
+            "GLU"
+          ],
+          [
+            "C",
+            73,
+            "HIS"
+          ],
+          [
+            "C",
+            90,
+            "LYS"
+          ],
+          [
+            "C",
+            138,
+            "ARG"
+          ]
+        ],
+        "target_pdb_sha256": "f1c4c9c1f6a5239756951dda9e4b466347a280f3dd3082e06ff9be18131f35c7",
+        "enumerated_at": "2026-10-08T12:22:59.183962+00:00",
+        "native_directory": "campaigns/2026-10-06_dd1-human-tnfa-pocket/runs/2026-10-06_162135-0400-dd1-human-1tnf-ac-pocket-rfd3-50000-empire_001/02_design/2026-10-08_empire-four-cohort-intake_001/native",
+        "derived_directory": "campaigns/2026-10-06_dd1-human-tnfa-pocket/runs/2026-10-06_162135-0400-dd1-human-1tnf-ac-pocket-rfd3-50000-empire_001/02_design/2026-10-08_empire-four-cohort-intake_001/derived",
+        "collection_receipt": "campaigns/2026-10-06_dd1-human-tnfa-pocket/runs/2026-10-06_162135-0400-dd1-human-1tnf-ac-pocket-rfd3-50000-empire_001/receipts/2026-10-08_empire-four-cohort-intake_001_collection.json",
+        "collection_receipt_sha256": "be208236cd41e5b6762d9d083b573fed3ca36676f7c8231d6c058320a865b0f2"
+      },
+      {
+        "cohort": "original-mouse",
+        "revision": "original",
+        "species": "mouse",
+        "campaign_id": "2026-10-06_dd1-mouse-tnfa-pocket",
+        "run_id": "2026-10-06_162135-0400-dd1-mouse-2tnf-ac-pocket-rfd3-50000-empire_001",
+        "model_pairs": 8688,
+        "hotspots_author": [
+          [
+            "A",
+            65,
+            "LYS"
+          ],
+          [
+            "A",
+            112,
+            "LYS"
+          ],
+          [
+            "A",
+            146,
+            "GLU"
+          ],
+          [
+            "C",
+            78,
+            "HIS"
+          ],
+          [
+            "C",
+            90,
+            "LYS"
+          ],
+          [
+            "C",
+            140,
+            "LYS"
+          ]
+        ],
+        "target_pdb_sha256": "3725d24819155e08686d5b6740999f5da1d8da0e9b0edf54394fd7a8c6eba9da",
+        "enumerated_at": "2026-10-08T12:23:09.914221+00:00",
+        "native_directory": "campaigns/2026-10-06_dd1-mouse-tnfa-pocket/runs/2026-10-06_162135-0400-dd1-mouse-2tnf-ac-pocket-rfd3-50000-empire_001/02_design/2026-10-08_empire-four-cohort-intake_001/native",
+        "derived_directory": "campaigns/2026-10-06_dd1-mouse-tnfa-pocket/runs/2026-10-06_162135-0400-dd1-mouse-2tnf-ac-pocket-rfd3-50000-empire_001/02_design/2026-10-08_empire-four-cohort-intake_001/derived",
+        "collection_receipt": "campaigns/2026-10-06_dd1-mouse-tnfa-pocket/runs/2026-10-06_162135-0400-dd1-mouse-2tnf-ac-pocket-rfd3-50000-empire_001/receipts/2026-10-08_empire-four-cohort-intake_001_collection.json",
+        "collection_receipt_sha256": "c351c3ea794556214720d1acb9a74d0d08a400b7e0ee43b6ce8c31c04a118c97"
+      },
+      {
+        "cohort": "revised-human",
+        "revision": "revised",
+        "species": "human",
+        "campaign_id": "2026-10-06_dd1-human-tnfa-pocket",
+        "run_id": "2026-10-07_102236-0400-dd1-human-1tnf-ac-103-110-rfd3-50000-empire_001",
+        "model_pairs": 7672,
+        "hotspots_author": [
+          [
+            "C",
+            103,
+            "ARG"
+          ],
+          [
+            "A",
+            104,
+            "GLU"
+          ],
+          [
+            "A",
+            110,
+            "GLU"
+          ],
+          [
+            "A",
+            107,
+            "GLU"
+          ],
+          [
+            "A",
+            109,
+            "ALA"
+          ]
+        ],
+        "target_pdb_sha256": "f1c4c9c1f6a5239756951dda9e4b466347a280f3dd3082e06ff9be18131f35c7",
+        "enumerated_at": "2026-10-08T12:23:22.574887+00:00",
+        "native_directory": "campaigns/2026-10-06_dd1-human-tnfa-pocket/runs/2026-10-07_102236-0400-dd1-human-1tnf-ac-103-110-rfd3-50000-empire_001/02_design/2026-10-08_empire-four-cohort-intake_001/native",
+        "derived_directory": "campaigns/2026-10-06_dd1-human-tnfa-pocket/runs/2026-10-07_102236-0400-dd1-human-1tnf-ac-103-110-rfd3-50000-empire_001/02_design/2026-10-08_empire-four-cohort-intake_001/derived",
+        "collection_receipt": "campaigns/2026-10-06_dd1-human-tnfa-pocket/runs/2026-10-07_102236-0400-dd1-human-1tnf-ac-103-110-rfd3-50000-empire_001/receipts/2026-10-08_empire-four-cohort-intake_001_collection.json",
+        "collection_receipt_sha256": "e4f4500f06aa2a675b00d4703ab25e27a33fb8ea3193071023a44dbfc75c5a2c"
+      },
+      {
+        "cohort": "revised-mouse",
+        "revision": "revised",
+        "species": "mouse",
+        "campaign_id": "2026-10-06_dd1-mouse-tnfa-pocket",
+        "run_id": "2026-10-07_102236-0400-dd1-mouse-2tnf-ab-71-112-rfd3-50000-empire_001",
+        "model_pairs": 7576,
+        "hotspots_author": [
+          [
+            "B",
+            112,
+            "LYS"
+          ],
+          [
+            "A",
+            71,
+            "ASP"
+          ],
+          [
+            "A",
+            104,
+            "ASP"
+          ],
+          [
+            "B",
+            110,
+            "GLU"
+          ],
+          [
+            "B",
+            107,
+            "GLU"
+          ]
+        ],
+        "target_pdb_sha256": "3725d24819155e08686d5b6740999f5da1d8da0e9b0edf54394fd7a8c6eba9da",
+        "enumerated_at": "2026-10-08T12:23:33.862393+00:00",
+        "native_directory": "campaigns/2026-10-06_dd1-mouse-tnfa-pocket/runs/2026-10-07_102236-0400-dd1-mouse-2tnf-ab-71-112-rfd3-50000-empire_001/02_design/2026-10-08_empire-four-cohort-intake_001/native",
+        "derived_directory": "campaigns/2026-10-06_dd1-mouse-tnfa-pocket/runs/2026-10-07_102236-0400-dd1-mouse-2tnf-ab-71-112-rfd3-50000-empire_001/02_design/2026-10-08_empire-four-cohort-intake_001/derived",
+        "collection_receipt": "campaigns/2026-10-06_dd1-mouse-tnfa-pocket/runs/2026-10-07_102236-0400-dd1-mouse-2tnf-ab-71-112-rfd3-50000-empire_001/receipts/2026-10-08_empire-four-cohort-intake_001_collection.json",
+        "collection_receipt_sha256": "d09a689712b14b02583b5406dbd171d4286d654bfbc5b9c067c7ba871ac982d6"
+      }
+    ],
+    "models": 32488,
+    "unique_binder_sequences": 32488,
+    "native_files": 65034,
+    "native_bytes": 3171733923,
+    "selection_scope": "Every regular output file in each cohort at its recorded enumeration boundary; no subsampling or quality filtering",
+    "root_provenance_scope": "All root regular files except the actively changing slurm.out; target PDB, design inputs, native manifests, mappings and runtime helpers retained",
+    "parent_intake": "2026-10-07_tnfa-foundry-boltz2-migration/2026-10-07_empire-all-available-intake_001",
+    "native_storage": "Hash-verified full copies under each original generation run 02_design; frozen source-snapshot.json pins every byte",
+    "sequence_export": {
+      "method": "rfd3-flat-cif-ca-residue-sequence-export",
+      "version": "1.1-four-cohort",
+      "script_sha256": "5d579cd8042a0c90ccee8064a338157e3e709b743a4ca71ea432bf00542c2db2",
+      "independent_new_Biopython_checks": 8,
+      "independent_prior_Biopython_comparisons": 16,
+      "description": "Binder D and all-chain FASTA exported from native coordinate residue identities; no native FASTA file was present"
+    },
+    "candidate_draft_directory": "drafts/2026-10-07_tnfa-foundry-boltz2-migration/01_staging/2026-10-08_empire-four-cohort-intake_001/candidate-records",
+    "candidate_registration": {
+      "preserved_existing_records": 4424,
+      "new_drafts_not_registered": 28064
+    },
+    "original_native_metadata_note": "Original outputs embed their 150412 scientific-input parent run ID while filenames, task/example metadata and native manifest identify the 162135 Empire execution run; both identities preserved and parent links validated",
+    "generation_unknowns": [
+      "installed engine version",
+      "checkpoint content hash",
+      "effective seed identity"
+    ],
+    "chemical_scope": "Native CIF/JSON and source PDB chemistry retained; sequence extraction does not certify output disulfide connectivity",
+    "scientific_execution_performed": false,
+    "remote_originals_retained": true,
+    "boltz2_settings": null
+  },
+  "files_sha256": {
+    "campaign.json": "a0eaf0176c8cb5045f091d0477679e3f09fbc9e0160489b4e30a70dd5267b64f",
+    "payload/all-binder-sequences.fasta": "6e23a82b19812a0efed512f9e6b8e59236b9c3daae12e118eb5969e13ccd8864",
+    "payload/export-summary.json": "e2d1cb51d9c8f7c2dbb0ba7bad7344df20fe36ef81d95572d6f20e738e39bb04",
+    "payload/model-index.csv": "0b493ce945cc0b51ad2de26701254e444fd11e2bf06cd2fd4863c7ffd0d2b670",
+    "payload/original-human/all-chain-sequences.fasta": "4b75837e82db6e90d6fcb0e34f59ddcdda2781fc314fb747bd5d7274da138b71",
+    "payload/original-human/binder-sequences.fasta": "3ee12864ebc324040344d8ec8b66b222295d1be9887ec2de8d6214fa065ed097",
+    "payload/original-human/model-index.csv": "4a9647122f890a332035d8dec827f083324a09d323f63c160fe27b0eeb52d5af",
+    "payload/original-human/sequence-provenance.json": "bf99c1e0b916a9041c2bb81fc00b846371413128d39b312dac2a6b732944f20b",
+    "payload/original-mouse/all-chain-sequences.fasta": "5b49aa66689144d54452053b5120b43babab04b647ff1a93fc10843bbd298f33",
+    "payload/original-mouse/binder-sequences.fasta": "77d674f0646342bbaa5a99f543b9504806f7fb97738640ecfda24277260042ca",
+    "payload/original-mouse/model-index.csv": "269224fd715b42056b8d3276a3df1f80835ba4d6b0790b8517f849c31e27ddae",
+    "payload/original-mouse/sequence-provenance.json": "eba60a744c937b8a21c8da7f138a2d0c1a8828e410aa198d6ecc5dca325e529e",
+    "payload/revised-human/all-chain-sequences.fasta": "8ebc793478985af915216fd133b30e53daef8cde1c31df1d030907662aadcf21",
+    "payload/revised-human/binder-sequences.fasta": "75333ad4d113d6dd298c641dcee0443c1f818435e48dfa72cbdd00837dabfff3",
+    "payload/revised-human/model-index.csv": "211a9ba56ea53f0d07b004d0b0a824f6a7a13d1b3acb05100e6d5df116b73c2d",
+    "payload/revised-human/sequence-provenance.json": "8b83e83a4cded41f62e5cf5a940a56a187054fbaa2f91ea72cd4820af79ac7d2",
+    "payload/revised-mouse/all-chain-sequences.fasta": "fc30d217082d508ebb7f32665ff7e96345a48a5c0f6b415eb4e284ef9ef17a27",
+    "payload/revised-mouse/binder-sequences.fasta": "068b5d2fb1ea59faa07c23802d7ec6b57ac8ae8639e285e446d5fd44e42c68bf",
+    "payload/revised-mouse/model-index.csv": "c77daf999ec160ce0c49cab131917de9811b1f05cff92f3e339acebf91a8e6cc",
+    "payload/revised-mouse/sequence-provenance.json": "be65acf34eaeaec6d113dc9e59f442e66c21859f30d1e9040ee12d57f407a35d",
+    "payload/source-intake.json": "bc99fbae7fde117423c606e18a142c1c150eb9f2f459d5716f00be0acb570f97",
+    "payload/source-snapshot.json": "6060c86518b83e89904a58d20e1fa7a5c5d77d02a5b0f3f2cfa59096b0ced827",
+    "payload/validation-summary.json": "7f5be092ef21996fe8848704aa0357bf14a353971c3610b5f6380c04849cdee5",
+    "project.json": "261db18a1e57a8cb7e44ac987779169bffd55f400b2260144f9c6e5e8d62d880",
+    "settings.json": "bc99fbae7fde117423c606e18a142c1c150eb9f2f459d5716f00be0acb570f97",
+    "workflow.lock.json": "47f84b2d604f2ad7f15070b039a1a0f0600927ca3d0af8fd1b3afc95846e0e9c"
+  },
+  "scientific_inputs_validated": false
+}

@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "project_id": "TNFA",
+  "title": "Adaptyv Challenge 02 \u2014 TNF-alpha (Week2)",
+  "machine_id": "mimas",
+  "competition": {
+    "id": "anthropic-adaptyv-2026",
+    "challenge_number": 2,
+    "challenge_url": "https://proteinbase.com/competitions/anthropic-adaptyv-2026/challenges/tnf-alpha",
+    "requirements": "docs/CHALLENGE.md"
+  },
+  "target": {
+    "name": "TNF-alpha",
+    "assembly": "soluble trimer",
+    "species": [
+      "human",
+      "mouse"
+    ],
+    "binding_pH": 7.4,
+    "release_pH": 6.0,
+    "construct_sources": "Exact target source, constructs, chemistry and numbering are selected and recorded per campaign; consult frozen campaign inputs and review evidence."
+  },
+  "default_recipe": {
+    "recipe_id": "foundry-boltz2-local-analysis",
+    "stages": {
+      "01_staging": {
+        "method": "validate-target-constructs-and-hotspot-inputs",
+        "execution": "local"
+      },
+      "02_design": {
+        "method": "foundry",
+        "execution": "mimas",
+        "scientific_parameters": "explicit campaign/run settings; no inherited EGFR defaults"
+      },
+      "03_filtering": {
+        "substeps": [
+          {
+            "method": "boltz2-prediction",
+            "execution": "mimas"
+          },
+          {
+            "method": "score-and-select",
+            "execution": "local"
+          }
+        ],
+        "score_methods": "choose explicitly per campaign"
+      },
+      "04_analysis": {
+        "method": "compare-rank-plot-and-report",
+        "execution": "local"
+      }
+    }
+  },
+  "first_campaign": "2026-10-06_mouse-tnfa-trimer",
+  "guide_references": {
+    "design": {
+      "path": "reference/02_Design/Mimas_Design_Skills",
+      "stages": [
+        "02_design"
+      ]
+    },
+    "folding": {
+      "path": "reference/01_Staging/Mimas_Folding_Skills",
+      "stages": [
+        "01_staging",
+        "03_filtering"
+      ]
+    }
+  },
+  "environment_roles": {
+    "control": {
+      "execution": "local",
+      "role": "control"
+    },
+    "analysis": {
+      "execution": "local",
+      "role": "analysis"
+    },
+    "molecular_views": {
+      "execution": "local",
+      "role": "molecular_views"
+    },
+    "foundry": {
+      "execution": "mimas",
+      "role": "foundry"
+    },
+    "boltz2": {
+      "execution": "mimas",
+      "role": "boltz2"
+    }
+  },
+  "first_design_campaign": "2026-10-06_dd1-human-tnfa-pocket",
+  "design_families": {
+    "DD1": {
+      "description": "First TNFa lateral A/C pocket design brief, evaluated against human and mouse trimers",
+      "campaigns": [
+        "2026-10-06_dd1-human-tnfa-pocket",
+        "2026-10-06_dd1-mouse-tnfa-pocket"
+      ],
+      "candidate_status": "No exact binder sequence generated"
+    }
+  }
+}

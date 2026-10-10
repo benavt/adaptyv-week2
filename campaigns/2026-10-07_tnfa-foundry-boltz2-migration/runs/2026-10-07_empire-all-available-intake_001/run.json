@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "project_id": "TNFA",
+  "campaign_id": "2026-10-07_tnfa-foundry-boltz2-migration",
+  "run_id": "2026-10-07_empire-all-available-intake_001",
+  "created_at": "2026-10-07T21:02:53.153217+00:00",
+  "parents": [
+    {
+      "campaign_id": "2026-10-07_tnfa-foundry-boltz2-migration",
+      "run_id": "2026-10-07_empire-first-batch-intake_001",
+      "manifest_sha256": "ebc8888281320d2552558d51f8ef4f3dcb36337b086c8f4c27c582323d1fa3dc"
+    },
+    {
+      "campaign_id": "2026-10-06_dd1-human-tnfa-pocket",
+      "run_id": "2026-10-07_102236-0400-dd1-human-1tnf-ac-103-110-rfd3-50000-empire_001",
+      "manifest_sha256": "62b6d052aac2f4aaf7e04a097ba825d4adba27fa52fdd1b4ff7c8b9647f22f97"
+    },
+    {
+      "campaign_id": "2026-10-06_dd1-mouse-tnfa-pocket",
+      "run_id": "2026-10-07_102236-0400-dd1-mouse-2tnf-ab-71-112-rfd3-50000-empire_001",
+      "manifest_sha256": "0e37bf281ed366d21392d198fea2185b005260c1b90138079ab96ce51ec62e62"
+    }
+  ],
+  "recipe": {
+    "recipe_id": "tnfa-foundry-boltz2-migration",
+    "stages": {
+      "01_staging": {
+        "method": "verify-two-dd1-source-cohorts-and-materialize-exact-sequences",
+        "execution": "local"
+      },
+      "02_design": {
+        "method": "intake-existing-foundry-rfd3-sequence-and-backbone-outputs",
+        "execution": "empire-beta-existing-output-source",
+        "scientific_parameters": "Explicit draft choices require review and freezing before execution"
+      },
+      "03_filtering": {
+        "substeps": [
+          {
+            "method": "boltz2-prediction",
+            "execution": "mimas"
+          },
+          {
+            "method": "score-and-select",
+            "execution": "local"
+          }
+        ],
+        "score_methods": "pending_explicit_review"
+      },
+      "04_analysis": {
+        "method": "first-round-ranking-and-branch-selection",
+        "execution": "local"
+      }
+    }
+  },
+  "settings": {
+    "run_kind": "all_available_empire_source_intake",
+    "purpose": "Record every available native output from the two requested DD1 Foundry runs at a fixed collection boundary",
+    "snapshot_started_at": "2026-10-07T20:56:08.111436+00:00",
+    "source_runs": [
+      {
+        "campaign_id": "2026-10-06_dd1-human-tnfa-pocket",
+        "run_id": "2026-10-07_102236-0400-dd1-human-1tnf-ac-103-110-rfd3-50000-empire_001",
+        "model_count": 2240,
+        "source_collection_receipt": "campaigns/2026-10-06_dd1-human-tnfa-pocket/runs/2026-10-07_102236-0400-dd1-human-1tnf-ac-103-110-rfd3-50000-empire_001/receipts/2026-10-07_empire-all-available_001_collection.json",
+        "source_collection_receipt_sha256": "7812ff2dfbeb22a2802c8ffa7d43c7e73555acf9aff5f3df8ebb4e84a0c298e1",
+        "native_output_root": "campaigns/2026-10-06_dd1-human-tnfa-pocket/runs/2026-10-07_102236-0400-dd1-human-1tnf-ac-103-110-rfd3-50000-empire_001/02_design/2026-10-07_empire-all-available_001/native"
+      },
+      {
+        "campaign_id": "2026-10-06_dd1-mouse-tnfa-pocket",
+        "run_id": "2026-10-07_102236-0400-dd1-mouse-2tnf-ab-71-112-rfd3-50000-empire_001",
+        "model_count": 2184,
+        "source_collection_receipt": "campaigns/2026-10-06_dd1-mouse-tnfa-pocket/runs/2026-10-07_102236-0400-dd1-mouse-2tnf-ab-71-112-rfd3-50000-empire_001/receipts/2026-10-07_empire-all-available_001_collection.json",
+        "source_collection_receipt_sha256": "035c587302ef6dbacfb7df0420051b90cbd94e97640db8bd9fb425bc27f0a330",
+        "native_output_root": "campaigns/2026-10-06_dd1-mouse-tnfa-pocket/runs/2026-10-07_102236-0400-dd1-mouse-2tnf-ab-71-112-rfd3-50000-empire_001/02_design/2026-10-07_empire-all-available_001/native"
+      }
+    ],
+    "source_files": 8848,
+    "source_bytes": 427207047,
+    "models": 4424,
+    "exact_binder_sequences": 4424,
+    "selection_scope": "All listed regular output files; no quality filtering or subsampling",
+    "parent_intake": "2026-10-07_tnfa-foundry-boltz2-migration/2026-10-07_empire-first-batch-intake_001",
+    "native_outputs_storage": "Hash-verified copies in original source generation run 02_design directories; bulk files referenced by frozen hashes rather than duplicated into this snapshot",
+    "sequence_export": {
+      "method": "rfd3-flat-cif-ca-residue-sequence-export",
+      "version": "1.0",
+      "script_sha256": "e207383bdafcfc26966e1b491c5f79116430dccd3cf1b0af03badc33fafc2bc7",
+      "independent_Biopython_pilot_comparisons": 16
+    },
+    "candidate_draft_directory": "drafts/2026-10-07_tnfa-foundry-boltz2-migration/01_staging/2026-10-07_empire-all-available_001/candidate-records",
+    "candidate_registration": "Previously registered 16 preserved; additional candidate draft records prepared, not yet registered/traced",
+    "generation_unknowns": [
+      "installed engine version",
+      "checkpoint content hash",
+      "effective seed identity"
+    ],
+    "boltz2_settings": null,
+    "scientific_execution_performed": false,
+    "remote_originals_retained": true
+  },
+  "files_sha256": {
+    "campaign.json": "0a07ed5e595a0998f8af1611957d7ead1c4ee7c59ded2dfe10c3b0437c328a78",
+    "payload/export-summary.json": "bd3421dd419fbb522cadc5b16561472690c8d0d02da8ee18944edad7dd9c5c10",
+    "payload/human/all-chain-sequences.fasta": "92990dc31ebbe4b259e0c84e3b1b26e43df1f60a3b1bcfd41a27fc938b1b3b5a",
+    "payload/human/binder-sequences.fasta": "33e9b640433771b87532660694e9d8fbaaaeb6874fca756f6184e5f0aeb8e6cb",
+    "payload/human/model-index.csv": "d1cf362b68cce1707769c67b5db995b4bae2f09d8743f4c38d7083b58306b02c",
+    "payload/human/sequence-provenance.json": "553dbeb308259b15cadda914bee3fc92421c1464be795737f3b8301b3600f969",
+    "payload/mouse/all-chain-sequences.fasta": "2e773a01538cd65ce7331d65e12b2f6e623356d8b0c9d8d701f30f942e0aa7cc",
+    "payload/mouse/binder-sequences.fasta": "6f9be1db1a144c0e6711e772802b41daf080c1d2460fb5aef2f55dfbd5630101",
+    "payload/mouse/model-index.csv": "3823e12ffb0a897fbad80a6384e4b5638da9eb5f2a35a4a52b5276e7f30970ff",
+    "payload/mouse/sequence-provenance.json": "07cfdc784db9212519a81260530ffe021b76f1f9384cd819fa2ee07c65f1b3c4",
+    "payload/source-intake.json": "df7be8436bd226381370116bbbf25310f07e45c11ca492b256182786f778e7b3",
+    "payload/source-snapshot.json": "12332d9b2ab88215884ea3d67a73f8173b5cbefd2e04a6139bca85aae842e5d7",
+    "project.json": "261db18a1e57a8cb7e44ac987779169bffd55f400b2260144f9c6e5e8d62d880",
+    "settings.json": "df7be8436bd226381370116bbbf25310f07e45c11ca492b256182786f778e7b3",
+    "workflow.lock.json": "47f84b2d604f2ad7f15070b039a1a0f0600927ca3d0af8fd1b3afc95846e0e9c"
+  },
+  "scientific_inputs_validated": false
+}

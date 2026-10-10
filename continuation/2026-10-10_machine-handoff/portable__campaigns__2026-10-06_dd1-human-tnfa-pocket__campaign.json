@@ -1,0 +1,148 @@
+{
+  "schema_version": 1,
+  "campaign_id": "2026-10-06_dd1-human-tnfa-pocket",
+  "title": "DD1 \u2014 human TNFa side pocket across protomers A and C",
+  "objective": "Initiate the first TNFA binder-design campaign at the researcher-selected lateral pocket spanning human 1TNF protomers A and C, beginning with hotspot visualization and review before RFD3 Foundry input preparation.",
+  "recipe": {
+    "recipe_id": "dd1-human-tnfa-pocket-foundry-boltz2-analysis",
+    "stages": {
+      "01_staging": {
+        "method": "validate-1tnf-native-author-numbering-researcher-hotspot-revision2",
+        "execution": "local"
+      },
+      "02_design": {
+        "method": "foundry-rfd3",
+        "execution": "empire-beta",
+        "scientific_parameters": "New five-residue hotspot set; 6250 x8 =50000 RFD3 backbones, 60\u2013100-residue binder; Fleet native container route and output/timing paths; no MPNN or refolding"
+      },
+      "03_filtering": {
+        "substeps": [
+          {
+            "method": "boltz2-prediction",
+            "execution": "mimas"
+          },
+          {
+            "method": "score-and-select",
+            "execution": "local"
+          }
+        ],
+        "score_methods": "choose explicitly per campaign",
+        "current_execution_status": "Excluded for this run by researcher: no MPNN or refolding"
+      },
+      "04_analysis": {
+        "method": "compare-rank-plot-and-report",
+        "execution": "local"
+      }
+    }
+  },
+  "created_at": "2026-10-06T18:01:19.856727+00:00",
+  "campaign_type": "binder_design",
+  "design_campaign_index": 1,
+  "initial_design_label": "DD1",
+  "target": {
+    "species": "Homo sapiens",
+    "pdb_id": "1TNF",
+    "assembly": "soluble biological trimer",
+    "chains": [
+      "A",
+      "B",
+      "C"
+    ],
+    "pocket_protomers": [
+      "A",
+      "C"
+    ],
+    "source_numbering": "Deposited author residue IDs",
+    "hotspots": [
+      {
+        "chain": "A",
+        "residues": [
+          104,
+          110,
+          107,
+          109
+        ]
+      },
+      {
+        "chain": "C",
+        "residues": [
+          103
+        ]
+      }
+    ]
+  },
+  "researcher_pocket_description": "Pocket exposed along the side of two different monomers",
+  "review_gate": {
+    "status": "input_preparation_authorized_by_later_user_instruction",
+    "evidence": "Researcher requested both campaign Designs folders for upload/batch launch and chose 60\u2013100 residues for both; this advances the earlier review gate without claiming independent PSE confirmation"
+  },
+  "next_engine": {
+    "name": "RFdiffusion3",
+    "platform": "Foundry",
+    "execution": "empire-beta",
+    "native_input_status": "revision2_local_preparation_verified_Empire_preflight_pending"
+  },
+  "challenge_context": "docs/CHALLENGE.md",
+  "candidate_status": "DD1 is a shared design brief; no exact binder sequence generated",
+  "updated_at": "2026-10-07T10:22:36.945576-04:00",
+  "binder": {
+    "chains": 1,
+    "length_range": [
+      60,
+      100
+    ]
+  },
+  "preparation_status": "Empire_hotspot_revision2_locally_verified_manual_upload_ready_not_submitted",
+  "designs_folder": "Designs/2026-10-07_102236-0400-dd1-human-1tnf-ac-103-110-rfd3-50000-empire_001",
+  "execution_scope": {
+    "stages": [
+      "rfd3"
+    ],
+    "requested_backbones": 50000,
+    "mpnn": "excluded_by_researcher",
+    "refolding": "excluded_by_researcher",
+    "job_submitted": false
+  },
+  "design_family_id": "DD1",
+  "current_run_id": "2026-10-07_102236-0400-dd1-human-1tnf-ac-103-110-rfd3-50000-empire_001",
+  "predecessor_snapshot": {
+    "manifest_sha256": "274c19329dac0491fa52a830d8b37b3e598d1243920705e833abbc59f98b58a4",
+    "archive_index": "local/history/2026-10-06_150412-0400_campaign-naming-history_001/lineage-index.json",
+    "scope": "Previous validated 50000-backbone snapshot; original frozen records retained in naming-history archive"
+  },
+  "related_campaign": "2026-10-06_dd1-mouse-tnfa-pocket",
+  "execution_machine": "empire-beta",
+  "execution_route": "foundry-empire-beta",
+  "output_layout": "runs/<run_id>/02_design/attempt-001/rfd3",
+  "logging": {
+    "attempt_directory": "MACHINE_CONFIGURED_PATH/runs/2026-10-07_102236-0400-dd1-human-1tnf-ac-103-110-rfd3-50000-empire_001/receipts/2026-10-07_102236-0400_empire-dd1-hotspots-r2_001",
+    "events": [
+      "queued",
+      "left_queue_execution_started",
+      "execution_finished"
+    ],
+    "official_queue_start": "Slurm SubmitTime collected after sbatch acceptance",
+    "official_queue_exit": "SLURM_JOB_START_TIME; observed wrapper start only if unavailable",
+    "end_time": "Observed actual native launcher termination, not projected SLURM_JOB_END_TIME",
+    "log_file": "MACHINE_CONFIGURED_PATH/runs/2026-10-07_102236-0400-dd1-human-1tnf-ac-103-110-rfd3-50000-empire_001/receipts/2026-10-07_102236-0400_empire-dd1-hotspots-r2_001/lifecycle.log",
+    "jsonl_file": "MACHINE_CONFIGURED_PATH/runs/2026-10-07_102236-0400-dd1-human-1tnf-ac-103-110-rfd3-50000-empire_001/receipts/2026-10-07_102236-0400_empire-dd1-hotspots-r2_001/lifecycle.jsonl",
+    "summary_file": "MACHINE_CONFIGURED_PATH/runs/2026-10-07_102236-0400-dd1-human-1tnf-ac-103-110-rfd3-50000-empire_001/receipts/2026-10-07_102236-0400_empire-dd1-hotspots-r2_001/timing-summary.json",
+    "job_log": "MACHINE_CONFIGURED_PATH/runs/2026-10-07_102236-0400-dd1-human-1tnf-ac-103-110-rfd3-50000-empire_001/slurm.out",
+    "accounting_refresh": "empire_lifecycle.py accounting; official final scheduler state/end/ElapsedRaw, including cancellation before start"
+  },
+  "prepared_50000_run": {
+    "run_id": "2026-10-06_150412-0400-dd1-human-1tnf-ac-pocket-rfd3-50000_001",
+    "designs_folder": "Designs/2026-10-06_150412-0400-dd1-human-1tnf-ac-pocket-rfd3-50000_001",
+    "execution_machine": "empire-beta",
+    "deployment_id": "2026-10-06_154453-0400_empire-dd1-timing_001",
+    "status": "preserved_not_submitted; Empire seed and bond validation pending"
+  },
+  "related_mimas_smoke_run": {
+    "run_id": "2026-10-06_160209-0400-dd1-human-1tnf-ac-pocket-rfd3-100-mimas_001",
+    "job_id": "3963",
+    "scope": "100 RFD3 models; queued separately; retained unchanged"
+  },
+  "current_deployment_id": "2026-10-07_102236-0400_empire-dd1-hotspots-r2_001",
+  "hotspot_revision": 2,
+  "prior_hotspot_run": "2026-10-06_162135-0400-dd1-human-1tnf-ac-pocket-rfd3-50000-empire_001"
+}

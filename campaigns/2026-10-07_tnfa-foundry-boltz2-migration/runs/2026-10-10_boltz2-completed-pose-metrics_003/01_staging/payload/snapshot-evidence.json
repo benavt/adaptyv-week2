@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-10-10T12:21:33.598514+00:00",
+  "pairs": 32488,
+  "reuse_pairs": 30028,
+  "new_pairs": 2460,
+  "cohorts": {
+    "revised-human": 7672,
+    "revised-mouse": 7576,
+    "original-human": 8552,
+    "original-mouse": 8688
+  },
+  "parent_metrics_sha256": "fa3213e6a7d75f8038354cb5d7de74d9df00a8ef9a55ef48badfe9e7bc4c3e3c",
+  "canonical_score_source_sha256": "fa3213e6a7d75f8038354cb5d7de74d9df00a8ef9a55ef48badfe9e7bc4c3e3c",
+  "salvaged_models_included": true,
+  "partial_cohorts_explicit": true
+}

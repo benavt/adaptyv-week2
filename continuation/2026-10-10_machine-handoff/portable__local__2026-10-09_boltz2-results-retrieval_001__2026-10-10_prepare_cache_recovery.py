@@ -1,0 +1,16 @@
+from pathlib import Path
+import json,shutil,hashlib,collections
+root=Path.cwd();base=root/'campaigns/2026-10-07_tnfa-foundry-boltz2-migration/runs';old=base/'2026-10-09_boltz2-missing-prediction-recovery_001';p=old/'01_staging/payload';audit=old/'04_analysis/2026-10-10_partial-output-audit_001';tasks=json.loads((audit/'remaining-tasks.json').read_text());assert len(tasks)==9776
+out=root/'drafts/03_filtering/2026-10-10_boltz2-cache-loss-recovery_001';out.mkdir(exist_ok=False,parents=True);groups=collections.defaultdict(list)
+# Preserve prior group membership, with completed salvaged tasks excluded.
+pilot_ids={t['task_id'] for t in tasks[:6]}
+for t in tasks:
+ t['parent_recovery_group_id']=t['group_id']
+ source=p/t['native_input_path'];assert hashlib.sha256(source.read_bytes()).hexdigest()==t['native_input_sha256'];t['group_id']='pilot' if t['task_id'] in pilot_ids else t['group_id'];t['native_input_path']='native-inputs/'+t['group_id']+'/'+t['task_id']+'.yaml';dest=out/t['native_input_path'];dest.parent.mkdir(exist_ok=True,parents=True);shutil.copyfile(source,dest);groups[t['group_id']].append(t['task_id'])
+for name in ['validation.py','source-resource-logging-SKILL.md','source-workflow-manifest.json']:shutil.copyfile(p/name,out/name)
+plan=json.loads((p/'recovery-plan.json').read_text());plan.update({'task_count':len(tasks),'pilot_prediction_count':6,'parent_recovery_run':old.name,'salvaged_models':72,'remaining_task_audit_sha256':hashlib.sha256((audit/'remaining-tasks.json').read_bytes()).hexdigest(),'cache_loss_repair':'Restore exact pinned archive; preserve completed and partial models; unchanged scientific options and FAST mode','preservation':'New outputs only, refuse any task with prior CIF; invalid partial files preserved and explicitly excluded pending researcher decision'})
+(out/'tasks.json').write_text(json.dumps(tasks,indent=2)+'\n');(out/'groups.json').write_text(json.dumps([{'group_id':g,'task_ids':v} for g,v in sorted(groups.items())],indent=2)+'\n');(out/'array-group-ids.json').write_text(json.dumps([g for g in sorted(groups) if g!='pilot'])+'\n');(out/'recovery-plan.json').write_text(json.dumps(plan,indent=2)+'\n');(out/'settings.json').write_text(json.dumps(plan,indent=2)+'\n')
+s=(p/'preflight.py').read_text().replace('2026-10-09_mols-repair_','2026-10-10_mols-repair_').replace('2026-10-09_cache-repair-preflight_001.json','2026-10-10_cache-repair-preflight_001.json');(out/'preflight.py').write_text(s)
+s=(p/'recovery.py').read_text().replace('2026-10-09_cache-repair-preflight_001.json','2026-10-10_cache-repair-preflight_001.json');start=s.index(" if gid!='pilot':");end=s.index(" out=RUN/",start);s=s[:start]+s[end:];s=s.replace(" source_root=Path(", " parent_root=RUN.parent/plan['parent_recovery_run']\n for t in tasks:\n  previous=parent_root/'03_filtering/2026-10-09_predictions_001'/t['parent_recovery_group_id']/'native/by_seed'/t['task_id']/'s0'\n  assert not any(previous.glob('*_model_*.cif')),'Existing parent prediction must be preserved'\n source_root=Path(");(out/'recovery.py').write_text(s)
+for name in ['gpu.sbatch','preflight.sbatch']:shutil.copyfile(p/name,out/name)
+print(out);print('groups',len(groups),'tasks',len(tasks))

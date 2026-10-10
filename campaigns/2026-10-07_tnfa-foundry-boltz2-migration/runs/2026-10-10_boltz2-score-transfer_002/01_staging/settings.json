@@ -1,0 +1,7 @@
+{
+  "source_run": "2026-10-10_boltz2-completed-pose-metrics_003",
+  "source_path": "04_analysis/2026-10-10_completed-pose-metrics_003",
+  "metrics_sha256": "3dd573aed5554774723362bec4d02b3414e739f9aadece2acdabf89c840a91be",
+  "runtime_sha256": "31d444c728901982043b0e70e0fb6d27c7f0e3f249052a6fcf245d5564e7d188",
+  "scope": "Lossless compressed transport of validated32488 full-cohort metrics; no scientific settings changed"
+}

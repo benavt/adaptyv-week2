@@ -18,7 +18,7 @@
     ],
     "binding_pH": 7.4,
     "release_pH": 6.0,
-    "construct_sources": "not selected yet; require actual sequence/structure and numbering evidence"
+    "construct_sources": "Exact target source, constructs, chemistry and numbering are selected and recorded per campaign; consult frozen campaign inputs and review evidence."
   },
   "default_recipe": {
     "recipe_id": "foundry-boltz2-local-analysis",
@@ -51,7 +51,7 @@
       }
     }
   },
-  "first_campaign": "not named yet",
+  "first_campaign": "2026-10-06_mouse-tnfa-trimer",
   "guide_references": {
     "design": {
       "path": "reference/02_Design/Mimas_Design_Skills",
@@ -87,6 +87,17 @@
     "boltz2": {
       "execution": "mimas",
       "role": "boltz2"
+    }
+  },
+  "first_design_campaign": "2026-10-06_dd1-human-tnfa-pocket",
+  "design_families": {
+    "DD1": {
+      "description": "First TNFa lateral A/C pocket design brief, evaluated against human and mouse trimers",
+      "campaigns": [
+        "2026-10-06_dd1-human-tnfa-pocket",
+        "2026-10-06_dd1-mouse-tnfa-pocket"
+      ],
+      "candidate_status": "No exact binder sequence generated"
     }
   }
 }

@@ -1,0 +1,183 @@
+{
+  "schema_version": 1,
+  "project_id": "TNFA",
+  "campaign_id": "2026-10-06_dd1-human-tnfa-pocket",
+  "run_id": "2026-10-06_150412-0400-dd1-human-1tnf-ac-pocket-rfd3-50000_001",
+  "created_at": "2026-10-06T19:09:41.818323+00:00",
+  "parents": [
+    {
+      "campaign_id": "2026-10-06_dd1-human-tnfa-pocket",
+      "run_id": "2026-10-06_dd1-rfd3-50000_001",
+      "manifest_sha256": "274c19329dac0491fa52a830d8b37b3e598d1243920705e833abbc59f98b58a4"
+    }
+  ],
+  "recipe": {
+    "recipe_id": "dd1-human-tnfa-pocket-foundry-boltz2-analysis",
+    "stages": {
+      "01_staging": {
+        "method": "validate-1tnf-trimer-native-author-numbering-and-researcher-selected-A-C-hotspots",
+        "execution": "local"
+      },
+      "02_design": {
+        "method": "foundry-rfd3",
+        "execution": "mimas",
+        "scientific_parameters": "One 60\u2013100-residue de novo binder against fixed complete modeled trimer; six selected hotspots; 6250 batches \u00d7 8 samples = 50000 requested backbones; seed 0; RFD3 only; no job submitted"
+      },
+      "03_filtering": {
+        "substeps": [
+          {
+            "method": "boltz2-prediction",
+            "execution": "mimas"
+          },
+          {
+            "method": "score-and-select",
+            "execution": "local"
+          }
+        ],
+        "score_methods": "choose explicitly per campaign",
+        "current_execution_status": "Excluded for this run by researcher: no MPNN or refolding"
+      },
+      "04_analysis": {
+        "method": "compare-rank-plot-and-report",
+        "execution": "local"
+      }
+    }
+  },
+  "settings": {
+    "campaign_id": "2026-10-06_dd1-human-tnfa-pocket",
+    "design_label": "DD1",
+    "prepared_at": "2026-10-06T15:04:12.448388-04:00",
+    "revision_reason": "Researcher clarified DD1 applies to both human and mouse; align local upload and Foundry run identities with timestamp, species, structure and pocket",
+    "binder_length_range": [
+      60,
+      100
+    ],
+    "binder_length_evidence": "User chose 60\u2013100 residues for both upload bundles in this chat",
+    "requested_backbones": 50000,
+    "diffusion_batch_size": 8,
+    "n_batches": 6250,
+    "count_scope": "One specification \u00d7 8 samples \u00d7 6250 batches = 50,000 requested RFD3 backbones",
+    "seed": 0,
+    "source_pdb_id": "1TNF",
+    "species": "Homo sapiens",
+    "source_sha256": "c86bc5041124d7cdcc0585ded990b489ef603b0f0d2b6dbb45a0f76856594ba5",
+    "target_pdb_sha256": "f1c4c9c1f6a5239756951dda9e4b466347a280f3dd3082e06ff9be18131f35c7",
+    "target_residues": 456,
+    "target_atoms": 3552,
+    "input_numbering": "PDB author IDs; native preparation validates exact residue identities, mapping and coordinates",
+    "target_chains": [
+      "A",
+      "B",
+      "C"
+    ],
+    "binder_output_chain": "D",
+    "hotspots_author": [
+      [
+        "A",
+        65,
+        "LYS"
+      ],
+      [
+        "A",
+        112,
+        "LYS"
+      ],
+      [
+        "A",
+        146,
+        "GLU"
+      ],
+      [
+        "C",
+        73,
+        "HIS"
+      ],
+      [
+        "C",
+        90,
+        "LYS"
+      ],
+      [
+        "C",
+        138,
+        "ARG"
+      ]
+    ],
+    "select_hotspots": {
+      "A65": "CB,CG,CD,CE,NZ",
+      "A112": "CB,CG,CD,CE,NZ",
+      "A146": "CB,CG,CD,OE1,OE2",
+      "C73": "CB,CG,ND1,CD2,CE1,NE2",
+      "C90": "CB,CG,CD,CE,NZ",
+      "C138": "CB,CG,CD,NE,CZ,NH1,NH2"
+    },
+    "contig": "A6-157,/0,B6-157,/0,C6-157,/0,60-100",
+    "native_adapter": "Preserve source bonds between fixed retained target atoms; shared installation unchanged",
+    "native_adapter_sha256": "b79dc933633e67c0d2055ee272a8f307f71e17c9f33d1134cac1ee0574db13fd",
+    "runtime_file": "runtime.json",
+    "job_submitted": false,
+    "job_count": 1,
+    "mpnn": "Excluded by researcher; do not execute",
+    "review_evidence": "Researcher authorized DD1 human and mouse input preparation, 60\u2013100-residue binder and 50000 backbones; MPNN/refolding excluded",
+    "guide_authority": [
+      "MACHINE_CONFIGURED_PATH/foundry/docs/rfd3.md",
+      "MACHINE_CONFIGURED_PATH/foundry/docs/input_paths.md",
+      "MACHINE_CONFIGURED_PATH/design/Mimas_Design_Skills/input_workflows.md",
+      "workflow.lock.json"
+    ],
+    "scientific_quality": "No designs generated, binding/eligibility not established",
+    "deposited_sequence_length": 157,
+    "deposited_sequence_sha256": "edb0284136c40c4f8dd367c28340a2020499364de3208b7e085d879a8662fffa",
+    "construct_difference_from_assay": "Deposited human Leu143; challenge sequence Asp143. Source model retained without mutation.",
+    "upload_directory": "campaigns/2026-10-06_dd1-human-tnfa-pocket/Designs/2026-10-06_150412-0400-dd1-human-1tnf-ac-pocket-rfd3-50000_001",
+    "remote_upload_directory": "MACHINE_CONFIGURED_PATH/foundry/runs/2026-10-06_150412-0400-dd1-human-1tnf-ac-pocket-rfd3-50000_001",
+    "output_directory": "MACHINE_CONFIGURED_PATH/foundry/runs/2026-10-06_150412-0400-dd1-human-1tnf-ac-pocket-rfd3-50000_001/02_design/attempt-001/rfd3",
+    "native_validation": "Passed installed Foundry YAML/PDB/Hydra validation of corrected DD1 identity; all target geometry, hotspot atoms, chain roles, numbering and three disulfides retained; 6250 x 8 = 50000; no inference",
+    "refolding": "Excluded by researcher; do not execute",
+    "execution_stages": [
+      "rfd3"
+    ],
+    "slurm_walltime": "14-00:00:00",
+    "walltime_authority": "MACHINE_CONFIGURED_PATH/foundry/pipeline_50k.slurm allocation header only; its downstream pipeline is not used",
+    "step": "design",
+    "attempt": "attempt-001",
+    "monitoring_attempt": "MACHINE_CONFIGURED_PATH/foundry/runs/2026-10-06_150412-0400-dd1-human-1tnf-ac-pocket-rfd3-50000_001/receipts/2026-10-06_150412-0400-monitored-attempt_001",
+    "design_family_id": "DD1",
+    "design_brief": "TNFa lateral pocket spanning native protomers A and C",
+    "run_id": "2026-10-06_150412-0400-dd1-human-1tnf-ac-pocket-rfd3-50000_001",
+    "predecessor_snapshot": {
+      "manifest_sha256": "274c19329dac0491fa52a830d8b37b3e598d1243920705e833abbc59f98b58a4",
+      "archive_index": "local/history/2026-10-06_150412-0400_campaign-naming-history_001/lineage-index.json",
+      "scope": "Previous validated 50000-backbone snapshot; original frozen records retained in naming-history archive"
+    }
+  },
+  "files_sha256": {
+    "campaign.json": "d833c025432c379cf285e7bea2aacb573dea4defdfd0effe1aca5f59982561f0",
+    "payload/1TNF_target.pdb": "f1c4c9c1f6a5239756951dda9e4b466347a280f3dd3082e06ff9be18131f35c7",
+    "payload/README.md": "f0ccb5fb3ce762c85a0a31e5d2d1ba95a1a73c7a45706a952e46df67757ae2e9",
+    "payload/bundle_manifest.json": "28a7ca886b65f6b42401a4310493a610f55f7eec267b7ee63052864d539806ee",
+    "payload/check_outputs.py": "9d78f3a0688cb5a05909aea2e8c99f1a7a1943a957dadbaa703eb84a7c6be280",
+    "payload/design.json": "6d2e89f5817f3263f77109bdf272022064097f3f108344fdcd7065e8038223a8",
+    "payload/design.yaml": "a0fa2c2f391f949dd81bd62776723b84a651701428a8898c4003a777afebeb1e",
+    "payload/expected.json": "edc28df6ef6ddf0161459c832dcc378491041f0f24e266090c81d03661212e65",
+    "payload/preserve_source_bonds.py": "b79dc933633e67c0d2055ee272a8f307f71e17c9f33d1134cac1ee0574db13fd",
+    "payload/preview/2026-10-06_150412-0400-dd1-human-1tnf-ac-pocket-rfd3-50000_001_hotspots.pse": "2066542286de0e182d162e522c6f46c488502060779d52a12922910c064a4618",
+    "payload/preview/validation.json": "3de06106850fa22b908cd9c477adf2053f03492dbfd30fdb21c4fdef1faa184d",
+    "payload/residue_mapping.csv": "fac0deb35bde191d1c0429f0007376b50ec5daa03bce307200725506dfc6c40d",
+    "payload/run_rfd3.py": "58a8a2f75057ed58a1ae962820f551688f1d8f7ada634969737867ee06b01cb4",
+    "payload/runtime.json": "daf0cfd13581f621861be7cdc5f2da96c856fe27c294f4dc31edee735aefac57",
+    "payload/settings.json": "305dff9b5206be2a9abdd35e10e06ef6606edde9d823682f79b4e58e12128b1f",
+    "payload/source/1TNF_asymmetric-unit.cif": "c86bc5041124d7cdcc0585ded990b489ef603b0f0d2b6dbb45a0f76856594ba5",
+    "payload/source/1TNF_deposited.fasta": "4fb9f24663b5b34916bcbb1aff1fd061b4c65606f05101a91eb8afa7a4e0ec8f",
+    "payload/source/lineage.json": "93c897b71e600b13423b90594257e58987942b799d99e8d398663cb2ae9efa75",
+    "payload/source/preparation.json": "1d7f8abbc58645ef47262e52995d680be070b6daacaf6701d8d0411f14cf748e",
+    "payload/validate_native.py": "80f9993d7d8b592cf1e0a207b3c9ffb423944953f5406c3eaf39443d030b293e",
+    "payload/validation.json": "d99dbb47abc69ffab9e766bfaab2288dca4c28f735e3385c7d7882ab855417ba",
+    "payload/verify_bundle.py": "58bd55498ffae6004c8993432650d49627c176514f8d6c2f538cd37c34bfd61b",
+    "payload/workload.sbatch": "60cc2e08524e4791c43ef4e6f0414634e2457ec55abdbe09b009d041fd66aa2c",
+    "project.json": "e46206a7fed2e2278244b5883e0ec54725954510860b56e2bcb494dcb0a767f0",
+    "settings.json": "305dff9b5206be2a9abdd35e10e06ef6606edde9d823682f79b4e58e12128b1f",
+    "workflow.lock.json": "47f84b2d604f2ad7f15070b039a1a0f0600927ca3d0af8fd1b3afc95846e0e9c"
+  },
+  "scientific_inputs_validated": false
+}

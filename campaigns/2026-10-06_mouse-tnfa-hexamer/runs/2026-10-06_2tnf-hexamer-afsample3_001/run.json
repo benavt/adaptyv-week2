@@ -1,0 +1,590 @@
+{
+  "schema_version": 1,
+  "project_id": "TNFA",
+  "campaign_id": "2026-10-06_mouse-tnfa-hexamer",
+  "run_id": "2026-10-06_2tnf-hexamer-afsample3_001",
+  "created_at": "2026-10-06T17:31:17.910052+00:00",
+  "parents": [
+    {
+      "campaign_id": "2026-10-06_mouse-tnfa-trimer",
+      "run_id": "2026-10-06_2tnf-afsample3_001",
+      "manifest_sha256": "93f87e2e77cb18df755b26b4fb47837141092fc690202478f5d668fa73fde112"
+    },
+    {
+      "campaign_id": "2026-10-06_human-mouse-tnfa-hexamer",
+      "run_id": "2026-10-06_1tnf-2tnf-afsample3_001",
+      "manifest_sha256": "e8f0d065e24273cdf0a7ab5128e4f3a6e73c69f43de75c10ffc31096a2e1b2e9"
+    }
+  ],
+  "recipe": {
+    "recipe_id": "2tnf-afsample3-mouse-hexamer-sampling",
+    "stages": {
+      "01_staging": {
+        "method": "validate-deposited-mouse-construct-six-chain-stoichiometry-and-native-af3-input",
+        "execution": "local"
+      },
+      "02_design": {
+        "method": "not-applicable-no-binder-generation",
+        "execution": "none"
+      },
+      "03_filtering": {
+        "method": "afsample3-native-msa-and-template-preparation-and-1000-model-mouse-hexamer-sampling",
+        "execution": "mimas",
+        "score_methods": "Native confidence retained; no ranking thresholds chosen"
+      },
+      "04_analysis": {
+        "method": "exact-count-chain-sequence-coordinate-and-confidence-validation",
+        "execution": "local"
+      }
+    }
+  },
+  "settings": {
+    "engine": "AFSample3",
+    "purpose": "Predict an unconstrained mouse TNFa homohexamer with six identical deposited 2TNF chains",
+    "created_at": "2026-10-06T13:30:34.863131-04:00",
+    "constructs": {
+      "mouse": {
+        "pdb_id": "2TNF",
+        "entity_id": "1",
+        "source_file": "source/2TNF_asymmetric-unit.cif",
+        "source_sha256": "2eb3e612a6aed3e57a2984e0c9220d67f605bd32f8d56cee9b3e49f9565c0b8a",
+        "sequence_sha256": "203a8671e29e18898a46c55a8e0095c1f7a708c76ae0cf62a320a25ab569ff4d",
+        "length": 156,
+        "chain_ids": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F"
+        ],
+        "native_connections": {
+          "_struct_conn.id": [
+            "disulf1",
+            "disulf2",
+            "disulf3"
+          ],
+          "_struct_conn.conn_type_id": [
+            "disulf",
+            "disulf",
+            "disulf"
+          ],
+          "_struct_conn.pdbx_leaving_atom_flag": [
+            "?",
+            "?",
+            "?"
+          ],
+          "_struct_conn.pdbx_PDB_id": [
+            "?",
+            "?",
+            "?"
+          ],
+          "_struct_conn.ptnr1_label_asym_id": [
+            "A",
+            "B",
+            "C"
+          ],
+          "_struct_conn.ptnr1_label_comp_id": [
+            "CYS",
+            "CYS",
+            "CYS"
+          ],
+          "_struct_conn.ptnr1_label_seq_id": [
+            "69",
+            "69",
+            "69"
+          ],
+          "_struct_conn.ptnr1_label_atom_id": [
+            "SG",
+            "SG",
+            "SG"
+          ],
+          "_struct_conn.pdbx_ptnr1_label_alt_id": [
+            "?",
+            "?",
+            "?"
+          ],
+          "_struct_conn.pdbx_ptnr1_PDB_ins_code": [
+            "?",
+            "?",
+            "?"
+          ],
+          "_struct_conn.pdbx_ptnr1_standard_comp_id": [
+            "?",
+            "?",
+            "?"
+          ],
+          "_struct_conn.ptnr1_symmetry": [
+            "1_555",
+            "1_555",
+            "1_555"
+          ],
+          "_struct_conn.ptnr2_label_asym_id": [
+            "A",
+            "B",
+            "C"
+          ],
+          "_struct_conn.ptnr2_label_comp_id": [
+            "CYS",
+            "CYS",
+            "CYS"
+          ],
+          "_struct_conn.ptnr2_label_seq_id": [
+            "100",
+            "100",
+            "100"
+          ],
+          "_struct_conn.ptnr2_label_atom_id": [
+            "SG",
+            "SG",
+            "SG"
+          ],
+          "_struct_conn.pdbx_ptnr2_label_alt_id": [
+            "?",
+            "?",
+            "?"
+          ],
+          "_struct_conn.pdbx_ptnr2_PDB_ins_code": [
+            "?",
+            "?",
+            "?"
+          ],
+          "_struct_conn.ptnr1_auth_asym_id": [
+            "A",
+            "B",
+            "C"
+          ],
+          "_struct_conn.ptnr1_auth_comp_id": [
+            "CYS",
+            "CYS",
+            "CYS"
+          ],
+          "_struct_conn.ptnr1_auth_seq_id": [
+            "69",
+            "69",
+            "69"
+          ],
+          "_struct_conn.ptnr2_auth_asym_id": [
+            "A",
+            "B",
+            "C"
+          ],
+          "_struct_conn.ptnr2_auth_comp_id": [
+            "CYS",
+            "CYS",
+            "CYS"
+          ],
+          "_struct_conn.ptnr2_auth_seq_id": [
+            "101",
+            "101",
+            "101"
+          ],
+          "_struct_conn.ptnr2_symmetry": [
+            "1_555",
+            "1_555",
+            "1_555"
+          ],
+          "_struct_conn.pdbx_ptnr3_label_atom_id": [
+            "?",
+            "?",
+            "?"
+          ],
+          "_struct_conn.pdbx_ptnr3_label_seq_id": [
+            "?",
+            "?",
+            "?"
+          ],
+          "_struct_conn.pdbx_ptnr3_label_comp_id": [
+            "?",
+            "?",
+            "?"
+          ],
+          "_struct_conn.pdbx_ptnr3_label_asym_id": [
+            "?",
+            "?",
+            "?"
+          ],
+          "_struct_conn.pdbx_ptnr3_label_alt_id": [
+            "?",
+            "?",
+            "?"
+          ],
+          "_struct_conn.pdbx_ptnr3_PDB_ins_code": [
+            "?",
+            "?",
+            "?"
+          ],
+          "_struct_conn.details": [
+            "?",
+            "?",
+            "?"
+          ],
+          "_struct_conn.pdbx_dist_value": [
+            "2.036",
+            "2.031",
+            "2.044"
+          ],
+          "_struct_conn.pdbx_value_order": [
+            "?",
+            "?",
+            "?"
+          ],
+          "_struct_conn.pdbx_role": [
+            "?",
+            "?",
+            "?"
+          ]
+        },
+        "native_connections_policy": "Preserved as source evidence; no explicit interchain bonds or forced topology in input."
+      }
+    },
+    "total_protein_chains": 6,
+    "total_residues": 936,
+    "topology": "Six independent chains; no forced trimer arrangement, artificial linkers, interchain bonds or ligand additions",
+    "sampling": {
+      "model_seeds": [
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        168,
+        169,
+        170,
+        171,
+        172,
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        179,
+        180,
+        181,
+        182,
+        183,
+        184,
+        185,
+        186,
+        187,
+        188,
+        189,
+        190,
+        191,
+        192,
+        193,
+        194,
+        195,
+        196,
+        197,
+        198,
+        199,
+        200,
+        201,
+        202,
+        203,
+        204,
+        205,
+        206,
+        207,
+        208,
+        209,
+        210,
+        211,
+        212,
+        213,
+        214,
+        215,
+        216,
+        217,
+        218,
+        219,
+        220,
+        221,
+        222,
+        223,
+        224,
+        225,
+        226,
+        227,
+        228,
+        229,
+        230,
+        231,
+        232,
+        233,
+        234,
+        235,
+        236,
+        237,
+        238,
+        239,
+        240,
+        241,
+        242,
+        243,
+        244,
+        245,
+        246,
+        247,
+        248,
+        249,
+        250,
+        251,
+        252,
+        253,
+        254,
+        255,
+        256,
+        257,
+        258,
+        259,
+        260,
+        261,
+        262,
+        263,
+        264,
+        265,
+        266,
+        267,
+        268,
+        269,
+        270,
+        271,
+        272,
+        273,
+        274,
+        275,
+        276,
+        277,
+        278,
+        279,
+        280,
+        281,
+        282,
+        283,
+        284,
+        285,
+        286,
+        287,
+        288,
+        289,
+        290,
+        291,
+        292,
+        293,
+        294,
+        295,
+        296,
+        297,
+        298,
+        299,
+        300
+      ],
+      "seed_count": 200,
+      "diffusion_samples_per_seed": 5,
+      "expected_native_samples": 1000,
+      "num_recycles": 10,
+      "num_msa": 1024,
+      "msa_rand_fraction": 0.4,
+      "shuffle_msa": true,
+      "flash_attention_implementation": "xla",
+      "tar_output": false,
+      "low_memory": true,
+      "num_workers": 1
+    },
+    "msa": {
+      "method": "Native AF3 data pipeline; sequence-specific MSA searches and native pairing",
+      "structural_templates": "Native template search (fields omitted), maximum template date 2021-09-30"
+    },
+    "defaults_basis": {
+      "site_profile": "Mimas Folding Skills app_reference AFSample3 ensemble profile and examples/cluster_launchers/run_backup_afsample3.sh",
+      "distinction": "Site ensemble profile randomization fraction 0.4; bare runtime flag default is 0.0. Explicit site profile used as requested.",
+      "seeds": "Explicit 101-300, same fixed list as preceding mouse run; native seed expansion omitted to preserve reproducibility."
+    },
+    "execution": {
+      "step": "folding",
+      "attempt": "attempt-001",
+      "cpu_preparation": {
+        "cpus": 32,
+        "mem_gb": 220,
+        "walltime": "24:00:00",
+        "partition": "debug"
+      },
+      "gpu_inference": {
+        "gpus": 1,
+        "cpus": 8,
+        "mem_gb": 256,
+        "walltime": "96:00:00",
+        "partition": "debug"
+      },
+      "resource_logging": {
+        "whole_job": true,
+        "interval_seconds": 15,
+        "monitor_version": "2026-10-06_v1",
+        "manifest_sha256": "206e0891dd533f808955c347716ac90d98f9c505d2a680f134fc94ab5a0a823a"
+      }
+    },
+    "acceptance": {
+      "expected_seed_sample_pairs": "Exactly seeds 101\u2013300 \u00d7 samples 0\u20134, excluding top-ranked duplicate model",
+      "chain_identity": "A/B/C/D/E/F each match deposited mouse 2TNF 156-aa sequence",
+      "coordinates": "Finite",
+      "confidence": "Native confidence and summary sidecars present; no scientific ranking thresholds imposed"
+    },
+    "parents": [
+      "2026-10-06_mouse-tnfa-trimer/2026-10-06_2tnf-afsample3_001",
+      "2026-10-06_human-mouse-tnfa-hexamer/2026-10-06_1tnf-2tnf-afsample3_001"
+    ],
+    "provenance": {
+      "construct_parent": "2026-10-06_mouse-tnfa-trimer/2026-10-06_2tnf-afsample3_001",
+      "profile_parent": "2026-10-06_human-mouse-tnfa-hexamer/2026-10-06_1tnf-2tnf-afsample3_001",
+      "authorization": "User requested an additional mouse TNFa six-mer AFS3 run; same 1000-model site profile retained"
+    },
+    "runtime_identity": {
+      "native_parser_validated": true,
+      "source_git_commit": "507e8fd492379cb3996d1ba2e04794e8ce2191df",
+      "source_files": [
+        {
+          "path": "/gpfs/u/barn/PMAR/shared/local/alphafold3/t_afsample3/run_afsample3.py",
+          "bytes": 33462,
+          "sha256": "b3cfdd3f1821f9ab20af9bafeeb136da136aad5c57e2a304aee1b7d4656fe0c8"
+        },
+        {
+          "path": "/gpfs/u/barn/PMAR/shared/local/alphafold3/t_afsample3/alphafold3/src/alphafold3/common/folding_input.py",
+          "bytes": 53066,
+          "sha256": "5422eeda658f9d768ce1fa13102d47cb889d0f255b750e5c734bdea360d4032f"
+        },
+        {
+          "path": "/gpfs/u/barn/PMAR/shared/local/alphafold3/t_afsample3/alphafold3/src/alphafold3/data/pipeline.py",
+          "bytes": 24299,
+          "sha256": "62ba1f4679cbcbe9ea80bbcde701d9d5703bcf35a8719044130da0fbecb1f48d"
+        },
+        {
+          "path": "/gpfs/u/barn/PMAR/shared/local/alphafold3/alphafold3/models/af3.bin",
+          "bytes": 1146811260,
+          "sha256": "7709a482399e17ee8398b336a3cf5a9a56dee679c69dce73b651b7dc2d500474"
+        }
+      ],
+      "chains": [
+        {
+          "id": "A",
+          "length": 156,
+          "sequence_sha256": "203a8671e29e18898a46c55a8e0095c1f7a708c76ae0cf62a320a25ab569ff4d"
+        },
+        {
+          "id": "B",
+          "length": 156,
+          "sequence_sha256": "203a8671e29e18898a46c55a8e0095c1f7a708c76ae0cf62a320a25ab569ff4d"
+        },
+        {
+          "id": "C",
+          "length": 156,
+          "sequence_sha256": "203a8671e29e18898a46c55a8e0095c1f7a708c76ae0cf62a320a25ab569ff4d"
+        },
+        {
+          "id": "D",
+          "length": 156,
+          "sequence_sha256": "203a8671e29e18898a46c55a8e0095c1f7a708c76ae0cf62a320a25ab569ff4d"
+        },
+        {
+          "id": "E",
+          "length": 156,
+          "sequence_sha256": "203a8671e29e18898a46c55a8e0095c1f7a708c76ae0cf62a320a25ab569ff4d"
+        },
+        {
+          "id": "F",
+          "length": 156,
+          "sequence_sha256": "203a8671e29e18898a46c55a8e0095c1f7a708c76ae0cf62a320a25ab569ff4d"
+        }
+      ],
+      "seed_count": 200,
+      "templates": "native search requested",
+      "databases_readable": true,
+      "hmmer_executable": true,
+      "sanitised_name": "2026-10-06_2TNF_mouse_TNFa_hexamer"
+    }
+  },
+  "files_sha256": {
+    "campaign.json": "713ca68e2267c0a1a06a53915663fe0d32f85ed028d6d84a3e5cdaf4e27dab1f",
+    "payload/README.md": "9cc93ead2a3a6b779de5ca12edd12586036672c2b19b1d45931ed4800db81042",
+    "payload/execution/binding.json": "2222ea027f600f63e4a4accaef034f5f118e8679392353c4cdc92b08893495c2",
+    "payload/execution/predict_afsample3.slurm": "d9b0e08128d05dd9ee365100e51a4b69d0b183f75152087672ed2101049ee62a",
+    "payload/execution/prepare_msa.slurm": "e0b9a70668cc9c866fc75d4267582356fab3f97976c933e5fb3f8144a3862c82",
+    "payload/execution/runtime-preflight.json": "e7c46a633c072a805ded86ba49dc2a40cc0e89ed27140eb5f78cdf5e93df224d",
+    "payload/execution/runtime_preflight.py": "d0c6b2cdde94dea1e553ece6eba7756e1da24578e184addb6a21f669ce493e18",
+    "payload/execution/validate_input.py": "5d8aeb13fc099e537507f6117330697801d8b4c7cdd1b269245d6ba5db0ca2a1",
+    "payload/execution/validate_outputs.py": "ac1c40a03bb3e7c3677b20e8d74cfc0e84aaae206f85476f8d6f2229392d2dc8",
+    "payload/native/2026-10-06_2TNF_hexamer_afsample3.json": "b12599750275762cbd8fa8226bf438745ec6be7051b30116f597f9458b260807",
+    "payload/settings.json": "53637e93df4a9eb2acc37907e4c183691d7b6b4ae87f6b62a91a64a1c5828b2c",
+    "payload/source/2TNF_asymmetric-unit.cif": "2eb3e612a6aed3e57a2984e0c9220d67f605bd32f8d56cee9b3e49f9565c0b8a",
+    "payload/source/2TNF_mouse_deposited.fasta": "67ee1e8cfe55a5df0ef26304ec410850cf0492a61eb41ee2fa925e091e04ade6",
+    "payload/source/2TNF_native_numbering.csv": "bf49deee393599fb837b4a70fdeb34d9ed122ddafb72c3d6badcd1e58ac3d453",
+    "project.json": "055e8257b26f56efee1548a19ddb60b868dddb390d2791672ecca34cbada272b",
+    "settings.json": "53637e93df4a9eb2acc37907e4c183691d7b6b4ae87f6b62a91a64a1c5828b2c",
+    "workflow.lock.json": "47f84b2d604f2ad7f15070b039a1a0f0600927ca3d0af8fd1b3afc95846e0e9c"
+  },
+  "scientific_inputs_validated": false
+}

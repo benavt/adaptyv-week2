@@ -1,0 +1,7 @@
+{
+  "archive": "local/2026-10-09_boltz2-results-retrieval_001/2026-10-10_candidate-traces-portable-backup.tar.gz",
+  "sha256": "bb046053590b4708f85947c1d17230ea37448fb88869278590c316533cfda785",
+  "size_bytes": 10969994,
+  "restore": "tar -xzf local/2026-10-09_boltz2-results-retrieval_001/2026-10-10_candidate-traces-portable-backup.tar.gz from repository root",
+  "scope": "Exact candidate traces and original completion/index hashes; immutable copied evidence"
+}

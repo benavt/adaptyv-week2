@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "campaign_id": "2026-10-06_human-mouse-tnfa-hexamer",
+  "title": "Human and mouse TNFa hetero-hexamer sampling",
+  "objective": "Generate 1000 AFSample3 predictions of a six-chain assembly containing three deposited human 1TNF and three deposited mouse 2TNF sequences, with whole-job CPU/RSS and allocated GPU telemetry.",
+  "recipe": {
+    "recipe_id": "1tnf-2tnf-afsample3-heterohexamer-sampling",
+    "stages": {
+      "01_staging": {
+        "method": "validate-deposited-human-mouse-constructs-six-chain-stoichiometry-and-native-af3-input",
+        "execution": "local"
+      },
+      "02_design": {
+        "method": "not-applicable-no-binder-generation",
+        "execution": "none"
+      },
+      "03_filtering": {
+        "method": "afsample3-native-msa-and-template-preparation-and-1000-model-heterohexamer-sampling",
+        "execution": "mimas",
+        "score_methods": "Native confidence retained; no ranking thresholds chosen"
+      },
+      "04_analysis": {
+        "method": "exact-count-chain-sequence-coordinate-and-confidence-validation",
+        "execution": "local"
+      }
+    }
+  },
+  "created_at": "2026-10-06T17:17:23.523210+00:00"
+}
