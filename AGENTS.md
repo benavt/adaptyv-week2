@@ -1,5 +1,10 @@
 # Week2 TNFA agent entry point
 
+For shared workflow defaults and lifecycle, start at
+`external/research-workflows/README.md`; read only the relevant shared contract
+and this project's Week 2 guidance/overrides. The submodule and
+`workflow.lock.json` pin define the release; verify with `workspace.py pin`.
+
 Start with `python3 scripts/workspace.py show` and overview.md. Select a campaign
 and stage; load only its guide using `show --stage STAGE`. Read docs/CHALLENGE.md
 before scientific work. Shared code and guide identities are pinned in
@@ -25,8 +30,9 @@ selection evidence and rationale. Missing generation/ranking evidence stays
 explicit; computational scores and recorded metadata are not eligibility proof.
 See docs/WORKSPACE.md for the commands. Submission requires researcher review.
 
-Fleet resolves private machines, storage and environment locations. Transport
-previews by default and --apply verifies hashes; it does not submit compute.
+Fleet resolves machine inventory and SSH/Tailscale bindings/access. Project
+adapters own workflow and launch semantics. Transport previews by default and
+--apply verifies hashes; it does not submit compute.
 Validate native adapters, actual runtimes and inputs before the first scientific
 run against new paths. Keep bulk artifacts canonical remotely and collect selected
 verified copies. Registry/selection records are ignored: preserve them in recorded

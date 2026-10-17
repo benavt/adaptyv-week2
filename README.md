@@ -7,6 +7,10 @@ score and analyze selected results on the Mac. Mouse trimer sampling is defined 
 Foundry/Boltz2 settings remain unset.
 
 Start with `python3 scripts/workspace.py show` and [overview.md](overview.md).
+The shared workflow is pinned as `external/research-workflows`; run
+`python3 scripts/workspace.py pin` to verify the effective release. After a
+fresh clone, initialize the submodule with
+`git submodule update --init -- external/research-workflows`.
 Read [challenge requirements](docs/CHALLENGE.md) before scientific choices and
 [workflow](docs/WORKSPACE.md) for preparation, transfer and sequence tracing.
 Foundry/Boltz2 execution against the new paths has not yet been validated. The
