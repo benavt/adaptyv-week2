@@ -2,6 +2,8 @@
 
 The objective is a protein binder that recognizes soluble human TNF-alpha, cross-reacts with mouse TNF-alpha, and preferentially interacts at pH 7.4 rather than pH 6.0. We used complementary structural and sequence evidence to prioritize molecules for experimental assessment. The present main text is restricted to the 20 exact sequences in the October 19 ranked review CSV; its order is preserved throughout.
 
+Retained campaign records document **at least 49,796 design/proposal attempts** and **47,962 distinct exact sequences** in the audited outputs. The write-up explains the counting scope and why the attempt count is a lower bound.
+
 [Adaptyv competition on ProteinBase](https://proteinbase.com/competitions/anthropic-adaptyv-2026) · [TNF-alpha challenge](https://proteinbase.com/competitions/anthropic-adaptyv-2026/challenges/tnf-alpha)
 
 ## Write-up
@@ -9,20 +11,34 @@ The objective is a protein binder that recognizes soluble human TNF-alpha, cross
 - [Main text: selected 20 candidates (PDF)](2026-10-19_tnfa-selected20-main-text.pdf) - 19 October 2026 review edition.
 - [Candidate names, exact sequences, and sequence classes (CSV)](2026-10-19_tnfa-selected20-sequences.csv) - rows follow the ranked review order.
 
-The write-up reconstructs each candidate's design history and retains the **side epitope** and **top epitope** hotspot depictions. Each candidate has a single comparison page pairing top-down and side views for all six models: human and mouse TNF-alpha complexes from Boltz2, OpenDDE, and AlphaFold3.
+The write-up opens with campaign design accounting and the original cluster-labeled **UMAP, PCA and t-SNE projections**, followed by all 18 hexamer ensemble PNGs grouped as **head-to-head, side-to-side and tail-to-tail**. It reconstructs each selected candidate's history on one information page and retains the **side epitope** and **top epitope** hotspot depictions. Each candidate also has one comparison page pairing top-down and side views for all six human/mouse models from Boltz2, OpenDDE and AlphaFold3.
+
+DeltaForge KD consistently scores **one complete candidate monomer against the human TNF-alpha trimer** and, separately, **one monomer against the mouse TNF-alpha trimer**. For fusions, the monomer includes both domains and the linker. All 40 saved results pass the chain-count and scoring-scope audit.
+
+- [DeltaForge KD values and 40-result scope audit](2026-10-19_tnfa-selected20-deltaforge-kd.csv) · [scoring protocol](docs/DELTAFORGE_PROTOCOL.md)
+- [Campaign design-effort ledger](2026-10-19_tnfa-design-effort.csv)
+- [Hexamer cluster-to-category map and source image links](2026-10-19_tnfa-hexamer-clusters.csv)
+
+## F01 AFSample3 ensemble animation
+
+[![F01 sampled states around a fixed human TNF-alpha trimer](media/F01/F01_AFSample3_sampled_states.gif)](media/F01/F01_AFSample3_sampled_states.mp4)
+
+**[Watch or download the MP4](media/F01/F01_AFSample3_sampled_states.mp4)** · [GIF](media/F01/F01_AFSample3_sampled_states.gif) · [Animation methods and sampled-model measurements](media/F01/README.md)
+
+The regenerated zoomed movie shows one linked F01 binder from each of 23 AFSample3 models, aligned to a fixed human TNF-alpha trimer. The sampled anchors illustrate N-domain, two-domain and C-domain proximity to the corresponding parent-defined pockets. They comprise 21 native single-binder models and two native three-binder models, selected from a 1,000-model distance analysis. Smooth transitions connect the sampled structures for visualization; they are not a molecular-dynamics trajectory. Main-text section 1.8 describes these results.
 
 ## Top 20: human TNF-alpha trimer complexes
 
 The gallery follows the same 20-candidate order as the write-up. Each row shows two views of the same selected **human Boltz2 Exact** model from the existing three-copy predictions: one TNF-alpha trimer with three copies of the candidate. These are computational structures used for candidate prioritization. Click an image for full resolution.
 
-Human TNF-alpha protomers use three blue shades. Single-domain candidate chains are **cyan**. Two-domain fusions use **cyan** for domain 1, **green** for the GS linker, and **magenta** for domain 2. Top-down and side views share the candidate's alignment and camera scale; the side view rotates the camera by 90 degrees.
+Human TNF-alpha protomers use three blue shades. Single-domain candidate chains are **cyan**. Two-domain fusions use **cyan** for domain 1, **green** for the GS linker, and **magenta** for domain 2. All models use a common, structurally aligned TNF-alpha reference frame. The **top epitope points upward in every side view**. Top-down and side views share each candidate's camera scale.
 
 | Rank | Candidate and sequence class | Human TNF-alpha: top-down | Human TNF-alpha: side |
 | ---: | --- | --- | --- |
 | 01 | **P37-d002**<br>Proton-Potts redesign | <a href="candidates/2026-10-19_selected20_001/models/01_P37-d002/top.png"><img src="candidates/2026-10-19_selected20_001/models/01_P37-d002/top.png" width="260" alt="P37-d002 bound to human TNF-alpha trimer, top-down view" /></a> | <a href="candidates/2026-10-19_selected20_001/models/01_P37-d002/side.png"><img src="candidates/2026-10-19_selected20_001/models/01_P37-d002/side.png" width="260" alt="P37-d002 bound to human TNF-alpha trimer, side view" /></a> |
 | 02 | **RP06-d085-V60T**<br>expert mutant | <a href="candidates/2026-10-19_selected20_001/models/02_RP06-d085-V60T/top.png"><img src="candidates/2026-10-19_selected20_001/models/02_RP06-d085-V60T/top.png" width="260" alt="RP06-d085-V60T bound to human TNF-alpha trimer, top-down view" /></a> | <a href="candidates/2026-10-19_selected20_001/models/02_RP06-d085-V60T/side.png"><img src="candidates/2026-10-19_selected20_001/models/02_RP06-d085-V60T/side.png" width="260" alt="RP06-d085-V60T bound to human TNF-alpha trimer, side view" /></a> |
 | 03 | **F07**<br>GS fusion | <a href="candidates/2026-10-19_selected20_001/models/03_F07/top.png"><img src="candidates/2026-10-19_selected20_001/models/03_F07/top.png" width="260" alt="F07 bound to human TNF-alpha trimer, top-down view" /></a> | <a href="candidates/2026-10-19_selected20_001/models/03_F07/side.png"><img src="candidates/2026-10-19_selected20_001/models/03_F07/side.png" width="260" alt="F07 bound to human TNF-alpha trimer, side view" /></a> |
-| 04 | **F01**<br>GS fusion | <a href="candidates/2026-10-19_selected20_001/models/04_F01/top.png"><img src="candidates/2026-10-19_selected20_001/models/04_F01/top.png" width="260" alt="F01 bound to human TNF-alpha trimer, top-down view" /></a> | <a href="candidates/2026-10-19_selected20_001/models/04_F01/side.png"><img src="candidates/2026-10-19_selected20_001/models/04_F01/side.png" width="260" alt="F01 bound to human TNF-alpha trimer, side view" /></a> |
+| 04 | **F01**<br>GS fusion<br>[AFSample3 animation](media/F01/README.md) | <a href="candidates/2026-10-19_selected20_001/models/04_F01/top.png"><img src="candidates/2026-10-19_selected20_001/models/04_F01/top.png" width="260" alt="F01 bound to human TNF-alpha trimer, top-down view" /></a> | <a href="candidates/2026-10-19_selected20_001/models/04_F01/side.png"><img src="candidates/2026-10-19_selected20_001/models/04_F01/side.png" width="260" alt="F01 bound to human TNF-alpha trimer, side view" /></a> |
 | 05 | **RP03-d017**<br>Proton-Potts redesign | <a href="candidates/2026-10-19_selected20_001/models/05_RP03-d017/top.png"><img src="candidates/2026-10-19_selected20_001/models/05_RP03-d017/top.png" width="260" alt="RP03-d017 bound to human TNF-alpha trimer, top-down view" /></a> | <a href="candidates/2026-10-19_selected20_001/models/05_RP03-d017/side.png"><img src="candidates/2026-10-19_selected20_001/models/05_RP03-d017/side.png" width="260" alt="RP03-d017 bound to human TNF-alpha trimer, side view" /></a> |
 | 06 | **P18-d092**<br>Proton-Potts redesign | <a href="candidates/2026-10-19_selected20_001/models/06_P18-d092/top.png"><img src="candidates/2026-10-19_selected20_001/models/06_P18-d092/top.png" width="260" alt="P18-d092 bound to human TNF-alpha trimer, top-down view" /></a> | <a href="candidates/2026-10-19_selected20_001/models/06_P18-d092/side.png"><img src="candidates/2026-10-19_selected20_001/models/06_P18-d092/side.png" width="260" alt="P18-d092 bound to human TNF-alpha trimer, side view" /></a> |
 | 07 | **P12-d084**<br>Proton-Potts redesign | <a href="candidates/2026-10-19_selected20_001/models/07_P12-d084/top.png"><img src="candidates/2026-10-19_selected20_001/models/07_P12-d084/top.png" width="260" alt="P12-d084 bound to human TNF-alpha trimer, top-down view" /></a> | <a href="candidates/2026-10-19_selected20_001/models/07_P12-d084/side.png"><img src="candidates/2026-10-19_selected20_001/models/07_P12-d084/side.png" width="260" alt="P12-d084 bound to human TNF-alpha trimer, side view" /></a> |

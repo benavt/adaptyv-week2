@@ -47,3 +47,22 @@
 !/candidates/2026-10-19_selected20_001/models/*/top.png
 !/candidates/2026-10-19_selected20_001/models/*/side.png
 !/.gitattributes
+
+# Reviewed revision 3: standardized KD audit and original hexamer context
+!/scripts/tnfa_deltaforge_scope.py
+!/docs/DELTAFORGE_PROTOCOL.md
+!/2026-10-19_tnfa-selected20-deltaforge-kd.csv
+!/2026-10-19_tnfa-design-effort.csv
+!/2026-10-19_tnfa-hexamer-clusters.csv
+!/figures/
+!/figures/2026-10-19_hexamer-context/
+!/figures/2026-10-19_hexamer-context/*.png
+
+# Regenerated F01 AFSample3 visualization and measurements
+!/media/
+!/media/F01/
+!/media/F01/README.md
+!/media/F01/F01_AFSample3_sampled_states.gif
+!/media/F01/F01_AFSample3_sampled_states.mp4
+!/media/F01/F01_AFSample3_sampled_state.png
+!/media/F01/F01_sampled_model_path.csv
