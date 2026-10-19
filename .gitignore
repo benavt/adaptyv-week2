@@ -36,3 +36,14 @@
 !campaigns/2026-10-07_tnfa-foundry-boltz2-migration/README.md
 !campaigns/2026-10-07_tnfa-protonpottsmpnn-redesign/README.md
 !campaigns/2026-10-07_tnfa-apnovo-epitope/README.md
+
+# Reviewed October 19 selected-20 write-up and human structure gallery
+!/2026-10-19_tnfa-selected20-main-text.pdf
+!/2026-10-19_tnfa-selected20-sequences.csv
+!/candidates/
+!/candidates/2026-10-19_selected20_001/
+!/candidates/2026-10-19_selected20_001/models/
+!/candidates/2026-10-19_selected20_001/models/*/
+!/candidates/2026-10-19_selected20_001/models/*/top.png
+!/candidates/2026-10-19_selected20_001/models/*/side.png
+!/.gitattributes
