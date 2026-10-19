@@ -1,75 +1,51 @@
-# Week2 — TNF-alpha
+# Week 2 - TNF-alpha
 
-Separate scientific project `TNFA` for Adaptyv Challenge 02. Local code is the
-control surface: prepare hotspots locally, run Foundry and Boltz2 on Mimas, then
-score and analyze selected results on the Mac. Mouse trimer sampling is defined in
-`2026-10-06_mouse-tnfa-trimer`; binder-design constructs, hotspots and detailed
-Foundry/Boltz2 settings remain unset.
+The objective is a protein binder that recognizes soluble human TNF-alpha, cross-reacts with mouse TNF-alpha, and preferentially interacts at pH 7.4 rather than pH 6.0. We used complementary structural and sequence evidence to prioritize molecules for experimental assessment. The present main text is restricted to the 20 exact sequences in the October 19 ranked review CSV; its order is preserved throughout.
 
-Start with `python3 scripts/workspace.py show` and [overview.md](overview.md).
-The shared workflow is pinned as `external/research-workflows`; run
-`python3 scripts/workspace.py pin` to verify the effective release. After a
-fresh clone, initialize the submodule with
-`git submodule update --init -- external/research-workflows`.
-Read [challenge requirements](docs/CHALLENGE.md) before scientific choices and
-[workflow](docs/WORKSPACE.md) for preparation, transfer and sequence tracing.
-Foundry/Boltz2 execution against the new paths has not yet been validated. The
-2TNF AFSample3 sampling run uses its own validated native parser and submitted
-Slurm launchers.
+[Adaptyv competition on ProteinBase](https://proteinbase.com/competitions/anthropic-adaptyv-2026) · [TNF-alpha challenge](https://proteinbase.com/competitions/anthropic-adaptyv-2026/challenges/tnf-alpha)
 
-```text
-project.json                   Target and four-stage recipe
-workflow.lock.json             Shared code and guide version pins
-campaigns/<campaign>/
-  campaign.json                Scientific question and chosen recipe
-  runs/<YYYY-MM-DD_label_NNN>/
-    run.json                   Frozen inputs/settings identity and parent links
-    01_staging/                Frozen native inputs
-    02_design/                 Foundry results
-    03_filtering/              Boltz2 results and local scores
-    04_analysis/               Comparisons, plots and reports
-    state.json                 Recorded progress
-    receipts/                  Transport/execution observations
-registry/candidates/           Exact sequences, native origins and parent candidates
-registry/observations/         Source-linked scores and other evidence
-drafts/                        Editable inputs and proposed provenance records
-submissions/<dated-selection>/ Frozen ranked set with complete candidate traces
-reference/                     Retained pre-adoption starter; historical references
-local/                         Private location configuration
-```
+## Write-up
 
-Each stage has one responsibility; execution location can differ by substep.
-Campaigns share the pinned stages and standards rather than duplicate manuals.
-Candidate traces explain how one final sequence arose across runs and campaigns;
-a frozen selection preserves the ranking and evidence for the chosen set.
+- [Main text: selected 20 candidates (PDF)](2026-10-19_tnfa-selected20-main-text.pdf) - 19 October 2026 review edition.
+- [Candidate names, exact sequences, and sequence classes (CSV)](2026-10-19_tnfa-selected20-sequences.csv) - rows follow the ranked review order.
 
-Git tracks portable source, reviewed campaign configs and requirements. Runs,
-registry records, drafts, dated selection packages, private settings, weights,
-predictions and references are currently ignored. Back these up with the actual
-scientific artifacts; a Git clone alone cannot restore them. Publish nonsecret
-provenance only through a deliberate reviewed allowlist change. Restore private
-configuration and retained guides before creating runs in a fresh clone.
+The write-up reconstructs each candidate's design history and retains the **side epitope** and **top epitope** hotspot depictions. Each candidate has a single comparison page pairing top-down and side views for all six models: human and mouse TNF-alpha complexes from Boltz2, OpenDDE, and AlphaFold3.
 
-Original starter files remain under `reference/` with unchanged bytes and internal
-relative layout. Its prior launchers retain their old path contracts. Shared
-workflow code is pinned separately from upstream engines and retained guide
-snapshots; those references are not installed prediction environments.
+## Top 20: human TNF-alpha trimer complexes
 
-Reference structures and prior TNFA analyses are indexed in
-[the reference intake](docs/2026-10-05_TNFA_REFERENCE_INTAKE.md). Campaign inputs
-and hotspots remain unset.
+The gallery follows the same 20-candidate order as the write-up. Each row shows two views of the same selected **human Boltz2 Exact** model from the existing three-copy predictions: one TNF-alpha trimer with three copies of the candidate. These are computational structures used for candidate prioritization. Click an image for full resolution.
 
-Final October 5 TNFA trimer modeling deliverables for all eight targets are indexed
-in [the successor modeling intake](docs/2026-10-06_TNFA_TRIMER_MODELING_INTAKE.md).
+Human TNF-alpha protomers use three blue shades. Single-domain candidate chains are **cyan**. Two-domain fusions use **cyan** for domain 1, **green** for the GS linker, and **magenta** for domain 2. Top-down and side views share the candidate's alignment and camera scale; the side view rotates the camera by 90 degrees.
 
-[Proposed TNFA species colors](docs/2026-10-06_TNFA_COLORS.md) use three human
-blues and three mouse copper/amber shades, with separate atom-color conventions.
+| Rank | Candidate and sequence class | Human TNF-alpha: top-down | Human TNF-alpha: side |
+| ---: | --- | --- | --- |
+| 01 | **P37-d002**<br>Proton-Potts redesign | <a href="candidates/2026-10-19_selected20_001/models/01_P37-d002/top.png"><img src="candidates/2026-10-19_selected20_001/models/01_P37-d002/top.png" width="260" alt="P37-d002 bound to human TNF-alpha trimer, top-down view" /></a> | <a href="candidates/2026-10-19_selected20_001/models/01_P37-d002/side.png"><img src="candidates/2026-10-19_selected20_001/models/01_P37-d002/side.png" width="260" alt="P37-d002 bound to human TNF-alpha trimer, side view" /></a> |
+| 02 | **RP06-d085-V60T**<br>expert mutant | <a href="candidates/2026-10-19_selected20_001/models/02_RP06-d085-V60T/top.png"><img src="candidates/2026-10-19_selected20_001/models/02_RP06-d085-V60T/top.png" width="260" alt="RP06-d085-V60T bound to human TNF-alpha trimer, top-down view" /></a> | <a href="candidates/2026-10-19_selected20_001/models/02_RP06-d085-V60T/side.png"><img src="candidates/2026-10-19_selected20_001/models/02_RP06-d085-V60T/side.png" width="260" alt="RP06-d085-V60T bound to human TNF-alpha trimer, side view" /></a> |
+| 03 | **F07**<br>GS fusion | <a href="candidates/2026-10-19_selected20_001/models/03_F07/top.png"><img src="candidates/2026-10-19_selected20_001/models/03_F07/top.png" width="260" alt="F07 bound to human TNF-alpha trimer, top-down view" /></a> | <a href="candidates/2026-10-19_selected20_001/models/03_F07/side.png"><img src="candidates/2026-10-19_selected20_001/models/03_F07/side.png" width="260" alt="F07 bound to human TNF-alpha trimer, side view" /></a> |
+| 04 | **F01**<br>GS fusion | <a href="candidates/2026-10-19_selected20_001/models/04_F01/top.png"><img src="candidates/2026-10-19_selected20_001/models/04_F01/top.png" width="260" alt="F01 bound to human TNF-alpha trimer, top-down view" /></a> | <a href="candidates/2026-10-19_selected20_001/models/04_F01/side.png"><img src="candidates/2026-10-19_selected20_001/models/04_F01/side.png" width="260" alt="F01 bound to human TNF-alpha trimer, side view" /></a> |
+| 05 | **RP03-d017**<br>Proton-Potts redesign | <a href="candidates/2026-10-19_selected20_001/models/05_RP03-d017/top.png"><img src="candidates/2026-10-19_selected20_001/models/05_RP03-d017/top.png" width="260" alt="RP03-d017 bound to human TNF-alpha trimer, top-down view" /></a> | <a href="candidates/2026-10-19_selected20_001/models/05_RP03-d017/side.png"><img src="candidates/2026-10-19_selected20_001/models/05_RP03-d017/side.png" width="260" alt="RP03-d017 bound to human TNF-alpha trimer, side view" /></a> |
+| 06 | **P18-d092**<br>Proton-Potts redesign | <a href="candidates/2026-10-19_selected20_001/models/06_P18-d092/top.png"><img src="candidates/2026-10-19_selected20_001/models/06_P18-d092/top.png" width="260" alt="P18-d092 bound to human TNF-alpha trimer, top-down view" /></a> | <a href="candidates/2026-10-19_selected20_001/models/06_P18-d092/side.png"><img src="candidates/2026-10-19_selected20_001/models/06_P18-d092/side.png" width="260" alt="P18-d092 bound to human TNF-alpha trimer, side view" /></a> |
+| 07 | **P12-d084**<br>Proton-Potts redesign | <a href="candidates/2026-10-19_selected20_001/models/07_P12-d084/top.png"><img src="candidates/2026-10-19_selected20_001/models/07_P12-d084/top.png" width="260" alt="P12-d084 bound to human TNF-alpha trimer, top-down view" /></a> | <a href="candidates/2026-10-19_selected20_001/models/07_P12-d084/side.png"><img src="candidates/2026-10-19_selected20_001/models/07_P12-d084/side.png" width="260" alt="P12-d084 bound to human TNF-alpha trimer, side view" /></a> |
+| 08 | **F02**<br>GS fusion | <a href="candidates/2026-10-19_selected20_001/models/08_F02/top.png"><img src="candidates/2026-10-19_selected20_001/models/08_F02/top.png" width="260" alt="F02 bound to human TNF-alpha trimer, top-down view" /></a> | <a href="candidates/2026-10-19_selected20_001/models/08_F02/side.png"><img src="candidates/2026-10-19_selected20_001/models/08_F02/side.png" width="260" alt="F02 bound to human TNF-alpha trimer, side view" /></a> |
+| 09 | **P37-d022**<br>Proton-Potts redesign | <a href="candidates/2026-10-19_selected20_001/models/09_P37-d022/top.png"><img src="candidates/2026-10-19_selected20_001/models/09_P37-d022/top.png" width="260" alt="P37-d022 bound to human TNF-alpha trimer, top-down view" /></a> | <a href="candidates/2026-10-19_selected20_001/models/09_P37-d022/side.png"><img src="candidates/2026-10-19_selected20_001/models/09_P37-d022/side.png" width="260" alt="P37-d022 bound to human TNF-alpha trimer, side view" /></a> |
+| 10 | **RP06-d085**<br>Proton-Potts redesign | <a href="candidates/2026-10-19_selected20_001/models/10_RP06-d085/top.png"><img src="candidates/2026-10-19_selected20_001/models/10_RP06-d085/top.png" width="260" alt="RP06-d085 bound to human TNF-alpha trimer, top-down view" /></a> | <a href="candidates/2026-10-19_selected20_001/models/10_RP06-d085/side.png"><img src="candidates/2026-10-19_selected20_001/models/10_RP06-d085/side.png" width="260" alt="RP06-d085 bound to human TNF-alpha trimer, side view" /></a> |
+| 11 | **F09**<br>GS fusion | <a href="candidates/2026-10-19_selected20_001/models/11_F09/top.png"><img src="candidates/2026-10-19_selected20_001/models/11_F09/top.png" width="260" alt="F09 bound to human TNF-alpha trimer, top-down view" /></a> | <a href="candidates/2026-10-19_selected20_001/models/11_F09/side.png"><img src="candidates/2026-10-19_selected20_001/models/11_F09/side.png" width="260" alt="F09 bound to human TNF-alpha trimer, side view" /></a> |
+| 12 | **P02-d070**<br>Proton-Potts redesign | <a href="candidates/2026-10-19_selected20_001/models/12_P02-d070/top.png"><img src="candidates/2026-10-19_selected20_001/models/12_P02-d070/top.png" width="260" alt="P02-d070 bound to human TNF-alpha trimer, top-down view" /></a> | <a href="candidates/2026-10-19_selected20_001/models/12_P02-d070/side.png"><img src="candidates/2026-10-19_selected20_001/models/12_P02-d070/side.png" width="260" alt="P02-d070 bound to human TNF-alpha trimer, side view" /></a> |
+| 13 | **F25**<br>GS fusion | <a href="candidates/2026-10-19_selected20_001/models/13_F25/top.png"><img src="candidates/2026-10-19_selected20_001/models/13_F25/top.png" width="260" alt="F25 bound to human TNF-alpha trimer, top-down view" /></a> | <a href="candidates/2026-10-19_selected20_001/models/13_F25/side.png"><img src="candidates/2026-10-19_selected20_001/models/13_F25/side.png" width="260" alt="F25 bound to human TNF-alpha trimer, side view" /></a> |
+| 14 | **RP06-d085-V60S**<br>expert mutant | <a href="candidates/2026-10-19_selected20_001/models/14_RP06-d085-V60S/top.png"><img src="candidates/2026-10-19_selected20_001/models/14_RP06-d085-V60S/top.png" width="260" alt="RP06-d085-V60S bound to human TNF-alpha trimer, top-down view" /></a> | <a href="candidates/2026-10-19_selected20_001/models/14_RP06-d085-V60S/side.png"><img src="candidates/2026-10-19_selected20_001/models/14_RP06-d085-V60S/side.png" width="260" alt="RP06-d085-V60S bound to human TNF-alpha trimer, side view" /></a> |
+| 15 | **F11**<br>GS fusion | <a href="candidates/2026-10-19_selected20_001/models/15_F11/top.png"><img src="candidates/2026-10-19_selected20_001/models/15_F11/top.png" width="260" alt="F11 bound to human TNF-alpha trimer, top-down view" /></a> | <a href="candidates/2026-10-19_selected20_001/models/15_F11/side.png"><img src="candidates/2026-10-19_selected20_001/models/15_F11/side.png" width="260" alt="F11 bound to human TNF-alpha trimer, side view" /></a> |
+| 16 | **F32**<br>GS fusion | <a href="candidates/2026-10-19_selected20_001/models/16_F32/top.png"><img src="candidates/2026-10-19_selected20_001/models/16_F32/top.png" width="260" alt="F32 bound to human TNF-alpha trimer, top-down view" /></a> | <a href="candidates/2026-10-19_selected20_001/models/16_F32/side.png"><img src="candidates/2026-10-19_selected20_001/models/16_F32/side.png" width="260" alt="F32 bound to human TNF-alpha trimer, side view" /></a> |
+| 17 | **RP03-d050-A40N_A69Q**<br>expert mutant | <a href="candidates/2026-10-19_selected20_001/models/17_RP03-d050-A40N_A69Q/top.png"><img src="candidates/2026-10-19_selected20_001/models/17_RP03-d050-A40N_A69Q/top.png" width="260" alt="RP03-d050-A40N_A69Q bound to human TNF-alpha trimer, top-down view" /></a> | <a href="candidates/2026-10-19_selected20_001/models/17_RP03-d050-A40N_A69Q/side.png"><img src="candidates/2026-10-19_selected20_001/models/17_RP03-d050-A40N_A69Q/side.png" width="260" alt="RP03-d050-A40N_A69Q bound to human TNF-alpha trimer, side view" /></a> |
+| 18 | **RP03-d043-A40N_A69Q**<br>expert mutant | <a href="candidates/2026-10-19_selected20_001/models/18_RP03-d043-A40N_A69Q/top.png"><img src="candidates/2026-10-19_selected20_001/models/18_RP03-d043-A40N_A69Q/top.png" width="260" alt="RP03-d043-A40N_A69Q bound to human TNF-alpha trimer, top-down view" /></a> | <a href="candidates/2026-10-19_selected20_001/models/18_RP03-d043-A40N_A69Q/side.png"><img src="candidates/2026-10-19_selected20_001/models/18_RP03-d043-A40N_A69Q/side.png" width="260" alt="RP03-d043-A40N_A69Q bound to human TNF-alpha trimer, side view" /></a> |
+| 19 | **P16-d085**<br>Proton-Potts redesign | <a href="candidates/2026-10-19_selected20_001/models/19_P16-d085/top.png"><img src="candidates/2026-10-19_selected20_001/models/19_P16-d085/top.png" width="260" alt="P16-d085 bound to human TNF-alpha trimer, top-down view" /></a> | <a href="candidates/2026-10-19_selected20_001/models/19_P16-d085/side.png"><img src="candidates/2026-10-19_selected20_001/models/19_P16-d085/side.png" width="260" alt="P16-d085 bound to human TNF-alpha trimer, side view" /></a> |
+| 20 | **P00-d000**<br>Proton-Potts redesign | <a href="candidates/2026-10-19_selected20_001/models/20_P00-d000/top.png"><img src="candidates/2026-10-19_selected20_001/models/20_P00-d000/top.png" width="260" alt="P00-d000 bound to human TNF-alpha trimer, top-down view" /></a> | <a href="candidates/2026-10-19_selected20_001/models/20_P00-d000/side.png"><img src="candidates/2026-10-19_selected20_001/models/20_P00-d000/side.png" width="260" alt="P00-d000 bound to human TNF-alpha trimer, side view" /></a> |
 
-Human and mouse focus-region objects and charge/histidine stick conventions are
-documented in [the TNFA color guide](docs/2026-10-06_TNFA_COLORS.md#focus-regions).
+## Repository workflow
 
-[The next 24 hour migration and branch plan](docs/2026-10-07_TNFA_MIGRATION_AND_BRANCH_PLAN.md)
-prepares both DD1 EmpireAI RFD3 sequence/backbone cohorts for incremental Boltz2
-refolding on Mimas, followed by ProtonPottsMPNN redesign and APNovo inputs focused
-on epitope targeting. Three new campaigns and editable stage folders are prepared;
-their scientific settings and downstream candidate assignments remain pending.
+Start with `python3 scripts/workspace.py show` and [overview.md](overview.md). Read the [challenge requirements](docs/CHALLENGE.md) and [workspace workflow](docs/WORKSPACE.md) before preparing new scientific runs.
+
+The shared workflow is pinned in `external/research-workflows`. After a fresh clone, initialize it with `git submodule update --init -- external/research-workflows`, then run `python3 scripts/workspace.py pin` to verify the effective release.
+
+Campaigns organize frozen inputs, design runs, refolding, and analysis. Candidate traces connect exact sequences to their source designs and parent candidates; frozen selections preserve the ranking and its supporting evidence. The [reference intake](docs/2026-10-05_TNFA_REFERENCE_INTAKE.md) and [trimer-modeling intake](docs/2026-10-06_TNFA_TRIMER_MODELING_INTAKE.md) index earlier reference material.
+
+Git tracks portable code, reviewed campaign configuration, and the explicitly published write-up, sequence table, and gallery above. Bulk predictions, private configuration, registry records, drafts, and other run artifacts remain in the separately retained research workspace; a Git clone alone does not restore them.
