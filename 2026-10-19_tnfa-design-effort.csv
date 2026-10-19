@@ -1,0 +1,17 @@
+branch,documented_sequence_outputs,documented_attempts_minimum,selected_for_refolding,attempt_scope
+RFD3 initial assessed designs,32488,32488,32488,lower bound from completed assessed candidates; original generation-attempt log incomplete
+Proton-Potts pilot 1,8,9,,complete saved proposal-attempt records
+Proton-Potts pilot 2,16,17,,complete saved proposal-attempt records
+Proton-Potts production round 1,6400,7108,4000,complete saved proposal-attempt records
+Proton-Potts production round 2,3200,3732,2000,complete saved proposal-attempt records
+Targeted paired redesign,64,65,13,complete saved proposal-attempt records
+Targeted conservative redesign,32,504,8,complete saved proposal-attempt records
+AP Novo-derived Proton-Potts pool,640,640,400,lower bound from completed sequence outputs; full rejected-proposal log not collected
+Additional AP Novo-derived exact redesigns,160,160,160,lower bound from completed sequence outputs; full rejected-proposal log not collected
+AP Novo pilot,8,8,8,completed design outputs; recovery/intake copies counted once
+AP Novo initial production,800,800,800,completed design outputs; recovery/intake copies counted once
+AP Novo extension,3200,3200,3200,completed design outputs; recovery/intake copies counted once
+AP Novo top-epitope production,1000,1000,1000,completed design outputs; recovery/intake copies counted once
+Expert mutants,16,16,16,16 changed sequences; unchanged control and repeated preparation excluded
+Geometry-guided GS fusions,47,47,47,47 complete fusion sequence outputs
+RF optimization final outputs,2,2,2,lower bound counting the two completed final outputs; internal optimization iterations excluded
