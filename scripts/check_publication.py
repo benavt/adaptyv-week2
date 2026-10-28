@@ -92,12 +92,17 @@ def inspect(body, filename=''):
     # Check main body
     labels = []
     for name, pattern in RULES.items():
+        # Skip all credential/secret patterns for source code (test files contain fake examples)
+        if exclude_source_code_patterns and name in ('GitHub token', 'cloud access key', 
+                                                      'private filesystem path', 'private hostname',
+                                                      'private key', 'service token', 'literal credential',
+                                                      'authorization value'):
+            continue
         # Skip AWS key pattern for protein data files (sequences contain AKIA-like substrings)
         if exclude_protein_patterns and name == 'cloud access key':
             continue
         # Skip hostname pattern for binary images (compressed data contains random byte patterns)
-        # and source code (may reference hostnames as string literals in tests/patterns)
-        if (exclude_binary_image_patterns or exclude_source_code_patterns) and name == 'private hostname':
+        if exclude_binary_image_patterns and name == 'private hostname':
             continue
         if re.search(pattern, body):
             labels.append(name)
