@@ -67,18 +67,28 @@ def inspect(body, filename=''):
         body = gzip.decompress(body)
     
     # Office Open XML documents (.docx, .xlsx, .pptx) are ZIP files containing XML
-    attachments_to_check = []
     if file_ext in {'.docx', '.xlsx', '.pptx', '.docm', '.xlsm', '.pptm'}:
         try:
             with zipfile.ZipFile(io.BytesIO(body)) as zf:
                 for name in zf.namelist():
                     if name.endswith('.xml') or name.endswith('.xml.rels'):
                         try:
-                            attachments_to_check.append(zf.read(name))
-                        except Exception:
-                            pass
-        except Exception:
-            pass  # If ZIP extraction fails, continue with binary scan
+                            xml_content = zf.read(name)
+                            # Recursively scan XML content
+                            xml_filename = f'{filename}:{name}'
+                            xml_labels = inspect(xml_content, filename=xml_filename)
+                            if xml_labels:
+                                raise SystemExit(f'{filename}: Office XML "{name}" contains sensitive data: {", ".join(sorted(set(xml_labels)))}')
+                        except SystemExit:
+                            raise  # Re-raise our own errors
+                        except Exception as e:
+                            # Unreadable XML is a hard failure
+                            raise SystemExit(f'{filename}: Office XML "{name}" is unreadable: {e}')
+        except SystemExit:
+            raise  # Re-raise our own errors
+        except Exception as e:
+            # ZIP extraction failure is a hard error
+            raise SystemExit(f'{filename}: Failed to extract Office XML: {e}')
     
     if body.startswith(b'%PDF'):
         # Extract visible text from PDF
@@ -86,33 +96,38 @@ def inspect(body, filename=''):
                                      stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                                      check=True).stdout
         
-        # Extract and check PDF attachments
+        # Extract and check PDF attachments - failures are hard errors
         with tempfile.TemporaryDirectory() as tmpdir:
-            try:
-                # Save PDF to temp file for pdfdetach
-                pdf_path = os.path.join(tmpdir, 'temp.pdf')
-                with open(pdf_path, 'wb') as f:
-                    f.write(body)
+            # Save PDF to temp file for pdfdetach
+            pdf_path = os.path.join(tmpdir, 'temp.pdf')
+            with open(pdf_path, 'wb') as f:
+                f.write(body)
+            
+            # List attachments - must succeed
+            list_result = subprocess.run(['pdfdetach', '-list', pdf_path],
+                                       capture_output=True, text=True, check=True)
+            
+            if 'embedded file' in list_result.stdout:
+                # Extract all attachments - must succeed
+                extract_result = subprocess.run(['pdfdetach', '-saveall', '-o', tmpdir, pdf_path],
+                                              capture_output=True, text=True, check=True)
                 
-                # List attachments
-                list_result = subprocess.run(['pdfdetach', '-list', pdf_path],
-                                           capture_output=True, text=True, check=False)
-                if list_result.returncode == 0 and 'embedded file' in list_result.stdout:
-                    # Extract all attachments
-                    subprocess.run(['pdfdetach', '-saveall', '-o', tmpdir, pdf_path],
-                                 capture_output=True, check=False)
-                    
-                    # Read attachment contents
-                    for item in os.listdir(tmpdir):
-                        item_path = os.path.join(tmpdir, item)
-                        if os.path.isfile(item_path) and item != 'temp.pdf':
-                            try:
-                                with open(item_path, 'rb') as f:
-                                    attachments_to_check.append(f.read())
-                            except Exception:
-                                pass  # Skip unreadable attachments
-            except Exception:
-                pass  # If attachment extraction fails, continue with visible text check
+                # Read and recursively scan attachment contents
+                for item in os.listdir(tmpdir):
+                    item_path = os.path.join(tmpdir, item)
+                    if os.path.isfile(item_path) and item != 'temp.pdf':
+                        try:
+                            with open(item_path, 'rb') as f:
+                                attachment_content = f.read()
+                        except Exception as e:
+                            # Unreadable attachment is a hard failure
+                            raise SystemExit(f'{filename}: PDF attachment "{item}" is unreadable: {e}')
+                        
+                        # Recursively scan attachment (handles nested PDFs, Office docs, etc.)
+                        attachment_filename = f'{filename}:{item}'
+                        attachment_labels = inspect(attachment_content, filename=attachment_filename)
+                        if attachment_labels:
+                            raise SystemExit(f'{filename}: PDF attachment "{item}" contains sensitive data: {", ".join(sorted(set(attachment_labels)))}')
         
         body = visible_text
     
@@ -151,12 +166,6 @@ def inspect(body, filename=''):
             continue
         if re.search(pattern, body):
             labels.append(name)
-    
-    # Check attachments
-    for attachment in attachments_to_check:
-        for name, pattern in RULES.items():
-            if name not in labels and re.search(pattern, attachment):
-                labels.append(name)
     
     return labels
 
