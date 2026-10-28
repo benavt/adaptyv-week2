@@ -28,9 +28,8 @@ RULES = {
 }
 
 # File extensions to exclude from certain pattern checks
-# Protein sequences contain AKIA-like substrings; binary images contain random byte patterns
+# Protein sequences contain AKIA-like substrings
 PROTEIN_DATA_EXTENSIONS = {'.fasta', '.a3m', '.pdb', '.cif', '.csv'}
-BINARY_IMAGE_EXTENSIONS = {'.png', '.gif', '.jpg', '.jpeg', '.bmp', '.tif', '.tiff'}
 
 # Specific files excluded from credential/hostname checks by path
 # These files legitimately contain test fixtures or detection patterns as string literals
@@ -61,7 +60,6 @@ def inspect(body, filename=''):
     
     file_ext = os.path.splitext(filename)[1].lower()
     exclude_protein_patterns = file_ext in PROTEIN_DATA_EXTENSIONS
-    exclude_binary_image_patterns = file_ext in BINARY_IMAGE_EXTENSIONS
     # Path-based exclusion for test fixtures only, not extension-based
     is_fixture_file = filename in FIXTURE_FILES
     
@@ -118,6 +116,22 @@ def inspect(body, filename=''):
         
         body = visible_text
     
+    # Detect non-text binary content to avoid false positives from regex on compressed streams
+    # Check for common binary image/video/audio signatures
+    is_binary_content = (
+        body.startswith(b'\x89PNG') or  # PNG
+        body.startswith(b'\xff\xd8\xff') or  # JPEG
+        body.startswith(b'GIF8') or  # GIF
+        body.startswith(b'RIFF') or  # WAV, AVI, WebP
+        body.startswith(b'\x00\x00\x00\x0cjP') or  # JPEG2000
+        body.startswith(b'\x00\x00\x01\x00') or  # ICO
+        body.startswith(b'BM') or  # BMP
+        body.startswith(b'II*\x00') or  # TIFF little-endian
+        body.startswith(b'MM\x00*') or  # TIFF big-endian
+        body.startswith(b'\x1a\x45\xdf\xa3') or  # WebM/MKV
+        body.startswith(b'ftyp')  # MP4/MOV (at offset 4, but checking start)
+    )
+    
     # Check main body
     labels = []
     for name, pattern in RULES.items():
@@ -132,8 +146,8 @@ def inspect(body, filename=''):
         # Skip AWS key pattern for protein data files (sequences contain AKIA-like substrings)
         if exclude_protein_patterns and name == 'cloud access key':
             continue
-        # Skip hostname pattern for binary images (compressed data contains random byte patterns)
-        if exclude_binary_image_patterns and name == 'private hostname':
+        # Skip hostname pattern for binary image/video/audio content (compressed data has random byte patterns)
+        if is_binary_content and name == 'private hostname':
             continue
         if re.search(pattern, body):
             labels.append(name)
