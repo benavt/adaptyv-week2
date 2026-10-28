@@ -159,6 +159,74 @@ def test_credentials_case_sensitive():
     return True
 
 
+def test_python_script_with_hardcoded_hostname():
+    """Test that .py files with hardcoded hostnames are rejected.
+    
+    This proves the narrowing works: the broad extension-based exclusion
+    would have let this pass, but path-based exclusion only covers test fixtures.
+    """
+    print("Test: Python script with hardcoded hostname is rejected")
+    
+    from check_publication import inspect
+    
+    # A helper script with a hardcoded SSH invocation to a private host
+    # Using fake placeholder "test-pax" that matches the pattern (hyphen before pax)
+    script_content = b"""#!/usr/bin/env python3
+import subprocess
+
+def deploy_to_server():
+    # Deploy files to the private server test-pax
+    subprocess.run(['ssh', 'user@test-pax', 'mkdir -p /opt/deploy'])
+    return True
+"""
+    
+    # This is scripts/deploy_helper.py - NOT in FIXTURE_FILES, so must be scanned
+    labels = inspect(script_content, filename='scripts/deploy_helper.py')
+    
+    if 'private hostname' in labels:
+        print("  ✓ PASS: Detected hardcoded hostname in .py script")
+        return True
+    else:
+        print("  ✗ FAIL: Did not detect hardcoded hostname in .py script")
+        print("         (broad extension exclusion is still active)")
+        return False
+
+
+def test_python_script_with_credential():
+    """Test that .py files with credentials are rejected.
+    
+    This proves the narrowing works: the broad extension-based exclusion
+    would have let this pass, but path-based exclusion only covers test fixtures.
+    """
+    print("Test: Python script with credential token is rejected")
+    
+    from check_publication import inspect
+    
+    # A utility script with a hardcoded API token
+    script_content = b"""#!/usr/bin/env python3
+import requests
+
+# API configuration
+API_TOKEN = 'ghp_FakeToken1234567890ABCDE'
+API_URL = 'https://api.example.com'
+
+def fetch_data():
+    headers = {'Authorization': f'token {API_TOKEN}'}
+    return requests.get(API_URL, headers=headers)
+"""
+    
+    # This is scripts/api_client.py - NOT in FIXTURE_FILES, so must be scanned
+    labels = inspect(script_content, filename='scripts/api_client.py')
+    
+    if 'GitHub token' in labels:
+        print("  ✓ PASS: Detected credential in .py script")
+        return True
+    else:
+        print("  ✗ FAIL: Did not detect credential in .py script")
+        print("         (broad extension exclusion is still active)")
+        return False
+
+
 def main():
     """Run all tests."""
     print("Running check_publication.py tests\n")
@@ -175,6 +243,10 @@ def main():
     results.append(test_protein_sequence_exclusion())
     print()
     results.append(test_credentials_case_sensitive())
+    print()
+    results.append(test_python_script_with_hardcoded_hostname())
+    print()
+    results.append(test_python_script_with_credential())
     print()
     
     passed = sum(results)

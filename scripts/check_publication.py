@@ -22,10 +22,16 @@ RULES = {
 
 # File extensions to exclude from certain pattern checks
 # Protein sequences contain AKIA-like substrings; binary images contain random byte patterns
-# Python source may reference patterns/hostnames as string literals
 PROTEIN_DATA_EXTENSIONS = {'.fasta', '.a3m', '.pdb', '.cif', '.csv'}
 BINARY_IMAGE_EXTENSIONS = {'.png', '.gif', '.jpg', '.jpeg', '.bmp', '.tif', '.tiff'}
-SOURCE_CODE_EXTENSIONS = {'.py', '.js', '.ts', '.java', '.cpp', '.c', '.h', '.sh'}
+
+# Specific files excluded from credential/hostname checks by path
+# These files legitimately contain test fixtures or detection patterns as string literals
+FIXTURE_FILES = {
+    'scripts/check_publication.py',  # Contains the patterns it checks for
+    'scripts/test_check_publication.py',  # Contains fake credentials/paths as test data
+}
+
 CONTROL_FILES = {'publication-files.json', 'scripts/check_publication.py', '.github/workflows/publication.yml'}
 
 def git(*arguments):
@@ -36,7 +42,7 @@ def inspect(body, filename=''):
     
     Args:
         body: Content to inspect
-        filename: Original filename, used for extension-based filtering
+        filename: Original filename, used for path-based and extension-based filtering
     
     Returns:
         List of matched rule names
@@ -47,7 +53,8 @@ def inspect(body, filename=''):
     file_ext = os.path.splitext(filename)[1].lower()
     exclude_protein_patterns = file_ext in PROTEIN_DATA_EXTENSIONS
     exclude_binary_image_patterns = file_ext in BINARY_IMAGE_EXTENSIONS
-    exclude_source_code_patterns = file_ext in SOURCE_CODE_EXTENSIONS
+    # Path-based exclusion for test fixtures only, not extension-based
+    is_fixture_file = filename in FIXTURE_FILES
     
     if body.startswith(b'\x1f\x8b'):
         body = gzip.decompress(body)
@@ -92,11 +99,12 @@ def inspect(body, filename=''):
     # Check main body
     labels = []
     for name, pattern in RULES.items():
-        # Skip all credential/secret patterns for source code (test files contain fake examples)
-        if exclude_source_code_patterns and name in ('GitHub token', 'cloud access key', 
-                                                      'private filesystem path', 'private hostname',
-                                                      'private key', 'service token', 'literal credential',
-                                                      'authorization value'):
+        # Skip all credential/secret patterns ONLY for specific test fixture files by path
+        # Other .py/.js/.sh files are fully scanned - hardcoded hostnames in scripts are dangerous
+        if is_fixture_file and name in ('GitHub token', 'cloud access key', 
+                                        'private filesystem path', 'private hostname',
+                                        'private key', 'service token', 'literal credential',
+                                        'authorization value'):
             continue
         # Skip AWS key pattern for protein data files (sequences contain AKIA-like substrings)
         if exclude_protein_patterns and name == 'cloud access key':
