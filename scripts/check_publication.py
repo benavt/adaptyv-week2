@@ -22,8 +22,10 @@ RULES = {
 
 # File extensions to exclude from certain pattern checks
 # Protein sequences contain AKIA-like substrings; binary images contain random byte patterns
+# Python source may reference patterns/hostnames as string literals
 PROTEIN_DATA_EXTENSIONS = {'.fasta', '.a3m', '.pdb', '.cif', '.csv'}
 BINARY_IMAGE_EXTENSIONS = {'.png', '.gif', '.jpg', '.jpeg', '.bmp', '.tif', '.tiff'}
+SOURCE_CODE_EXTENSIONS = {'.py', '.js', '.ts', '.java', '.cpp', '.c', '.h', '.sh'}
 CONTROL_FILES = {'publication-files.json', 'scripts/check_publication.py', '.github/workflows/publication.yml'}
 
 def git(*arguments):
@@ -45,6 +47,7 @@ def inspect(body, filename=''):
     file_ext = os.path.splitext(filename)[1].lower()
     exclude_protein_patterns = file_ext in PROTEIN_DATA_EXTENSIONS
     exclude_binary_image_patterns = file_ext in BINARY_IMAGE_EXTENSIONS
+    exclude_source_code_patterns = file_ext in SOURCE_CODE_EXTENSIONS
     
     if body.startswith(b'\x1f\x8b'):
         body = gzip.decompress(body)
@@ -93,7 +96,8 @@ def inspect(body, filename=''):
         if exclude_protein_patterns and name == 'cloud access key':
             continue
         # Skip hostname pattern for binary images (compressed data contains random byte patterns)
-        if exclude_binary_image_patterns and name == 'private hostname':
+        # and source code (may reference hostnames as string literals in tests/patterns)
+        if (exclude_binary_image_patterns or exclude_source_code_patterns) and name == 'private hostname':
             continue
         if re.search(pattern, body):
             labels.append(name)
