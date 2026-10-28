@@ -63,14 +63,19 @@ def test_pdf_with_dirty_attachment():
     pdf_content = create_test_pdf_with_dirty_attachment()
     
     from check_publication import inspect
-    labels = inspect(pdf_content, filename='test.pdf')
     
-    if 'private filesystem path' in labels:
-        print("  ✓ PASS: Detected private path in PDF attachment")
-        return True
-    else:
-        print("  ✗ FAIL: Did not detect private path in PDF attachment")
+    # With recursive scanning, this should now raise SystemExit
+    try:
+        labels = inspect(pdf_content, filename='test.pdf')
+        print("  ✗ FAIL: Did not detect private path in PDF attachment (no exception raised)")
         return False
+    except SystemExit as e:
+        if 'PDF attachment' in str(e) and 'private filesystem path' in str(e):
+            print("  ✓ PASS: Detected private path in PDF attachment (hard failure)")
+            return True
+        else:
+            print(f"  ✗ FAIL: Wrong error: {e}")
+            return False
 
 
 def test_hostname_detection_case_insensitive():
@@ -308,14 +313,84 @@ def test_office_xml_scanning():
         with open(docx_path, 'rb') as f:
             docx_content = f.read()
     
-    labels = inspect(docx_content, filename='document.docx')
-    
-    if 'private filesystem path' in labels:
-        print("  ✓ PASS: Detected private path in Office XML")
-        return True
-    else:
-        print("  ✗ FAIL: Did not detect private path in Office XML")
+    # This should now raise SystemExit due to hard failure on sensitive data in Office XML
+    try:
+        labels = inspect(docx_content, filename='document.docx')
+        print("  ✗ FAIL: Did not detect private path in Office XML (no exception raised)")
         return False
+    except SystemExit as e:
+        if 'Office XML' in str(e) and 'private filesystem path' in str(e):
+            print("  ✓ PASS: Detected private path in Office XML (hard failure)")
+            return True
+        else:
+            print(f"  ✗ FAIL: Wrong error: {e}")
+            return False
+
+
+def test_recursive_pdf_attachment_scanning():
+    """Test that PDF attachments are recursively scanned (PDF with nested PDF)."""
+    print("Test: Recursive PDF attachment scanning")
+    
+    from check_publication import inspect
+    import pikepdf
+    from reportlab.pdfgen import canvas as pdf_canvas
+    from reportlab.lib.pagesizes import letter
+    import tempfile
+    import os
+    
+    with tempfile.TemporaryDirectory() as tmpdir:
+        # Create an inner PDF with private content in visible text
+        inner_pdf_path = os.path.join(tmpdir, 'inner.pdf')
+        c = pdf_canvas.Canvas(inner_pdf_path, pagesize=letter)
+        c.drawString(100, 750, "Contains private path: /home/secretuser/private/data.txt")
+        c.save()
+        
+        with open(inner_pdf_path, 'rb') as f:
+            inner_pdf_content = f.read()
+        
+        # Create an outer PDF with clean visible text
+        outer_pdf_path = os.path.join(tmpdir, 'outer.pdf')
+        c = pdf_canvas.Canvas(outer_pdf_path, pagesize=letter)
+        c.drawString(100, 750, "Clean outer PDF - no sensitive information")
+        c.save()
+        
+        # Attach the inner PDF to the outer PDF
+        outer_with_attachment_path = os.path.join(tmpdir, 'outer_with_attachment.pdf')
+        with pikepdf.open(outer_pdf_path) as pdf:
+            # Create attachment from inner PDF
+            attachment = pikepdf.Stream(pdf, inner_pdf_content)
+            
+            # Add the attachment
+            if '/Names' not in pdf.Root:
+                pdf.Root.Names = pikepdf.Dictionary()
+            
+            filespec = pikepdf.Dictionary(
+                Type=pikepdf.Name.Filespec,
+                F='inner.pdf',
+                EF=pikepdf.Dictionary(F=attachment)
+            )
+            
+            pdf.Root.Names.EmbeddedFiles = pikepdf.Dictionary(
+                Names=pikepdf.Array([pikepdf.String('inner.pdf'), filespec])
+            )
+            
+            pdf.save(outer_with_attachment_path)
+        
+        with open(outer_with_attachment_path, 'rb') as f:
+            outer_content = f.read()
+    
+    # This should now raise SystemExit due to recursive scanning detecting the nested PDF
+    try:
+        labels = inspect(outer_content, filename='outer.pdf')
+        print("  ✗ FAIL: Did not detect private path in nested PDF (no exception raised)")
+        return False
+    except SystemExit as e:
+        if 'PDF attachment' in str(e) and 'inner.pdf' in str(e) and 'private filesystem path' in str(e):
+            print("  ✓ PASS: Detected private path in nested PDF (recursive scan)")
+            return True
+        else:
+            print(f"  ✗ FAIL: Wrong error: {e}")
+            return False
 
 
 def main():
@@ -344,6 +419,8 @@ def main():
     results.append(test_ssh_config_detection())
     print()
     results.append(test_office_xml_scanning())
+    print()
+    results.append(test_recursive_pdf_attachment_scanning())
     print()
     
     passed = sum(results)
