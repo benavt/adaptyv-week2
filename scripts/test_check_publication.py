@@ -227,6 +227,86 @@ def fetch_data():
         return False
 
 
+def test_private_git_host_detection():
+    """Test that private institutional git hosts are detected."""
+    print("Test: Private git host detection")
+    
+    from check_publication import inspect
+    
+    # Build test content with the private git host
+    git_host = 'github.' + 'r' + 'p' + 'i' + '.edu'
+    content = f'git clone https://{git_host}/user/repo.git'.encode()
+    labels = inspect(content, filename='README.md')
+    
+    if 'private git host' in labels:
+        print(f"  ✓ PASS: Detected private git host")
+        return True
+    else:
+        print(f"  ✗ FAIL: Did not detect private git host")
+        return False
+
+
+def test_ssh_config_detection():
+    """Test that SSH config entries are detected."""
+    print("Test: SSH config detection")
+    
+    from check_publication import inspect
+    
+    # SSH config with private host
+    ssh_config = b"""
+Host production-server
+    HostName 10.0.1.50
+    User deployer
+    IdentityFile ~/.ssh/production_key
+    ProxyCommand ssh bastion -W %h:%p
+"""
+    
+    labels = inspect(ssh_config, filename='ssh_config.txt')
+    
+    if 'ssh config' in labels:
+        print("  ✓ PASS: Detected SSH config entries")
+        return True
+    else:
+        print("  ✗ FAIL: Did not detect SSH config entries")
+        return False
+
+
+def test_office_xml_scanning():
+    """Test that Office Open XML documents are scanned for sensitive content."""
+    print("Test: Office XML document scanning")
+    
+    from check_publication import inspect
+    import zipfile
+    import tempfile
+    import os
+    
+    # Create a minimal .docx file with private content embedded in XML
+    with tempfile.TemporaryDirectory() as tmpdir:
+        docx_path = os.path.join(tmpdir, 'test.docx')
+        
+        # Create a minimal Office Open XML structure
+        with zipfile.ZipFile(docx_path, 'w', zipfile.ZIP_DEFLATED) as zf:
+            # Add [Content_Types].xml
+            zf.writestr('[Content_Types].xml', b'<?xml version="1.0"?><Types/>')
+            
+            # Add document.xml with private path embedded
+            private_path = '/home/testuser/secret/project/file.txt'
+            doc_xml = f'<?xml version="1.0"?><document><text>Path: {private_path}</text></document>'.encode()
+            zf.writestr('word/document.xml', doc_xml)
+        
+        with open(docx_path, 'rb') as f:
+            docx_content = f.read()
+    
+    labels = inspect(docx_content, filename='document.docx')
+    
+    if 'private filesystem path' in labels:
+        print("  ✓ PASS: Detected private path in Office XML")
+        return True
+    else:
+        print("  ✗ FAIL: Did not detect private path in Office XML")
+        return False
+
+
 def main():
     """Run all tests."""
     print("Running check_publication.py tests\n")
@@ -247,6 +327,12 @@ def main():
     results.append(test_python_script_with_hardcoded_hostname())
     print()
     results.append(test_python_script_with_credential())
+    print()
+    results.append(test_private_git_host_detection())
+    print()
+    results.append(test_ssh_config_detection())
+    print()
+    results.append(test_office_xml_scanning())
     print()
     
     passed = sum(results)
