@@ -126,7 +126,8 @@ def inspect(body, filename=''):
         if is_fixture_file and name in ('GitHub token', 'cloud access key', 
                                         'private filesystem path', 'private hostname',
                                         'private key', 'service token', 'literal credential',
-                                        'authorization value', 'private git host', 'ssh config'):
+                                        'authorization value', 'private git host', 'ssh config',
+                                        'private network address'):
             continue
         # Skip AWS key pattern for protein data files (sequences contain AKIA-like substrings)
         if exclude_protein_patterns and name == 'cloud access key':
