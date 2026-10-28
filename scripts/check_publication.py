@@ -17,20 +17,94 @@ RULES = {
     'authorization value': rb'(?i)\bBearer\s+[A-Za-z0-9_.-]{20,}',
     'private filesystem path': rb'/(?:home|Users|scratch|data|projects|mnt)/[A-Za-z0-9_.-]+/',
     'private network address': rb'\b(?:10\.[0-9]+\.[0-9]+\.[0-9]+|192\.168\.[0-9]+\.[0-9]+|172\.(?:1[6-9]|2[0-9]|3[01])\.[0-9]+\.[0-9]+|100\.(?:6[4-9]|[7-9][0-9]|1[01][0-9]|12[0-7])\.[0-9]+\.[0-9]+)\b|[A-Za-z0-9.-]+\.ts\.net',
+    'private hostname': rb'(?i)(?:^|[^a-z])(?:pax|mimas)(?:[^a-z]|$)',
 }
+
+# File extensions to exclude from certain pattern checks
+# Protein sequences contain AKIA-like substrings; binary images contain random byte patterns
+PROTEIN_DATA_EXTENSIONS = {'.fasta', '.a3m', '.pdb', '.cif', '.csv'}
+BINARY_IMAGE_EXTENSIONS = {'.png', '.gif', '.jpg', '.jpeg', '.bmp', '.tif', '.tiff'}
 CONTROL_FILES = {'publication-files.json', 'scripts/check_publication.py', '.github/workflows/publication.yml'}
 
 def git(*arguments):
     return subprocess.check_output(['git', *arguments])
 
-def inspect(body):
+def inspect(body, filename=''):
+    """Inspect content for sensitive patterns.
+    
+    Args:
+        body: Content to inspect
+        filename: Original filename, used for extension-based filtering
+    
+    Returns:
+        List of matched rule names
+    """
+    import tempfile
+    import os
+    
+    file_ext = os.path.splitext(filename)[1].lower()
+    exclude_protein_patterns = file_ext in PROTEIN_DATA_EXTENSIONS
+    exclude_binary_image_patterns = file_ext in BINARY_IMAGE_EXTENSIONS
+    
     if body.startswith(b'\x1f\x8b'):
         body = gzip.decompress(body)
+    
+    attachments_to_check = []
     if body.startswith(b'%PDF'):
-        body = subprocess.run(['pdftotext', '-layout', '-', '-'], input=body,
-                              stdout=subprocess.PIPE, stderr=subprocess.PIPE,
-                              check=True).stdout
-    return [name for name, pattern in RULES.items() if re.search(pattern, body)]
+        # Extract visible text from PDF
+        visible_text = subprocess.run(['pdftotext', '-layout', '-', '-'], input=body,
+                                     stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                                     check=True).stdout
+        
+        # Extract and check PDF attachments
+        with tempfile.TemporaryDirectory() as tmpdir:
+            try:
+                # Save PDF to temp file for pdfdetach
+                pdf_path = os.path.join(tmpdir, 'temp.pdf')
+                with open(pdf_path, 'wb') as f:
+                    f.write(body)
+                
+                # List attachments
+                list_result = subprocess.run(['pdfdetach', '-list', pdf_path],
+                                           capture_output=True, text=True, check=False)
+                if list_result.returncode == 0 and 'embedded file' in list_result.stdout:
+                    # Extract all attachments
+                    subprocess.run(['pdfdetach', '-saveall', '-o', tmpdir, pdf_path],
+                                 capture_output=True, check=False)
+                    
+                    # Read attachment contents
+                    for item in os.listdir(tmpdir):
+                        item_path = os.path.join(tmpdir, item)
+                        if os.path.isfile(item_path) and item != 'temp.pdf':
+                            try:
+                                with open(item_path, 'rb') as f:
+                                    attachments_to_check.append(f.read())
+                            except Exception:
+                                pass  # Skip unreadable attachments
+            except Exception:
+                pass  # If attachment extraction fails, continue with visible text check
+        
+        body = visible_text
+    
+    # Check main body
+    labels = []
+    for name, pattern in RULES.items():
+        # Skip AWS key pattern for protein data files (sequences contain AKIA-like substrings)
+        if exclude_protein_patterns and name == 'cloud access key':
+            continue
+        # Skip hostname pattern for binary images (compressed data contains random byte patterns)
+        if exclude_binary_image_patterns and name == 'private hostname':
+            continue
+        if re.search(pattern, body):
+            labels.append(name)
+    
+    # Check attachments
+    for attachment in attachments_to_check:
+        for name, pattern in RULES.items():
+            if name not in labels and re.search(pattern, attachment):
+                labels.append(name)
+    
+    return labels
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
@@ -58,8 +132,8 @@ def main():
             failures.append((name, ['operational or private file']))
             continue
         try:
-            labels = inspect(git('cat-file', 'blob', oid.decode()))
-            labels += inspect(raw_name)
+            labels = inspect(git('cat-file', 'blob', oid.decode()), filename=name)
+            labels += inspect(raw_name, filename=name)
         except (OSError, ValueError, subprocess.CalledProcessError):
             labels = ['content could not be inspected']
         if labels:
