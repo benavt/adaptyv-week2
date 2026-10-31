@@ -78,6 +78,7 @@
     "media/F01/README.md",
     "publication-files.json",
     "scripts/check_publication.py",
+    "scripts/test_check_publication.py",
     "scripts/tnfa_deltaforge_scope.py"
   ]
 }
